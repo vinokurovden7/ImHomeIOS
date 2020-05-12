@@ -15,6 +15,7 @@
 		922D2B1C246ACBB500CA6492 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 922D2B1A246ACBB500CA6492 /* LaunchScreen.storyboard */; };
 		922D2B27246ACBB500CA6492 /* I_m_homeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922D2B26246ACBB500CA6492 /* I_m_homeTests.swift */; };
 		922D2B32246ACBB500CA6492 /* I_m_homeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922D2B31246ACBB500CA6492 /* I_m_homeUITests.swift */; };
+		924F9E05246AD2340065056E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924F9E04246AD2340065056E /* LoginVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		922D2B2D246ACBB500CA6492 /* I'm homeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "I'm homeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		922D2B31246ACBB500CA6492 /* I_m_homeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = I_m_homeUITests.swift; sourceTree = "<group>"; };
 		922D2B33246ACBB500CA6492 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		924F9E04246AD2340065056E /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				922D2B0F246ACBB400CA6492 /* AppDelegate.swift */,
 				922D2B11246ACBB400CA6492 /* SceneDelegate.swift */,
 				922D2B13246ACBB400CA6492 /* ViewController.swift */,
+				924F9E04246AD2340065056E /* LoginVC.swift */,
 				922D2B15246ACBB400CA6492 /* Main.storyboard */,
 				922D2B18246ACBB500CA6492 /* Assets.xcassets */,
 				922D2B1A246ACBB500CA6492 /* LaunchScreen.storyboard */,
@@ -261,6 +264,7 @@
 			files = (
 				922D2B14246ACBB400CA6492 /* ViewController.swift in Sources */,
 				922D2B10246ACBB400CA6492 /* AppDelegate.swift in Sources */,
+				924F9E05246AD2340065056E /* LoginVC.swift in Sources */,
 				922D2B12246ACBB400CA6492 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
