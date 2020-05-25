@@ -15,7 +15,16 @@
 		922D2B1C246ACBB500CA6492 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 922D2B1A246ACBB500CA6492 /* LaunchScreen.storyboard */; };
 		922D2B27246ACBB500CA6492 /* I_m_homeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922D2B26246ACBB500CA6492 /* I_m_homeTests.swift */; };
 		922D2B32246ACBB500CA6492 /* I_m_homeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922D2B31246ACBB500CA6492 /* I_m_homeUITests.swift */; };
+		92413DA6247AA0CC009B56B7 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92413DA5247AA0CC009B56B7 /* ProfileVC.swift */; };
+		924348192477C05A00649D0B /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924348182477C05A00649D0B /* MainVC.swift */; };
+		924348222477FAF800649D0B /* ContactsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924348212477FAF800649D0B /* ContactsCell.swift */; };
+		924348242478049D00649D0B /* ContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924348232478049D00649D0B /* ContactsVC.swift */; };
+		924348262478FB0C00649D0B /* RequestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924348252478FB0C00649D0B /* RequestVC.swift */; };
 		924F9E05246AD2340065056E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924F9E04246AD2340065056E /* LoginVC.swift */; };
+		92925C7324751D63000F6500 /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92925C7224751D63000F6500 /* RegistrationVC.swift */; };
+		92CD7577247BDA4E00EED562 /* DelayMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CD7576247BDA4E00EED562 /* DelayMessageVC.swift */; };
+		92DD21A12478FD2300849AB2 /* RequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD21A02478FD2300849AB2 /* RequestCell.swift */; };
+		92DD21A32479495900849AB2 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD21A22479495900849AB2 /* SettingsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		922D2B0C246ACBB400CA6492 /* I'm home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "I'm home.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		922D2B0C246ACBB400CA6492 /* Я дома.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Я дома.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		922D2B0F246ACBB400CA6492 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		922D2B11246ACBB400CA6492 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		922D2B13246ACBB400CA6492 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,7 +59,18 @@
 		922D2B2D246ACBB500CA6492 /* I'm homeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "I'm homeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		922D2B31246ACBB500CA6492 /* I_m_homeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = I_m_homeUITests.swift; sourceTree = "<group>"; };
 		922D2B33246ACBB500CA6492 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92413DA5247AA0CC009B56B7 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		924348182477C05A00649D0B /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		924348212477FAF800649D0B /* ContactsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsCell.swift; sourceTree = "<group>"; };
+		924348232478049D00649D0B /* ContactsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsVC.swift; sourceTree = "<group>"; };
+		924348252478FB0C00649D0B /* RequestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestVC.swift; sourceTree = "<group>"; };
 		924F9E04246AD2340065056E /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		924F9E08246AF0DD0065056E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		924F9E09246AF0DD0065056E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		92925C7224751D63000F6500 /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
+		92CD7576247BDA4E00EED562 /* DelayMessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayMessageVC.swift; sourceTree = "<group>"; };
+		92DD21A02478FD2300849AB2 /* RequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCell.swift; sourceTree = "<group>"; };
+		92DD21A22479495900849AB2 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +111,7 @@
 		922D2B0D246ACBB400CA6492 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				922D2B0C246ACBB400CA6492 /* I'm home.app */,
+				922D2B0C246ACBB400CA6492 /* Я дома.app */,
 				922D2B22246ACBB500CA6492 /* I'm homeTests.xctest */,
 				922D2B2D246ACBB500CA6492 /* I'm homeUITests.xctest */,
 			);
@@ -101,10 +121,11 @@
 		922D2B0E246ACBB400CA6492 /* I'm home */ = {
 			isa = PBXGroup;
 			children = (
+				9243481F2477FAA800649D0B /* View */,
+				9243481C2477D81200649D0B /* Protocols */,
+				9243481B2477D7F500649D0B /* ViewModels */,
 				922D2B0F246ACBB400CA6492 /* AppDelegate.swift */,
 				922D2B11246ACBB400CA6492 /* SceneDelegate.swift */,
-				922D2B13246ACBB400CA6492 /* ViewController.swift */,
-				924F9E04246AD2340065056E /* LoginVC.swift */,
 				922D2B15246ACBB400CA6492 /* Main.storyboard */,
 				922D2B18246ACBB500CA6492 /* Assets.xcassets */,
 				922D2B1A246ACBB500CA6492 /* LaunchScreen.storyboard */,
@@ -131,6 +152,54 @@
 			path = "I'm homeUITests";
 			sourceTree = "<group>";
 		};
+		9243481A2477D7E800649D0B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				922D2B13246ACBB400CA6492 /* ViewController.swift */,
+				924F9E04246AD2340065056E /* LoginVC.swift */,
+				92925C7224751D63000F6500 /* RegistrationVC.swift */,
+				924348182477C05A00649D0B /* MainVC.swift */,
+				924348232478049D00649D0B /* ContactsVC.swift */,
+				924348252478FB0C00649D0B /* RequestVC.swift */,
+				92DD21A22479495900849AB2 /* SettingsVC.swift */,
+				92413DA5247AA0CC009B56B7 /* ProfileVC.swift */,
+				92CD7576247BDA4E00EED562 /* DelayMessageVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9243481B2477D7F500649D0B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9243481C2477D81200649D0B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		9243481F2477FAA800649D0B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				924348202477FAB700649D0B /* CustomCell */,
+				9243481A2477D7E800649D0B /* ViewControllers */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		924348202477FAB700649D0B /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				924348212477FAF800649D0B /* ContactsCell.swift */,
+				92DD21A02478FD2300849AB2 /* RequestCell.swift */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -148,7 +217,7 @@
 			);
 			name = "I'm home";
 			productName = "I'm home";
-			productReference = 922D2B0C246ACBB400CA6492 /* I'm home.app */;
+			productReference = 922D2B0C246ACBB400CA6492 /* Я дома.app */;
 			productType = "com.apple.product-type.application";
 		};
 		922D2B21246ACBB500CA6492 /* I'm homeTests */ = {
@@ -217,6 +286,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 922D2B03246ACBB400CA6492;
 			productRefGroup = 922D2B0D246ACBB400CA6492 /* Products */;
@@ -262,9 +332,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92413DA6247AA0CC009B56B7 /* ProfileVC.swift in Sources */,
+				92CD7577247BDA4E00EED562 /* DelayMessageVC.swift in Sources */,
+				92DD21A32479495900849AB2 /* SettingsVC.swift in Sources */,
 				922D2B14246ACBB400CA6492 /* ViewController.swift in Sources */,
+				924348192477C05A00649D0B /* MainVC.swift in Sources */,
+				924348262478FB0C00649D0B /* RequestVC.swift in Sources */,
 				922D2B10246ACBB400CA6492 /* AppDelegate.swift in Sources */,
+				924348242478049D00649D0B /* ContactsVC.swift in Sources */,
 				924F9E05246AD2340065056E /* LoginVC.swift in Sources */,
+				924348222477FAF800649D0B /* ContactsCell.swift in Sources */,
+				92DD21A12478FD2300849AB2 /* RequestCell.swift in Sources */,
+				92925C7324751D63000F6500 /* RegistrationVC.swift in Sources */,
 				922D2B12246ACBB400CA6492 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,6 +384,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				922D2B16246ACBB400CA6492 /* Base */,
+				924F9E08246AF0DD0065056E /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -313,6 +393,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				922D2B1B246ACBB500CA6492 /* Base */,
+				924F9E09246AF0DD0065056E /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -324,6 +405,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -384,6 +466,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -446,9 +529,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "denis.I-m-home";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Я дома";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -464,9 +547,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "denis.I-m-home";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Я дома";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

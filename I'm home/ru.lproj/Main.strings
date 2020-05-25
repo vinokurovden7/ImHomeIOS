@@ -1,0 +1,36 @@
+
+/* Class = "UILabel"; text = "ДОМА"; ObjectID = "Dkm-VC-D93"; */
+"Dkm-VC-D93.text" = "ДОМА";
+
+/* Class = "UILabel"; text = "Я"; ObjectID = "H0O-1Y-RgO"; */
+"H0O-1Y-RgO.text" = "Я";
+
+/* Class = "UIButton"; normalTitle = "Забыли пароль ?"; ObjectID = "JbQ-uS-qBV"; */
+"JbQ-uS-qBV.normalTitle" = "Забыли пароль ?";
+
+/* Class = "UITextField"; placeholder = "Пароль"; ObjectID = "L5W-Rx-VxZ"; */
+"L5W-Rx-VxZ.placeholder" = "Пароль";
+
+/* Class = "UILabel"; text = "Приложение с которым спокойно"; ObjectID = "U25-5h-4bS"; */
+"U25-5h-4bS.text" = "Приложение с которым спокойно";
+
+/* Class = "UILabel"; text = "я"; ObjectID = "U8V-8d-4eA"; */
+"U8V-8d-4eA.text" = "я";
+
+/* Class = "UILabel"; text = "ДОМА"; ObjectID = "cYZ-aS-lJe"; */
+"cYZ-aS-lJe.text" = "ДОМА";
+
+/* Class = "UILabel"; text = "ДОМА"; ObjectID = "fLE-Jz-dpm"; */
+"fLE-Jz-dpm.text" = "ДОМА";
+
+/* Class = "UITextField"; placeholder = "Имя пользователя"; ObjectID = "iIJ-Py-gq0"; */
+"iIJ-Py-gq0.placeholder" = "Имя пользователя";
+
+/* Class = "UIButton"; normalTitle = "Авторизоваться"; ObjectID = "kfe-XG-TUS"; */
+"kfe-XG-TUS.normalTitle" = "Авторизоваться";
+
+/* Class = "UILabel"; text = "Я"; ObjectID = "ucl-dd-TKV"; */
+"ucl-dd-TKV.text" = "Я";
+
+/* Class = "UIButton"; normalTitle = "Регистрация"; ObjectID = "v0J-Fi-Che"; */
+"v0J-Fi-Che.normalTitle" = "Регистрация";

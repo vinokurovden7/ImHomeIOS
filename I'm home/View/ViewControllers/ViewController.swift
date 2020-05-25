@@ -13,12 +13,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DispatchQueue.main.async {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1){
             self.performSegue(withIdentifier: "showLoginScreen", sender: self)
-        }
-        
+        }        
     }
 
+    //MARK: Визуальное оформление
+    //MARK: Стиль статус бара
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .lightContent
+    }
 
 }
-
