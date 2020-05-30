@@ -20,9 +20,12 @@
 		924348222477FAF800649D0B /* ContactsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924348212477FAF800649D0B /* ContactsCell.swift */; };
 		924348242478049D00649D0B /* ContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924348232478049D00649D0B /* ContactsVC.swift */; };
 		924348262478FB0C00649D0B /* RequestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924348252478FB0C00649D0B /* RequestVC.swift */; };
+		924B0949247D6BA9002F7267 /* NewContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924B0948247D6BA9002F7267 /* NewContactVC.swift */; };
+		924B094B247D7B74002F7267 /* NewContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924B094A247D7B74002F7267 /* NewContactCell.swift */; };
 		924F9E05246AD2340065056E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924F9E04246AD2340065056E /* LoginVC.swift */; };
 		92925C7324751D63000F6500 /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92925C7224751D63000F6500 /* RegistrationVC.swift */; };
 		92CD7577247BDA4E00EED562 /* DelayMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CD7576247BDA4E00EED562 /* DelayMessageVC.swift */; };
+		92CD7579247BFC5000EED562 /* ProfileContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CD7578247BFC5000EED562 /* ProfileContactVC.swift */; };
 		92DD21A12478FD2300849AB2 /* RequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD21A02478FD2300849AB2 /* RequestCell.swift */; };
 		92DD21A32479495900849AB2 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD21A22479495900849AB2 /* SettingsVC.swift */; };
 /* End PBXBuildFile section */
@@ -64,11 +67,14 @@
 		924348212477FAF800649D0B /* ContactsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsCell.swift; sourceTree = "<group>"; };
 		924348232478049D00649D0B /* ContactsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsVC.swift; sourceTree = "<group>"; };
 		924348252478FB0C00649D0B /* RequestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestVC.swift; sourceTree = "<group>"; };
+		924B0948247D6BA9002F7267 /* NewContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactVC.swift; sourceTree = "<group>"; };
+		924B094A247D7B74002F7267 /* NewContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactCell.swift; sourceTree = "<group>"; };
 		924F9E04246AD2340065056E /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		924F9E08246AF0DD0065056E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		924F9E09246AF0DD0065056E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		92925C7224751D63000F6500 /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
 		92CD7576247BDA4E00EED562 /* DelayMessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayMessageVC.swift; sourceTree = "<group>"; };
+		92CD7578247BFC5000EED562 /* ProfileContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContactVC.swift; sourceTree = "<group>"; };
 		92DD21A02478FD2300849AB2 /* RequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCell.swift; sourceTree = "<group>"; };
 		92DD21A22479495900849AB2 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,6 +170,8 @@
 				92DD21A22479495900849AB2 /* SettingsVC.swift */,
 				92413DA5247AA0CC009B56B7 /* ProfileVC.swift */,
 				92CD7576247BDA4E00EED562 /* DelayMessageVC.swift */,
+				92CD7578247BFC5000EED562 /* ProfileContactVC.swift */,
+				924B0948247D6BA9002F7267 /* NewContactVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -196,6 +204,7 @@
 			children = (
 				924348212477FAF800649D0B /* ContactsCell.swift */,
 				92DD21A02478FD2300849AB2 /* RequestCell.swift */,
+				924B094A247D7B74002F7267 /* NewContactCell.swift */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -337,12 +346,15 @@
 				92DD21A32479495900849AB2 /* SettingsVC.swift in Sources */,
 				922D2B14246ACBB400CA6492 /* ViewController.swift in Sources */,
 				924348192477C05A00649D0B /* MainVC.swift in Sources */,
+				924B094B247D7B74002F7267 /* NewContactCell.swift in Sources */,
 				924348262478FB0C00649D0B /* RequestVC.swift in Sources */,
 				922D2B10246ACBB400CA6492 /* AppDelegate.swift in Sources */,
+				924B0949247D6BA9002F7267 /* NewContactVC.swift in Sources */,
 				924348242478049D00649D0B /* ContactsVC.swift in Sources */,
 				924F9E05246AD2340065056E /* LoginVC.swift in Sources */,
 				924348222477FAF800649D0B /* ContactsCell.swift in Sources */,
 				92DD21A12478FD2300849AB2 /* RequestCell.swift in Sources */,
+				92CD7579247BFC5000EED562 /* ProfileContactVC.swift in Sources */,
 				92925C7324751D63000F6500 /* RegistrationVC.swift in Sources */,
 				922D2B12246ACBB400CA6492 /* SceneDelegate.swift in Sources */,
 			);

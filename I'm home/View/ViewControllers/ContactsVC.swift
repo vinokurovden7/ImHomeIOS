@@ -9,14 +9,43 @@
 import UIKit
 
 private let reuseIdentifier = "contactsCell"
+private var searchController: UISearchController!
 
 let countItems = CGFloat(2)
 let paddingPlit = CGFloat(16)
 
-class ContactsVC: UICollectionViewController {
+class ContactsVC: UICollectionViewController, UISearchBarDelegate {
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
+        self.navigationController?.navigationBar.barStyle = .black
+        //self.navigationController?.hidesBarsOnSwipe = true
+        
+        setSearchNavController()
+        
+    }
+    
+    //MARK: Настройка searchController и  NavigationController
+    func setSearchNavController(){
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.tintColor = UIColor .white
+        searchController.searchBar.barTintColor = UIColor .clear
+        searchController.searchBar.delegate = self
+        searchController.searchBar.placeholder = "Поиск"
+       // searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = true
+        definesPresentationContext = true
     }
     
     //MARK: Визуальное оформление
@@ -41,7 +70,7 @@ extension ContactsVC: UICollectionViewDelegateFlowLayout {
         let widthPlit = (collectionView.frame.width - paddingPlit * countItems) / countItems
         let superPadding = (collectionView.frame.width - widthPlit * countItems) / (countItems+1)
         let padding = (collectionView.frame.width - (superPadding + (countItems * widthPlit))) / countItems
-        return UIEdgeInsets(top: 40, left: padding, bottom: 40, right: padding)
+        return UIEdgeInsets(top: 0, left: padding, bottom: 40, right: padding)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
