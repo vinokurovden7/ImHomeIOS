@@ -12,42 +12,59 @@ class RegistrationVC: UITableViewController {
 
     @IBOutlet var emailTextField: UITextField! {
         didSet {
-            emailTextField.attributedPlaceholder = NSAttributedString(string: "Введите Email",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            emailTextField.layer.cornerRadius = emailTextField.frame.height / 2
+            emailTextField.clipsToBounds = true
         }
     }
-    @IBOutlet var usernameTextField: UITextField! {
+    @IBOutlet var usernameTextField: UITextField!
+    {
         didSet {
-            usernameTextField.attributedPlaceholder = NSAttributedString(string: "Введите имя пользователя",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            usernameTextField.layer.cornerRadius = usernameTextField.frame.height / 2
+            usernameTextField.clipsToBounds = true
         }
     }
     @IBOutlet var passwordTextField: UITextField! {
         didSet {
-            passwordTextField.attributedPlaceholder = NSAttributedString(string: "Введите пароль",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            passwordTextField.layer.cornerRadius = passwordTextField.frame.height / 2
+            passwordTextField.clipsToBounds = true
         }
     }
     @IBOutlet weak var secondNameUser: UITextField! {
         didSet {
-            secondNameUser.attributedPlaceholder = NSAttributedString(string: "Введите фамилию",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            secondNameUser.layer.cornerRadius = secondNameUser.frame.height / 2
+            secondNameUser.clipsToBounds = true
         }
     }
     @IBOutlet weak var firstNameUser: UITextField! {
         didSet {
-            firstNameUser.attributedPlaceholder = NSAttributedString(string: "Введите имя",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            firstNameUser.layer.cornerRadius = firstNameUser.frame.height / 2
+            firstNameUser.clipsToBounds = true
         }
     }
     @IBOutlet weak var thirdNameUser: UITextField! {
         didSet {
-            thirdNameUser.attributedPlaceholder = NSAttributedString(string: "Введите отчество",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            thirdNameUser.layer.cornerRadius = thirdNameUser.frame.height / 2
+            thirdNameUser.clipsToBounds = true
         }
     }
     @IBOutlet weak var goLoginScreenBtn: UIButton!
-    @IBOutlet weak var imageAccount: UIImageView!
+    @IBOutlet weak var backgroundViewImageAccount: UIView! {
+        didSet {
+            backgroundViewImageAccount.layer.cornerRadius = backgroundViewImageAccount.frame.height / 2
+            backgroundViewImageAccount.layer.shadowRadius = 4
+            backgroundViewImageAccount.layer.shadowOffset = CGSize(width: 0, height: 3)
+            backgroundViewImageAccount.layer.shadowOpacity = 0.7
+            backgroundViewImageAccount.layer.shadowColor = UIColor.black.cgColor
+        }
+    }
+    @IBOutlet weak var imageAccount: UIImageView! {
+        didSet {
+            imageAccount.layer.cornerRadius = imageAccount.frame.height / 2
+            imageAccount.layer.borderColor = UIColor.white.cgColor
+            imageAccount.layer.borderWidth = 2
+            imageAccount.clipsToBounds = true
+        }
+    }
     @IBOutlet weak var registrationBtn: UIButton! {
         didSet {
             registrationBtn.layer.cornerRadius = registrationBtn.frame.height / 2
@@ -55,7 +72,8 @@ class RegistrationVC: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.backgroundView = UIImageView(image: UIImage(named: "fonBackground"))
+        tableView.backgroundView?.alpha = 0.07
         
     }
 

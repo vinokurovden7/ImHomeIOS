@@ -12,29 +12,29 @@ class ProfileVC: UITableViewController {
 
     @IBOutlet weak var emailTextField: UITextField! {
         didSet {
-            emailTextField.attributedPlaceholder = NSAttributedString(string: "Введите Email",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            emailTextField.layer.cornerRadius = emailTextField.frame.height / 2
+            emailTextField.clipsToBounds = true
         }
     }
     
     @IBOutlet weak var secondNameTextField: UITextField! {
         didSet {
-            secondNameTextField.attributedPlaceholder = NSAttributedString(string: "Введите фамилию",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            secondNameTextField.layer.cornerRadius = secondNameTextField.frame.height / 2
+            secondNameTextField.clipsToBounds = true
         }
     }
     
     @IBOutlet weak var firstNameTextField: UITextField! {
         didSet {
-            firstNameTextField.attributedPlaceholder = NSAttributedString(string: "Введите имя",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            firstNameTextField.layer.cornerRadius = firstNameTextField.frame.height / 2
+            firstNameTextField.clipsToBounds = true
         }
     }
     
     @IBOutlet weak var thirdNameTextField: UITextField! {
         didSet {
-            thirdNameTextField.attributedPlaceholder = NSAttributedString(string: "Введите отчество",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            thirdNameTextField.layer.cornerRadius = thirdNameTextField.frame.height / 2
+            thirdNameTextField.clipsToBounds = true
         }
     }
     
@@ -52,7 +52,23 @@ class ProfileVC: UITableViewController {
         }
     }
     
-    @IBOutlet weak var imageProfile: UIImageView! 
+    @IBOutlet weak var backgroundViewImageProfile: UIView! {
+        didSet {
+            backgroundViewImageProfile.layer.cornerRadius = backgroundViewImageProfile.frame.height / 2
+            backgroundViewImageProfile.layer.shadowRadius = 4
+            backgroundViewImageProfile.layer.shadowOffset = CGSize(width: 0, height: 3)
+            backgroundViewImageProfile.layer.shadowOpacity = 0.7
+            backgroundViewImageProfile.layer.shadowColor = UIColor.black.cgColor
+        }
+    }
+    @IBOutlet weak var imageProfile: UIImageView! {
+        didSet {
+            imageProfile.layer.cornerRadius = imageProfile.frame.height / 2
+            imageProfile.layer.borderColor = UIColor.white.cgColor
+            imageProfile.layer.borderWidth = 2
+            imageProfile.clipsToBounds = true
+        }
+    }
     
     @IBOutlet weak var backgroundViewProfileImage: UIView! {
         didSet {
@@ -75,6 +91,8 @@ class ProfileVC: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.backgroundView = UIImageView(image: UIImage(named: "fonBackground"))
+        tableView.backgroundView?.alpha = 0.07
 
     }
     

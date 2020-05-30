@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsVC: UIViewController {
+class SettingsVC: UITableViewController {
 
     @IBOutlet weak var backgroundImageView: UIView! {
         didSet {
@@ -24,11 +24,6 @@ class SettingsVC: UIViewController {
             editAccountButton.layer.cornerRadius = editAccountButton.frame.height / 2
         }
     }
-    @IBOutlet weak var deleteAccountButton: UIButton! {
-        didSet {
-            deleteAccountButton.layer.cornerRadius = deleteAccountButton.frame.height / 2
-        }
-    }
     @IBOutlet weak var profileImageVIew: UIImageView! {
         didSet {
             profileImageVIew.layer.cornerRadius = profileImageVIew.frame.width / 2
@@ -40,7 +35,9 @@ class SettingsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.backgroundView = UIImageView(image: UIImage(named: "fonBackground"))
+        tableView.backgroundView?.alpha = 0.07
+        
     }
     
     //MARK: Обработчики
