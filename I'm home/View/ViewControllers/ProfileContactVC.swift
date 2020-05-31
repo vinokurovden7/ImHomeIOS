@@ -108,13 +108,10 @@ class ProfileContactVC: UIViewController {
 
             //To apply border
             thirdNameProfileTextField.layer.borderWidth = 0.25
-            thirdNameProfileTextField.layer.borderColor = UIColor.white.cgColor
 
             //To apply Shadow
             thirdNameProfileTextField.layer.shadowOpacity = 0.2
             thirdNameProfileTextField.layer.shadowRadius = 5.0
-            thirdNameProfileTextField.layer.shadowOffset = CGSize.zero // Use any CGSize
-            thirdNameProfileTextField.layer.shadowColor = UIColor.gray.cgColor
 
             //To apply padding
             let paddingView : UIView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: thirdNameProfileTextField.frame.height))
@@ -151,18 +148,7 @@ class ProfileContactVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

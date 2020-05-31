@@ -12,43 +12,43 @@ class ProfileVC: UITableViewController {
 
     @IBOutlet weak var emailTextField: UITextField! {
         didSet {
-            emailTextField.layer.cornerRadius = emailTextField.frame.height / 2
-            emailTextField.clipsToBounds = true
+            textFieldSetup(textField: emailTextField)
         }
     }
     
     @IBOutlet weak var secondNameTextField: UITextField! {
         didSet {
-            secondNameTextField.layer.cornerRadius = secondNameTextField.frame.height / 2
-            secondNameTextField.clipsToBounds = true
+            textFieldSetup(textField: secondNameTextField)
         }
     }
     
     @IBOutlet weak var firstNameTextField: UITextField! {
         didSet {
-            firstNameTextField.layer.cornerRadius = firstNameTextField.frame.height / 2
-            firstNameTextField.clipsToBounds = true
+            textFieldSetup(textField: firstNameTextField)
         }
     }
     
     @IBOutlet weak var thirdNameTextField: UITextField! {
         didSet {
-            thirdNameTextField.layer.cornerRadius = thirdNameTextField.frame.height / 2
-            thirdNameTextField.clipsToBounds = true
+            textFieldSetup(textField: thirdNameTextField)
         }
     }
     
     @IBOutlet weak var changePasswordBtn: UIButton! {
         didSet {
-            changePasswordBtn.layer.cornerRadius = changePasswordBtn.frame.height / 2
+            buttonSetup(button: changePasswordBtn)
         }
     }
     
-    @IBOutlet weak var saveBtn: UIBarButtonItem!
+    @IBOutlet weak var saveBtn: UIButton! {
+        didSet {
+            buttonSetup(button: saveBtn)
+        }
+    }
     
     @IBOutlet weak var deleteAccountBtn: UIButton! {
         didSet {
-            deleteAccountBtn.layer.cornerRadius = deleteAccountBtn.frame.height / 2
+            buttonSetup(button: deleteAccountBtn)
         }
     }
     
@@ -70,25 +70,6 @@ class ProfileVC: UITableViewController {
         }
     }
     
-    @IBOutlet weak var backgroundViewProfileImage: UIView! {
-        didSet {
-            backgroundViewProfileImage.layer.cornerRadius = 20
-            backgroundViewProfileImage.layer.shadowRadius = 4
-            backgroundViewProfileImage.layer.shadowOffset = CGSize(width: 0, height: 3)
-            backgroundViewProfileImage.layer.shadowOpacity = 1
-            backgroundViewProfileImage.layer.shadowColor = UIColor.black.cgColor
-        }
-    }
-    
-    @IBOutlet weak var backgroundBtnView: UIView! {
-        didSet {
-            backgroundBtnView.layer.cornerRadius = backgroundBtnView.frame.height / 2
-            backgroundBtnView.layer.shadowRadius = 4
-            backgroundBtnView.layer.shadowOffset = CGSize(width: 0, height: 3)
-            backgroundBtnView.layer.shadowOpacity = 1
-            backgroundBtnView.layer.shadowColor = UIColor.black.cgColor
-        }
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.backgroundView = UIImageView(image: UIImage(named: "fonBackground"))
@@ -96,15 +77,14 @@ class ProfileVC: UITableViewController {
 
     }
     
+    
+    
     //MARK: Обработчики
     //MARK: Нажатие на любое пустое место на экране
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    @IBAction func saveBtnAction(_ sender: UIBarButtonItem) {
-        dismiss(animated: true)
-    }
-    @IBAction func cancelBtnAction(_ sender: UIBarButtonItem) {
+    @IBAction func saveBtnAction(_ sender: UIButton) {
         dismiss(animated: true)
     }
     
@@ -112,6 +92,15 @@ class ProfileVC: UITableViewController {
     //MARK: Стиль статус бара
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
+    }
+    
+    fileprivate func textFieldSetup(textField: UITextField){
+        textField.layer.cornerRadius = textField.frame.height / 2
+        textField.clipsToBounds = true
+    }
+    
+    fileprivate func buttonSetup(button: UIButton){
+        button.layer.cornerRadius = button.frame.height / 2
     }
     
 }
