@@ -9,6 +9,7 @@
 import UIKit
 
 class ContactsCell: UICollectionViewCell {
+    @IBOutlet weak var backgroundViewContacts: UIView!
     @IBOutlet weak var widthConstraintPlit: NSLayoutConstraint!
     @IBOutlet weak var backImageContactView: UIView! {
         didSet {

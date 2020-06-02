@@ -20,13 +20,6 @@ class ContactsVC: UICollectionViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = .clear
-        self.navigationController?.navigationBar.barStyle = .black
-        //self.navigationController?.hidesBarsOnSwipe = true
-        
         setSearchNavController()
         
     }
@@ -35,22 +28,27 @@ class ContactsVC: UICollectionViewController, UISearchBarDelegate {
     func setSearchNavController(){
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.view.backgroundColor = .clear
+        self.navigationController?.navigationBar.barStyle = .black
         
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.tintColor = UIColor .white
         searchController.searchBar.barTintColor = UIColor .clear
         searchController.searchBar.delegate = self
         searchController.searchBar.placeholder = "Поиск"
-       // searchController.searchResultsUpdater = self
+        //searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = true
         definesPresentationContext = true
     }
     
-    //MARK: Визуальное оформление
-    //MARK: Стиль статус бара
-    override var preferredStatusBarStyle: UIStatusBarStyle{
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNeedsStatusBarAppearanceUpdate()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
 

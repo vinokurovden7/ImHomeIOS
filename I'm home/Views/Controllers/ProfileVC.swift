@@ -95,6 +95,10 @@ class ProfileVC: UITableViewController {
     }
     
     fileprivate func textFieldSetup(textField: UITextField){
+        //To apply padding
+        let paddingView : UIView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
+        textField.leftView = paddingView
+        textField.leftViewMode = UITextField.ViewMode.always
         textField.layer.cornerRadius = textField.frame.height / 2
         textField.clipsToBounds = true
     }

@@ -12,31 +12,11 @@ class ProfileContactVC: UIViewController {
 
     @IBOutlet weak var emailProfileTextField: UITextField! {
         didSet {
-            //Basic texfield Setup
-            emailProfileTextField.borderStyle = .none
-            emailProfileTextField.backgroundColor = .white // Use anycolor that give you a 2d look.
-
             //To apply corner radius
             emailProfileTextField.layer.cornerRadius = emailProfileTextField.frame.size.height / 2
-
-            //To apply border
-            emailProfileTextField.layer.borderWidth = 0.25
-            emailProfileTextField.layer.borderColor = UIColor.white.cgColor
-
-            //To apply Shadow
-            emailProfileTextField.layer.shadowOpacity = 0.2
-            emailProfileTextField.layer.shadowRadius = 5.0
-            emailProfileTextField.layer.shadowOffset = CGSize.zero // Use any CGSize
-            emailProfileTextField.layer.shadowColor = UIColor.gray.cgColor
-
-            //To apply padding
-            let paddingView : UIView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: emailProfileTextField.frame.height))
-            emailProfileTextField.leftView = paddingView
-            emailProfileTextField.leftViewMode = UITextField.ViewMode.always
-            emailProfileTextField.layer.borderColor = UIColor.black.withAlphaComponent(0.25).cgColor
-            emailProfileTextField.layer.shadowOffset = CGSize(width: 0, height: 4)
-            emailProfileTextField.layer.shadowColor = UIColor.black.cgColor //Any dark color
-            emailProfileTextField.overrideUserInterfaceStyle = .light
+            emailProfileTextField.layer.borderColor = UIColor(named: "Lead")?.cgColor
+            emailProfileTextField.layer.borderWidth = 2
+            emailProfileTextField.clipsToBounds = true
         }
     }
     @IBOutlet weak var secondNameProfileTextField: UITextField! {

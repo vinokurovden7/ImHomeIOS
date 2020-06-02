@@ -10,6 +10,12 @@ import UIKit
 
 class SettingsVC: UITableViewController {
 
+    @IBOutlet weak var timeCancelSOSSignal: UITextField! {
+        didSet {
+            timeCancelSOSSignal.layer.cornerRadius = timeCancelSOSSignal.frame.height / 2
+            timeCancelSOSSignal.clipsToBounds = true
+        }
+    }
     @IBOutlet weak var backgroundImageView: UIView! {
         didSet {
             backgroundImageView.layer.cornerRadius = backgroundImageView.frame.height / 2

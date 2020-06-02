@@ -12,39 +12,33 @@ class RegistrationVC: UITableViewController {
 
     @IBOutlet var emailTextField: UITextField! {
         didSet {
-            emailTextField.layer.cornerRadius = emailTextField.frame.height / 2
-            emailTextField.clipsToBounds = true
+            textFieldSetup(textField: emailTextField)
         }
     }
     @IBOutlet var usernameTextField: UITextField!
     {
         didSet {
-            usernameTextField.layer.cornerRadius = usernameTextField.frame.height / 2
-            usernameTextField.clipsToBounds = true
+            textFieldSetup(textField: usernameTextField)
         }
     }
     @IBOutlet var passwordTextField: UITextField! {
         didSet {
-            passwordTextField.layer.cornerRadius = passwordTextField.frame.height / 2
-            passwordTextField.clipsToBounds = true
+            textFieldSetup(textField: passwordTextField)
         }
     }
     @IBOutlet weak var secondNameUser: UITextField! {
         didSet {
-            secondNameUser.layer.cornerRadius = secondNameUser.frame.height / 2
-            secondNameUser.clipsToBounds = true
+            textFieldSetup(textField: secondNameUser)
         }
     }
     @IBOutlet weak var firstNameUser: UITextField! {
         didSet {
-            firstNameUser.layer.cornerRadius = firstNameUser.frame.height / 2
-            firstNameUser.clipsToBounds = true
+            textFieldSetup(textField: firstNameUser)
         }
     }
     @IBOutlet weak var thirdNameUser: UITextField! {
         didSet {
-            thirdNameUser.layer.cornerRadius = thirdNameUser.frame.height / 2
-            thirdNameUser.clipsToBounds = true
+            textFieldSetup(textField: thirdNameUser)
         }
     }
     @IBOutlet weak var goLoginScreenBtn: UIButton!
@@ -75,6 +69,11 @@ class RegistrationVC: UITableViewController {
         tableView.backgroundView = UIImageView(image: UIImage(named: "fonBackground"))
         tableView.backgroundView?.alpha = 0.07
         
+    }
+    
+    fileprivate func textFieldSetup(textField: UITextField){
+        textField.layer.cornerRadius = textField.frame.height / 2
+        textField.clipsToBounds = true
     }
 
     //MARK: Обработчики

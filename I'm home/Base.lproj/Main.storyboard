@@ -3,6 +3,7 @@
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,9 +19,11 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.070000000000000007" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fonBackground" translatesAutoresizingMaskIntoConstraints="NO" id="cHO-DG-5Uq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="tintColor" name="fonBackgroundImageColor"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Path" translatesAutoresizingMaskIntoConstraints="NO" id="IFW-vn-KoV">
                                 <rect key="frame" x="0.0" y="64" width="359" height="694"/>
+                                <color key="tintColor" name="rombColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="304" id="BE2-sw-0wi"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="515" id="WYi-7x-RgQ"/>
@@ -28,11 +31,10 @@
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Имя пользователя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iIJ-Py-gq0">
                                 <rect key="frame" x="15" y="356" width="290" height="40"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="xKc-L1-3zI"/>
                                 </constraints>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -43,7 +45,7 @@
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L5W-Rx-VxZ">
                                 <rect key="frame" x="15" y="426" width="290" height="40"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="kaq-va-yUV"/>
                                 </constraints>
@@ -63,6 +65,7 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home" translatesAutoresizingMaskIntoConstraints="NO" id="yXi-BI-POZ">
                                         <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="90" id="TnX-8J-QZS"/>
                                             <constraint firstAttribute="width" constant="90" id="wDj-5G-qMy"/>
@@ -74,7 +77,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Я" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0O-1Y-RgO">
                                                 <rect key="frame" x="0.0" y="0.0" width="16.333333333333332" height="35"/>
                                                 <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="23"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" name="textLabelColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ДОМА" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYZ-aS-lJe">
@@ -123,7 +126,7 @@
                                     <constraint firstAttribute="width" constant="106" id="1H3-W8-iUA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="2aQ-15-mpd">
@@ -132,7 +135,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Я" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucl-dd-TKV">
                                         <rect key="frame" x="0.0" y="0.0" width="16.333333333333332" height="35"/>
                                         <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="23"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ДОМА" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLE-Jz-dpm">
@@ -170,11 +173,11 @@
                                 <rect key="frame" x="10" y="555" width="141.66666666666666" height="33"/>
                                 <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="15"/>
                                 <state key="normal" title="Забыли пароль ?">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" name="buttonColor"/>
                                 </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.15686274510000001" green="0.1333333333" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="backgroundViewColor"/>
                         <constraints>
                             <constraint firstItem="cHO-DG-5Uq" firstAttribute="leading" secondItem="OsD-vc-ix4" secondAttribute="leading" id="1Ch-tw-hve"/>
                             <constraint firstItem="fMb-qU-NIF" firstAttribute="top" secondItem="OsD-vc-ix4" secondAttribute="top" constant="20" id="2oS-d9-bnW"/>
@@ -235,13 +238,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.070000000298023224" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fonBackground" translatesAutoresizingMaskIntoConstraints="NO" id="4Ih-8T-PAG">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.070000000000000007" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fonBackground" translatesAutoresizingMaskIntoConstraints="NO" id="4Ih-8T-PAG">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нажми, если чувствуешь себя в опасности" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Jae-rA-HqD">
                                 <rect key="frame" x="30" y="64" width="315" height="123"/>
                                 <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="25"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" name="textLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8hy-GI-HbN">
@@ -249,12 +252,15 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="8hy-GI-HbN" secondAttribute="height" multiplier="14:15" id="RFl-Vh-JmO"/>
                                 </constraints>
-                                <state key="normal" image="Home"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="Home">
+                                    <color key="titleColor" name="fonBackgroundImageColor"/>
+                                </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:07" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2i-6Q-vKz">
                                 <rect key="frame" x="161.33333333333334" y="586" width="52.666666666666657" height="28"/>
                                 <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" name="textLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6N-8A-mhm">
@@ -265,7 +271,7 @@
                                     <constraint firstAttribute="height" constant="56" id="P7n-vl-efX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="tintColor" red="0.15686274510000001" green="0.1333333333" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" name="backgroundViewColor"/>
                                 <state key="normal" image="text.bubble.fill" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="23"/>
                                 </state>
@@ -281,11 +287,11 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35:15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FWd-Ae-VeS">
                                 <rect key="frame" x="301" y="699" width="42" height="24"/>
                                 <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" name="textLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.15686274510000001" green="0.1333333333" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="backgroundViewColor"/>
                         <constraints>
                             <constraint firstItem="8hy-GI-HbN" firstAttribute="top" secondItem="Jae-rA-HqD" secondAttribute="bottom" constant="20" id="5pQ-XZ-OKT"/>
                             <constraint firstItem="C1y-5u-vvH" firstAttribute="bottom" secondItem="U6N-8A-mhm" secondAttribute="bottom" constant="35" id="7J6-tW-CVW"/>
@@ -325,29 +331,29 @@
             <objects>
                 <viewController id="4ax-6k-BMS" customClass="DelayMessageVC" customModule="Я_дома" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5sF-OQ-VCL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.070000000298023224" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fonBackground" translatesAutoresizingMaskIntoConstraints="NO" id="5zG-Yd-Sd8">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.070000000000000007" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fonBackground" translatesAutoresizingMaskIntoConstraints="NO" id="5zG-Yd-Sd8">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Укажите информацию на случай, если вам потребуется помощь" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VpQ-LR-P3i">
                                 <rect key="frame" x="22.666666666666657" y="19.999999999999996" width="329.66666666666674" height="47.666666666666657"/>
                                 <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" name="textLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YWp-XW-HjH">
                                 <rect key="frame" x="16" y="74.999999999999972" width="343" height="447.33333333333326"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="inputTextViewColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Время, через которое сообщение будет отправлено" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DlA-tR-8cC">
                                 <rect key="frame" x="16" y="532.33333333333337" width="343" height="47.666666666666629"/>
                                 <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" name="textLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HxY-wL-rMp">
@@ -362,18 +368,17 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="время" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8NV-MX-Qp8">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="время" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8NV-MX-Qp8">
                                 <rect key="frame" x="16" y="590" width="343" height="34"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="inputTextViewColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="rIh-Bs-2f6"/>
                                 </constraints>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" red="0.15686274510000001" green="0.1333333333" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="backgroundViewColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="5zG-Yd-Sd8" secondAttribute="bottom" id="Ah3-rs-hgr"/>
                             <constraint firstItem="YWp-XW-HjH" firstAttribute="leading" secondItem="NRN-Td-3Wi" secondAttribute="leading" constant="16" id="BGU-6E-WiS"/>
@@ -417,7 +422,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Fdm-6d-bR5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.10359326736027397" green="0.12685859014931505" blue="0.605549330189041" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" name="barColor"/>
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
@@ -438,15 +443,15 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" id="ndL-v6-w2N">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.15686274510000001" green="0.1333333333" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="backgroundViewColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HTV-vB-mbg">
                             <size key="itemSize" width="145" height="147"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
-                        <imageView key="backgroundView" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.070000000298023196" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fonBackground" id="rj8-dx-hgj">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <imageView key="backgroundView" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.070000000000000007" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fonBackground" id="rj8-dx-hgj">
+                            <rect key="frame" x="0.0" y="-88" width="375" height="812"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <cells>
@@ -463,13 +468,13 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mildred Ingram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dlm-3P-JmA">
                                                     <rect key="frame" x="5" y="40" width="107" height="21"/>
                                                     <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="15"/>
-                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="angelita.mitchell@hotmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SjF-6J-InE">
                                                     <rect key="frame" x="5" y="66" width="135" height="18.333333333333329"/>
                                                     <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="13"/>
-                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hfI-U5-3ND">
@@ -493,21 +498,21 @@
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mic.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rsX-bM-5Rs">
                                                             <rect key="frame" x="0.0" y="-0.33333333333333215" width="28.333333333333332" height="24.666666666666664"/>
-                                                            <color key="tintColor" red="0.15686274510000001" green="0.1333333333" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="tintColor" name="buttonImageColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="25" id="KnQ-kE-KGi"/>
                                                             </constraints>
                                                         </imageView>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin.and.ellipse" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="XzC-Qp-Vxq">
                                                             <rect key="frame" x="48.333333333333336" y="0.33333333333333393" width="28.333333333333336" height="25"/>
-                                                            <color key="tintColor" red="0.15686274510000001" green="0.1333333333" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="tintColor" name="buttonImageColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="25" id="GZU-MP-zLf"/>
                                                             </constraints>
                                                         </imageView>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="text.bubble.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="KJR-sq-cb4">
                                                             <rect key="frame" x="96.666666666666671" y="1.3333333333333339" width="28.333333333333329" height="24"/>
-                                                            <color key="tintColor" red="0.15686274510000001" green="0.1333333333" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="tintColor" name="buttonImageColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="25" id="rDo-OV-ROa"/>
                                                             </constraints>
@@ -515,7 +520,7 @@
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" name="viewPlitsColor"/>
                                             <constraints>
                                                 <constraint firstItem="hfI-U5-3ND" firstAttribute="centerY" secondItem="JC0-ee-kzZ" secondAttribute="centerY" id="1lS-p0-xkv"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dlm-3P-JmA" secondAttribute="trailing" constant="5" id="7SW-74-Fo5"/>
@@ -552,6 +557,7 @@
                                 <size key="customSize" width="145" height="155"/>
                                 <connections>
                                     <outlet property="backImageContactView" destination="hfI-U5-3ND" id="Krv-kY-S05"/>
+                                    <outlet property="backgroundViewContacts" destination="sqw-FF-WGB" id="y7U-Kt-lkS"/>
                                     <outlet property="imageContact" destination="JC0-ee-kzZ" id="Elz-Cw-hbi"/>
                                     <outlet property="widthConstraintPlit" destination="r0s-s6-1rw" id="Ocm-61-LtY"/>
                                     <segue destination="gkJ-Ib-34f" kind="presentation" id="tNh-Kt-tTu"/>
@@ -578,11 +584,11 @@
         <!--Настройки-->
         <scene sceneID="XTq-0J-GTv">
             <objects>
-                <tableViewController interfaceStyle="dark" id="htl-ds-WV1" customClass="SettingsVC" customModule="Я_дома" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="htl-ds-WV1" customClass="SettingsVC" customModule="Я_дома" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WK7-za-l5o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.15686274510000001" green="0.1333333333" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="backgroundViewColor"/>
                         <sections>
                             <tableViewSection id="0ki-cQ-VLp">
                                 <cells>
@@ -607,13 +613,13 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Иванов Вася Пупкин" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sV2-3Q-C6H">
                                                     <rect key="frame" x="152" y="5" width="202" height="34"/>
                                                     <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="24"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="textColor" name="textLabelColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vasya@mail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="itH-vm-XO8">
                                                     <rect key="frame" x="152" y="44" width="202" height="24"/>
                                                     <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="textColor" name="textLabelColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -673,14 +679,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wln-Z6-ypB">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wln-Z6-ypB">
                                                     <rect key="frame" x="309" y="8" width="50" height="34"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" name="inputTextViewColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="34" id="h6c-pe-Iln"/>
                                                         <constraint firstAttribute="width" constant="50" id="wlD-Sf-vUs"/>
                                                     </constraints>
-                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
@@ -690,7 +695,7 @@
                                                         <constraint firstAttribute="height" constant="34" id="cpX-QY-SRw"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="textColor" name="textLabelColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -730,7 +735,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Использовать Touch ID для отмены вызова" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Spp-10-Wio">
                                                     <rect key="frame" x="24" y="19" width="280" height="17"/>
                                                     <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="textColor" name="textLabelColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -758,6 +763,7 @@
                         <outlet property="backgroundImageView" destination="FoM-c1-D6D" id="iYf-l3-LxE"/>
                         <outlet property="editAccountButton" destination="Tdc-sh-x2g" id="tmP-zP-Fi5"/>
                         <outlet property="profileImageVIew" destination="0ow-dX-MsM" id="7ib-tH-wMb"/>
+                        <outlet property="timeCancelSOSSignal" destination="Wln-Z6-ypB" id="zNN-Im-7gf"/>
                         <segue destination="kYe-3K-TNs" kind="show" identifier="showProfile" id="NQ0-L5-JoZ"/>
                     </connections>
                 </tableViewController>
@@ -768,11 +774,11 @@
         <!--Аккаунт-->
         <scene sceneID="K0s-eV-D8k">
             <objects>
-                <tableViewController interfaceStyle="dark" id="kYe-3K-TNs" customClass="ProfileVC" customModule="Я_дома" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="kYe-3K-TNs" customClass="ProfileVC" customModule="Я_дома" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="aT2-RW-puA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.15686274510000001" green="0.1333333333" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="backgroundViewColor"/>
                         <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="suP-Dx-fEk">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
@@ -820,16 +826,15 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jvk-JB-iFe">
                                                             <rect key="frame" x="0.0" y="0.0" width="343" height="20"/>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="textColor" name="textLabelColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gRA-OO-yjo">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gRA-OO-yjo">
                                                             <rect key="frame" x="0.0" y="20" width="343" height="34"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="backgroundColor" name="inputTextViewColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="34" id="pEw-ym-CLK"/>
                                                             </constraints>
-                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
@@ -860,16 +865,15 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Фамилия" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Azk-Vj-aLv">
                                                             <rect key="frame" x="0.0" y="0.0" width="343" height="20"/>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="textColor" name="textLabelColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2BU-Oo-xBv">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2BU-Oo-xBv">
                                                             <rect key="frame" x="0.0" y="20" width="343" height="34"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="backgroundColor" name="inputTextViewColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="34" id="j4o-6t-xp3"/>
                                                             </constraints>
-                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
@@ -899,16 +903,15 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p6n-MW-hdh">
                                                             <rect key="frame" x="0.0" y="0.0" width="343" height="20"/>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="textColor" name="textLabelColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tsD-JE-lTk">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tsD-JE-lTk">
                                                             <rect key="frame" x="0.0" y="20" width="343" height="34"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="backgroundColor" name="inputTextViewColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="34" id="jYj-rA-5be"/>
                                                             </constraints>
-                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
@@ -938,16 +941,15 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Отчество" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xWN-d4-9dj">
                                                             <rect key="frame" x="0.0" y="0.0" width="343" height="20"/>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="textColor" name="textLabelColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MB3-X3-0PS">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MB3-X3-0PS">
                                                             <rect key="frame" x="0.0" y="20" width="343" height="34"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="backgroundColor" name="inputTextViewColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="34" id="kbi-ft-5pU"/>
                                                             </constraints>
-                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
@@ -1088,16 +1090,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.050000000000000003" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fonBackground" translatesAutoresizingMaskIntoConstraints="NO" id="L9Y-ay-vx4">
-                                <rect key="frame" x="0.0" y="0.0" width="380" height="792"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.070000000000000007" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fonBackground" translatesAutoresizingMaskIntoConstraints="NO" id="L9Y-ay-vx4">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="tintColor" name="fonBackgroundImageColor"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home" translatesAutoresizingMaskIntoConstraints="NO" id="KOU-Li-sCB">
                                 <rect key="frame" x="50" y="114" width="275" height="259"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Я" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nqu-nY-hNE">
                                 <rect key="frame" x="86.666666666666671" y="376" width="34" height="70"/>
                                 <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="50"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" name="textLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ДОМА" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Gw-mE-pBl">
@@ -1110,13 +1114,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.15686274510000001" green="0.1333333333" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="backgroundViewColor"/>
                         <constraints>
                             <constraint firstItem="L9Y-ay-vx4" firstAttribute="leading" secondItem="rcc-Eo-iIg" secondAttribute="leading" id="70P-PD-UP4"/>
                             <constraint firstItem="5Gw-mE-pBl" firstAttribute="top" secondItem="KOU-Li-sCB" secondAttribute="bottom" constant="8" id="CKQ-g3-8Pn"/>
                             <constraint firstItem="Nqu-nY-hNE" firstAttribute="centerY" secondItem="5Gw-mE-pBl" secondAttribute="centerY" id="FUA-Cy-C7C"/>
                             <constraint firstItem="5Gw-mE-pBl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="rcc-Eo-iIg" secondAttribute="leading" constant="20" id="INg-Hc-ZUa"/>
-                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="L9Y-ay-vx4" secondAttribute="bottom" constant="20" id="LJs-B0-Rcd"/>
+                            <constraint firstAttribute="bottom" secondItem="L9Y-ay-vx4" secondAttribute="bottom" id="LJs-B0-Rcd"/>
                             <constraint firstItem="Nqu-nY-hNE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="rcc-Eo-iIg" secondAttribute="leading" constant="20" id="Lod-5v-THg"/>
                             <constraint firstItem="5Gw-mE-pBl" firstAttribute="centerY" secondItem="rcc-Eo-iIg" secondAttribute="centerY" id="WMC-cj-SEN"/>
                             <constraint firstItem="rcc-Eo-iIg" firstAttribute="trailing" secondItem="KOU-Li-sCB" secondAttribute="trailing" constant="50" id="ZF1-fp-bmQ"/>
@@ -1124,7 +1128,7 @@
                             <constraint firstItem="5Gw-mE-pBl" firstAttribute="centerX" secondItem="rcc-Eo-iIg" secondAttribute="centerX" constant="30" id="hQg-FW-b1o"/>
                             <constraint firstItem="5Gw-mE-pBl" firstAttribute="leading" secondItem="Nqu-nY-hNE" secondAttribute="trailing" constant="20" id="hjN-4a-hPn"/>
                             <constraint firstItem="KOU-Li-sCB" firstAttribute="leading" secondItem="rcc-Eo-iIg" secondAttribute="leading" constant="50" id="kva-2K-Sel"/>
-                            <constraint firstItem="L9Y-ay-vx4" firstAttribute="trailing" secondItem="rcc-Eo-iIg" secondAttribute="trailing" constant="5" id="l0i-Dr-arH"/>
+                            <constraint firstItem="L9Y-ay-vx4" firstAttribute="trailing" secondItem="rcc-Eo-iIg" secondAttribute="trailing" id="l0i-Dr-arH"/>
                             <constraint firstItem="L9Y-ay-vx4" firstAttribute="top" secondItem="2WF-WO-S5k" secondAttribute="top" id="nhb-FN-d0E"/>
                             <constraint firstItem="rcc-Eo-iIg" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5Gw-mE-pBl" secondAttribute="trailing" constant="20" id="x0o-mr-omx"/>
                         </constraints>
@@ -1146,7 +1150,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.070000000298023224" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fonBackground" translatesAutoresizingMaskIntoConstraints="NO" id="xvg-NL-5bY">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.070000000000000007" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fonBackground" translatesAutoresizingMaskIntoConstraints="NO" id="xvg-NL-5bY">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="330" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7Zj-om-5J2">
@@ -1181,7 +1185,7 @@
                                                                 <constraint firstAttribute="height" constant="18" id="3eL-aA-wX9"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="15"/>
-                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="angelita.mitchell@hotmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qJQ-0Z-ab4">
@@ -1190,7 +1194,7 @@
                                                                 <constraint firstAttribute="height" constant="15" id="Gu5-H0-R46"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="13"/>
-                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сообщение:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ioV-ON-8Sd">
@@ -1206,7 +1210,7 @@
                                                             <rect key="frame" x="5" y="124" width="333" height="97"/>
                                                             <string key="text">There are numerous success stories you will hear about businesses making it good on the internet . The troubling thing is, there are maybe a tenfold or even a hundredfold of stories inconsistent to theirs. Many have unsuccessfully launched a business venture that is internet based but only a handful shall succeed.</string>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="13"/>
-                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="7Ac-2I-Irx">
@@ -1253,7 +1257,7 @@
                                                             </subviews>
                                                         </stackView>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" name="viewPlitsColor"/>
                                                     <constraints>
                                                         <constraint firstItem="qJQ-0Z-ab4" firstAttribute="top" secondItem="6w0-zz-LWg" secondAttribute="bottom" constant="5" id="6if-V8-B4I"/>
                                                         <constraint firstItem="Szk-KW-1ab" firstAttribute="height" secondItem="uyS-qA-2F1" secondAttribute="height" id="EFQ-2P-fhm"/>
@@ -1313,7 +1317,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.15686274510000001" green="0.1333333333" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="backgroundViewColor"/>
                         <constraints>
                             <constraint firstItem="7Zj-om-5J2" firstAttribute="top" secondItem="080-PY-let" secondAttribute="top" id="5E1-t4-JHA"/>
                             <constraint firstItem="xvg-NL-5bY" firstAttribute="trailing" secondItem="UmJ-BK-ehB" secondAttribute="trailing" id="9Cg-3j-EdV"/>
@@ -1338,9 +1342,9 @@
         <!--Profile ContactVC-->
         <scene sceneID="QqA-lJ-h6H">
             <objects>
-                <viewController interfaceStyle="dark" id="gkJ-Ib-34f" customClass="ProfileContactVC" customModule="Я_дома" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gkJ-Ib-34f" customClass="ProfileContactVC" customModule="Я_дома" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sd6-cx-OWp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YQf-H5-iP9">
@@ -1364,40 +1368,36 @@
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Прослушивание микрофона" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yJk-Oo-AOr">
                                         <rect key="frame" x="16" y="379.33333333333326" width="275" height="45"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="20"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Отслеживание геопозиции" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lRz-H9-pEC">
                                         <rect key="frame" x="16" y="442.33333333333326" width="275" height="45"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="20"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Иванов Вася Пупкин" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PJO-3o-q48">
                                         <rect key="frame" x="16" y="259.33333333333337" width="343" height="40"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="vZU-wW-ltt"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="35"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vasya@mail.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="De2-8R-fdu">
                                         <rect key="frame" x="16" y="319.33333333333337" width="343" height="40"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="8Z6-Jf-zDW"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="30"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="viewPlitsColor"/>
                                 <constraints>
                                     <constraint firstItem="De2-8R-fdu" firstAttribute="top" secondItem="PJO-3o-q48" secondAttribute="bottom" constant="20" id="37D-Xi-OOR"/>
                                     <constraint firstItem="DCF-Ug-N9w" firstAttribute="top" secondItem="Gw0-cE-hn3" secondAttribute="bottom" constant="15" id="Ea1-6t-axg"/>
@@ -1484,7 +1484,8 @@
         <!--Контакты-->
         <scene sceneID="4DE-FE-65y">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qxR-Y0-5h0" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4vx-7n-lrs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qxR-Y0-5h0" customClass="NavigationViewController" customModule="Я_дома" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Контакты" image="person.3.fill" catalog="system" landscapeImage="person.3.fill" largeContentSizeImage="person.3.fill" badgeValue="1" id="fyb-79-0eR"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="gj6-Mi-NiN">
@@ -1492,12 +1493,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.1176470588" green="0.027450980390000001" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" name="barColor"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" name="textLabelColor"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" name="textLabelColor"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1505,14 +1506,13 @@
                         <segue destination="JEb-SK-Zha" kind="relationship" relationship="rootViewController" id="VEZ-jQ-b6O"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4vx-7n-lrs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3618.75" y="-208.09859154929578"/>
         </scene>
         <!--Profile ContactVC-->
         <scene sceneID="HIE-Bh-oUG">
             <objects>
-                <viewController interfaceStyle="dark" id="2eq-Si-JOW" customClass="ProfileContactVC" customModule="Я_дома" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2eq-Si-JOW" customClass="ProfileContactVC" customModule="Я_дома" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cDn-J0-6aN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1530,12 +1530,12 @@
                                     </imageView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RpV-MY-jPq">
                                         <rect key="frame" x="16" y="232.33333333333337" width="343" height="216"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" name="inputTextViewColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="216" id="Xyi-rD-ggs"/>
                                         </constraints>
                                         <string key="text">Я поехал домой в 21:00 с адреса Говорова 2 до адреса Декбристов 1-а. Сел в такси рено логан гос. номер р195ка66, зеленого цвета  </string>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <userDefinedRuntimeAttributes>
@@ -1629,7 +1629,7 @@
         <!--Profile ContactVC-->
         <scene sceneID="Ymi-Dt-hIp">
             <objects>
-                <viewController interfaceStyle="dark" id="auh-zJ-XT1" customClass="ProfileContactVC" customModule="Я_дома" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="auh-zJ-XT1" customClass="ProfileContactVC" customModule="Я_дома" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BcF-ya-Yej">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1743,7 +1743,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.070000000298023196" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fonBackground" translatesAutoresizingMaskIntoConstraints="NO" id="EjH-I1-4F9">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.070000000000000007" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fonBackground" translatesAutoresizingMaskIntoConstraints="NO" id="EjH-I1-4F9">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="105" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JYJ-M2-IAl">
@@ -1773,25 +1773,25 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cody Rodriguez" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GDT-ZT-VsL">
                                                             <rect key="frame" x="85" y="8" width="209" height="24"/>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
-                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="smith_laura@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="REP-vl-hYP">
                                                             <rect key="frame" x="85" y="32" width="209" height="21"/>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="15"/>
-                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.badge.plus.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7y2-fg-txg">
                                                             <rect key="frame" x="299" y="26.666666666666668" width="36" height="35.666666666666657"/>
-                                                            <color key="tintColor" red="0.16710814830000001" green="0.1071069613" blue="0.54121041299999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color key="tintColor" name="buttonImageColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="36" id="7mv-y3-HtX"/>
                                                                 <constraint firstAttribute="height" constant="36" id="viT-OA-fJP"/>
                                                             </constraints>
                                                         </imageView>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" name="viewPlitsColor"/>
                                                     <constraints>
                                                         <constraint firstItem="GDT-ZT-VsL" firstAttribute="leading" secondItem="SkB-k7-YBn" secondAttribute="trailing" constant="8" id="5tt-zw-jZO"/>
                                                         <constraint firstItem="REP-vl-hYP" firstAttribute="leading" secondItem="SkB-k7-YBn" secondAttribute="trailing" constant="8" id="Irl-Vj-Zjz"/>
@@ -1837,7 +1837,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.15686274510000001" green="0.1333333333" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="backgroundViewColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="EjH-I1-4F9" secondAttribute="bottom" id="9pg-Lt-1xK"/>
                             <constraint firstItem="JYJ-M2-IAl" firstAttribute="top" secondItem="zio-1C-68o" secondAttribute="top" id="BYR-f0-zYI"/>
@@ -1862,11 +1862,11 @@
         <!--Аккаунт-->
         <scene sceneID="gGA-Zv-5wV">
             <objects>
-                <tableViewController interfaceStyle="dark" id="XJb-OH-pZL" customClass="RegistrationVC" customModule="Я_дома" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="XJb-OH-pZL" customClass="RegistrationVC" customModule="Я_дома" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fx2-mX-zHy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.15686274510000001" green="0.1333333333" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="backgroundViewColor"/>
                         <color key="separatorColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="H1i-60-bi6">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
@@ -1914,16 +1914,15 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Lc-T5-cmD">
                                                             <rect key="frame" x="0.0" y="0.0" width="343" height="20"/>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="14"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="textColor" name="textLabelColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TbB-0S-617">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TbB-0S-617">
                                                             <rect key="frame" x="0.0" y="20" width="343" height="34"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="backgroundColor" name="inputTextViewColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="34" id="AM8-bW-ElD"/>
                                                             </constraints>
-                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
@@ -1954,16 +1953,15 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Фамилия" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYA-A7-yrW">
                                                             <rect key="frame" x="0.0" y="0.0" width="343" height="20"/>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="14"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="textColor" name="textLabelColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ERY-oc-RRX">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ERY-oc-RRX">
                                                             <rect key="frame" x="0.0" y="20" width="343" height="34"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="backgroundColor" name="inputTextViewColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="34" id="4ai-dl-ecc"/>
                                                             </constraints>
-                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
@@ -1993,16 +1991,15 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUJ-fX-c75">
                                                             <rect key="frame" x="0.0" y="0.0" width="343" height="20"/>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="14"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="textColor" name="textLabelColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6S8-MN-qXR">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6S8-MN-qXR">
                                                             <rect key="frame" x="0.0" y="20" width="343" height="34"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="backgroundColor" name="inputTextViewColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="34" id="OiH-iJ-Cqz"/>
                                                             </constraints>
-                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
@@ -2032,16 +2029,15 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Отчество" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nn6-gP-K4H">
                                                             <rect key="frame" x="0.0" y="0.0" width="343" height="20"/>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="14"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="textColor" name="textLabelColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aRg-n5-vOe">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aRg-n5-vOe">
                                                             <rect key="frame" x="0.0" y="20" width="343" height="34"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="backgroundColor" name="inputTextViewColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="34" id="W40-fj-sJX"/>
                                                             </constraints>
-                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
@@ -2071,16 +2067,15 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя пользователя" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fyp-2T-joB">
                                                             <rect key="frame" x="0.0" y="0.0" width="343" height="20"/>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="14"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="textColor" name="textLabelColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UTT-Ka-fh2">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UTT-Ka-fh2">
                                                             <rect key="frame" x="0.0" y="20" width="343" height="34"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="backgroundColor" name="inputTextViewColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="34" id="J7w-q0-gNX"/>
                                                             </constraints>
-                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
@@ -2110,16 +2105,15 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пароль" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCz-Hb-71I">
                                                             <rect key="frame" x="0.0" y="0.0" width="343" height="20"/>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="14"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="textColor" name="textLabelColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UJQ-Zm-0VX">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UJQ-Zm-0VX">
                                                             <rect key="frame" x="0.0" y="20" width="343" height="34"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="backgroundColor" name="inputTextViewColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="34" id="gDb-0p-iDo"/>
                                                             </constraints>
-                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
@@ -2218,7 +2212,7 @@
         <image name="Path" width="249" height="410"/>
         <image name="camera.circle.fill" catalog="system" width="128" height="121"/>
         <image name="exclamationmark.triangle.fill" width="128" height="128"/>
-        <image name="fonBackground" width="750" height="1334"/>
+        <image name="fonBackground" width="250" height="444.66665649414062"/>
         <image name="gear" catalog="system" width="128" height="119"/>
         <image name="homeIcon" width="22" height="26"/>
         <image name="lock" catalog="system" width="128" height="128"/>
@@ -2233,5 +2227,32 @@
         <image name="person.badge.plus.fill" catalog="system" width="128" height="116"/>
         <image name="sherlock" width="206.66667175292969" height="140"/>
         <image name="text.bubble.fill" catalog="system" width="128" height="110"/>
+        <namedColor name="backgroundViewColor">
+            <color red="0.15700000524520874" green="0.13300000131130219" blue="0.54100000858306885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="barColor">
+            <color red="0.11800000071525574" green="0.027000000700354576" blue="0.57999998331069946" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="buttonColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="buttonImageColor">
+            <color red="0.15700000524520874" green="0.13300000131130219" blue="0.54100000858306885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="fonBackgroundImageColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="inputTextViewColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="rombColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textLabelColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="viewPlitsColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
