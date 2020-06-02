@@ -1,5 +1,5 @@
 //
-//  NavigationViewController.swift
+//  CustomNavigationViewController.swift
 //  I'm home
 //
 //  Created by Денис Винокуров on 02.06.2020.
@@ -8,13 +8,15 @@
 
 import UIKit
 
-class NavigationViewController: UINavigationController {
+class CustomNavigationViewController: UINavigationController {
 
     override var preferredStatusBarStyle : UIStatusBarStyle {
+
         if let topVC = viewControllers.last {
             //return the status property of each VC, look at step 2
             return topVC.preferredStatusBarStyle
         }
+
         return .default
     }
 
