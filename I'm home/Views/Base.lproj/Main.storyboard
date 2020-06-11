@@ -99,7 +99,7 @@
                                     <constraint firstAttribute="width" constant="90" id="s2g-oj-JUz"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfe-XG-TUS">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfe-XG-TUS" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                 <rect key="frame" x="204" y="486" width="155" height="60"/>
                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -111,11 +111,6 @@
                                 <state key="normal" title="Авторизоваться">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="30"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="autorizeBtnAction:" destination="SbB-GM-0eM" eventType="touchUpInside" id="f2b-9l-HKS"/>
                                 </connections>
@@ -150,7 +145,7 @@
                                     <constraint firstAttribute="height" constant="35" id="cHD-KU-cmN"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0J-Fi-Che">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0J-Fi-Che" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                 <rect key="frame" x="134.66666666666666" y="732" width="106" height="36"/>
                                 <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
                                 <color key="tintColor" red="0.29497301580000002" green="0.55425816770000003" blue="0.80395334959999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -169,12 +164,15 @@
                                     <constraint firstAttribute="width" constant="25" id="sX7-Nf-a2B"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JbQ-uS-qBV">
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JbQ-uS-qBV" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                 <rect key="frame" x="10" y="555" width="141.66666666666666" height="33"/>
                                 <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="15"/>
                                 <state key="normal" title="Забыли пароль ?">
                                     <color key="titleColor" name="buttonColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="fogotPasswordBtnAction:" destination="SbB-GM-0eM" eventType="touchUpInside" id="uga-XZ-vtz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" name="backgroundViewColor"/>
@@ -263,7 +261,7 @@
                                 <color key="textColor" name="textLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6N-8A-mhm">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6N-8A-mhm" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                 <rect key="frame" x="294" y="638" width="56" height="56"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -275,11 +273,6 @@
                                 <state key="normal" image="text.bubble.fill" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="23"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="28"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="delayMessageBtnAction:" destination="rj1-kM-JaT" eventType="touchUpInside" id="aBG-r9-L94"/>
                                 </connections>
@@ -356,7 +349,7 @@
                                 <color key="textColor" name="textLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HxY-wL-rMp">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HxY-wL-rMp" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                 <rect key="frame" x="16" y="664" width="343" height="50"/>
                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -367,6 +360,9 @@
                                 <state key="normal" title="Отправить">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="sendBtnAction:" destination="4ax-6k-BMS" eventType="touchUpInside" id="hWS-mC-1P6"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="время" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8NV-MX-Qp8">
                                 <rect key="frame" x="16" y="590" width="343" height="34"/>
@@ -408,6 +404,7 @@
                     <connections>
                         <outlet property="delayTextField" destination="8NV-MX-Qp8" id="JC3-tU-oIZ"/>
                         <outlet property="messageTextView" destination="YWp-XW-HjH" id="LiX-BK-wBQ"/>
+                        <outlet property="sendBtn" destination="HxY-wL-rMp" id="S5R-FS-GEf"/>
                         <outlet property="sendMessageBtn" destination="HxY-wL-rMp" id="zgM-lP-O4d"/>
                     </connections>
                 </viewController>
@@ -560,7 +557,6 @@
                                     <outlet property="backgroundViewContacts" destination="sqw-FF-WGB" id="y7U-Kt-lkS"/>
                                     <outlet property="imageContact" destination="JC0-ee-kzZ" id="Elz-Cw-hbi"/>
                                     <outlet property="widthConstraintPlit" destination="r0s-s6-1rw" id="Ocm-61-LtY"/>
-                                    <segue destination="gkJ-Ib-34f" kind="presentation" id="tNh-Kt-tTu"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -572,10 +568,14 @@
                     <navigationItem key="navigationItem" title="Контакты" largeTitleDisplayMode="always" id="fNk-d3-kF0">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="person.badge.plus.fill" catalog="system" id="YC5-DG-Fi9">
                             <connections>
+                                <action selector="addContactBtnAction:" destination="JEb-SK-Zha" id="QCX-6m-aS5"/>
                                 <segue destination="LWi-jD-Z6C" kind="show" id="Jkr-WZ-cne"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="gkJ-Ib-34f" kind="presentation" identifier="showContactProfile" id="5nz-MD-EOx"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zCE-u5-CKM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -648,7 +648,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tdc-sh-x2g">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tdc-sh-x2g" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                                     <rect key="frame" x="16" y="8" width="343" height="50"/>
                                                     <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
@@ -976,7 +976,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZLj-N0-4C8">
                                                     <rect key="frame" x="16" y="10" width="343" height="50"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17S-yt-E2M">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17S-yt-E2M" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="50"/>
                                                             <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
@@ -987,7 +987,7 @@
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trz-Ke-P3y">
+                                                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trz-Ke-P3y" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                                             <rect key="frame" x="176.66666666666663" y="0.0" width="166.33333333333337" height="50"/>
                                                             <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
@@ -1025,7 +1025,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mdT-F9-9sg">
                                                     <rect key="frame" x="16" y="10" width="343" height="50"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wd-Rq-fPF">
+                                                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wd-Rq-fPF" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
                                                             <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
@@ -1216,7 +1216,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="7Ac-2I-Irx">
                                                             <rect key="frame" x="20" y="226" width="303" height="36"/>
                                                             <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8Q-Ta-d4V">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8Q-Ta-d4V" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="136.66666666666666" height="36"/>
                                                                     <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>
@@ -1229,13 +1229,8 @@
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
                                                                     </state>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                            <integer key="value" value="18"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                    </userDefinedRuntimeAttributes>
                                                                 </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcr-mw-21x">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcr-mw-21x" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                                                     <rect key="frame" x="166.66666666666663" y="0.0" width="136.33333333333337" height="36"/>
                                                                     <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>
@@ -1248,11 +1243,6 @@
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
                                                                     </state>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                            <integer key="value" value="18"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                    </userDefinedRuntimeAttributes>
                                                                 </button>
                                                             </subviews>
                                                         </stackView>
@@ -1424,7 +1414,7 @@
                                     <constraint firstAttribute="width" secondItem="JnE-SO-NcU" secondAttribute="height" multiplier="1:1" id="kwd-El-qU8"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fq-JT-HMP">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fq-JT-HMP" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                 <rect key="frame" x="16" y="664" width="343" height="50"/>
                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1484,7 +1474,6 @@
         <!--Контакты-->
         <scene sceneID="4DE-FE-65y">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4vx-7n-lrs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qxR-Y0-5h0" customClass="CustomNavigationViewController" customModule="Я_дома" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Контакты" image="person.3.fill" catalog="system" landscapeImage="person.3.fill" largeContentSizeImage="person.3.fill" badgeValue="1" id="fyb-79-0eR"/>
                     <toolbarItems/>
@@ -1506,6 +1495,7 @@
                         <segue destination="JEb-SK-Zha" kind="relationship" relationship="rootViewController" id="VEZ-jQ-b6O"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4vx-7n-lrs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3618.75" y="-208.09859154929578"/>
         </scene>
@@ -1528,7 +1518,7 @@
                                             <constraint firstAttribute="width" constant="48" id="HhV-i3-B6k"/>
                                         </constraints>
                                     </imageView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RpV-MY-jPq">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RpV-MY-jPq">
                                         <rect key="frame" x="16" y="232.33333333333337" width="343" height="216"/>
                                         <color key="backgroundColor" name="inputTextViewColor"/>
                                         <constraints>
@@ -1577,7 +1567,7 @@
                                     <constraint firstAttribute="width" secondItem="2jP-up-cg7" secondAttribute="height" multiplier="1:1" id="z1D-Yh-cEt"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zco-WV-zQj">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zco-WV-zQj" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                 <rect key="frame" x="16" y="718" width="343" height="50"/>
                                 <color key="backgroundColor" red="0.16710814830000001" green="0.1071069613" blue="0.54121041299999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -1689,7 +1679,7 @@
                                     <constraint firstAttribute="width" secondItem="FAC-9c-WVl" secondAttribute="height" multiplier="1:1" id="AS6-fE-HB2"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vco-b6-WiI">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vco-b6-WiI" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                 <rect key="frame" x="16" y="718" width="343" height="50"/>
                                 <color key="backgroundColor" red="0.16710814830000001" green="0.1071069613" blue="0.54121041299999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -2140,7 +2130,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="q9u-Y8-CqQ">
                                                     <rect key="frame" x="16" y="30" width="343" height="132"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pvB-xa-SGq">
+                                                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pvB-xa-SGq" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="343" height="51"/>
                                                             <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="15"/>
@@ -2151,7 +2141,7 @@
                                                                 <action selector="loginBtnAction:" destination="XJb-OH-pZL" eventType="touchUpInside" id="Be5-TB-wQb"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJK-bo-pdE">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJK-bo-pdE" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="81" width="343" height="51"/>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
                                                             <state key="normal" title="У меня уже есть аккаунт">

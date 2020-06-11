@@ -16,15 +16,17 @@ let paddingPlit = CGFloat(16)
 
 class ContactsVC: UICollectionViewController, UISearchBarDelegate {
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setSearchNavController()
-        
     }
     
-    //MARK: Настройка searchController и  NavigationController
+    @IBAction func addContactBtnAction(_ sender: UIBarButtonItem) {
+        UIImpactFeedbackGenerator.init(style: .soft).impactOccurred()
+    }
+    //MARK: Setup
+    /// Настройка searchController и  navigationController
     func setSearchNavController(){
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
@@ -32,29 +34,34 @@ class ContactsVC: UICollectionViewController, UISearchBarDelegate {
         self.navigationController?.navigationBar.barStyle = .black
         
         searchController = UISearchController(searchResultsController: nil)
-        searchController.searchBar.tintColor = UIColor .white
+        searchController.searchBar.tintColor = UIColor.white
         searchController.searchBar.barTintColor = UIColor .clear
         searchController.searchBar.delegate = self
         searchController.searchBar.placeholder = "Поиск"
-        //searchController.searchResultsUpdater = self
+        searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = true
         definesPresentationContext = true
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setNeedsStatusBarAppearanceUpdate()
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
+    //MARK: Визуальное оформление
+    /// Стиль статус бара
+    override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
     }
 
 }
 
+//MARK: Extensions Collection FlowLayout
 extension ContactsVC: UICollectionViewDelegateFlowLayout {
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell: ContactsCell = collectionView.cellForItem(at: indexPath) as? ContactsCell else {return}
+        cell.pulseAnimate(cell) {
+            self.performSegue(withIdentifier: "showContactProfile", sender: self)
+        }
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return CGFloat(bitPattern: 10)
@@ -75,24 +82,31 @@ extension ContactsVC: UICollectionViewDelegateFlowLayout {
         return CGSize(width: (collectionView.frame.width - paddingPlit * countItems) / countItems, height: 155)
     }
     
-        // MARK: UICollectionViewDataSource
+    // MARK: UICollectionViewDataSource
 
-        override func numberOfSections(in collectionView: UICollectionView) -> Int {
-            // #warning Incomplete implementation, return the number of sections
-            return 1
-        }
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
 
 
-        override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            // #warning Incomplete implementation, return the number of items
-            return 15
-        }
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of items
+        return 15
+    }
 
-        override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ContactsCell
-            
-            cell.widthConstraintPlit.constant = (collectionView.frame.width - paddingPlit * countItems) / countItems
-            
-            return cell
-        }
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ContactsCell
+        
+        cell.widthConstraintPlit.constant = (collectionView.frame.width - paddingPlit * countItems) / countItems
+        
+        return cell
+    }
+}
+
+extension ContactsVC: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        print(searchController.searchBar.text ?? "")
+    }
 }

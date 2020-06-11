@@ -72,15 +72,18 @@ class RegistrationVC: UITableViewController {
     }
     
     fileprivate func textFieldSetup(textField: UITextField){
+        let paddingView : UIView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
+        textField.leftView = paddingView
+        textField.leftViewMode = UITextField.ViewMode.always
         textField.layer.cornerRadius = textField.frame.height / 2
         textField.clipsToBounds = true
     }
 
     //MARK: Обработчики
-    @IBAction func loginBtnAction(_ sender: UIButton) {
+    @IBAction func loginBtnAction(_ sender: CustomButton) {
         dismiss(animated: true)
     }
-    @IBAction func goLoginScreenBtnAction(_ sender: UIButton) {
+    @IBAction func goLoginScreenBtnAction(_ sender: CustomButton) {
         dismiss(animated: true)
     }
     

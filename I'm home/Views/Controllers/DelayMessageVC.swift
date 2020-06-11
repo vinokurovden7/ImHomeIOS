@@ -27,12 +27,16 @@ class DelayMessageVC: UIViewController {
             delayTextField.layer.shadowColor = UIColor.black.cgColor
         }
     }
+    @IBOutlet weak var sendBtn: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-
-
+    
+    @IBAction func sendBtnAction(_ sender: CustomButton) {
+        dismiss(animated: true)
+    }
 }

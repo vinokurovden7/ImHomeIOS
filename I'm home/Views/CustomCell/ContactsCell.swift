@@ -28,4 +28,22 @@ class ContactsCell: UICollectionViewCell {
         }
     }
     
+    /// Пульсирующая анимация, имитирующая нажатие
+    /// - Parameters:
+    ///   - animationView: view, к которому применяется анимация
+    func pulseAnimate(_ animationView: UIView, completion: @escaping () -> ()){
+        UIView.animate(withDuration: 0.12, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 4, options: .curveEaseIn, animations: {
+            animationView.transform.a = 0.9
+            animationView.transform.d = 0.9
+            UIImpactFeedbackGenerator.init(style: .soft).impactOccurred()
+        }) { (_) in
+            UIView.animate(withDuration: 0.12, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
+                animationView.transform.a = 1
+                animationView.transform.d = 1
+            }, completion: {(_) in
+                completion()
+            })
+
+        }
+    }
 }

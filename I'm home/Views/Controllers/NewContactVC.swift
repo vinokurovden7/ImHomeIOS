@@ -9,9 +9,7 @@
 import UIKit
 
 class NewContactVC: UIViewController, UISearchBarDelegate {
-
     
-
     private var searchController: UISearchController!
     @IBOutlet weak var myTableView: UITableView!
     override func viewDidLoad() {
@@ -32,7 +30,7 @@ class NewContactVC: UIViewController, UISearchBarDelegate {
         searchController.searchBar.barTintColor = UIColor .clear
         searchController.searchBar.delegate = self
         searchController.searchBar.placeholder = "Поиск"
-        //searchController.searchResultsUpdater = self
+        searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = true
@@ -59,6 +57,8 @@ extension NewContactVC: UITableViewDelegate, UITableViewDataSource {
         return cell
         
     }
-    
-    
+}
+extension NewContactVC: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+    }
 }

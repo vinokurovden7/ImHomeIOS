@@ -17,10 +17,9 @@ class MainVC: UIViewController {
     }
     
     //MARK: Обработчики
-    @IBAction func delayMessageBtnAction(_ sender: UIButton) {
+    @IBAction func delayMessageBtnAction(_ sender: CustomButton) {
         performSegue(withIdentifier: "showDelayMessageScreen", sender: self)
     }
-    
     
     //MARK: Визуальное оформление
     //MARK: Стиль статус бара

@@ -35,6 +35,4 @@ extension RequestVC: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-    
-    
 }

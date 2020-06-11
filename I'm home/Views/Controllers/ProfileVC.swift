@@ -76,15 +76,13 @@ class ProfileVC: UITableViewController {
         tableView.backgroundView?.alpha = 0.07
 
     }
-    
-    
-    
+
     //MARK: Обработчики
     //MARK: Нажатие на любое пустое место на экране
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    @IBAction func saveBtnAction(_ sender: UIButton) {
+    @IBAction func saveBtnAction(_ sender: CustomButton) {
         dismiss(animated: true)
     }
     
@@ -106,5 +104,4 @@ class ProfileVC: UITableViewController {
     fileprivate func buttonSetup(button: UIButton){
         button.layer.cornerRadius = button.frame.height / 2
     }
-    
 }

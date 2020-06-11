@@ -51,7 +51,7 @@ class SettingsVC: UITableViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    @IBAction func editProfileBtnAction(_ sender: UIButton) {
+    @IBAction func editProfileBtnAction(_ sender: CustomButton) {
         performSegue(withIdentifier: "showProfile", sender: self)
     }
     
