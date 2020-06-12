@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DFFBA83334C8EBE4D2B13F6 /* Pods_ImHome_ImHomeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6358E0BE9641DAF4050D39C0 /* Pods_ImHome_ImHomeUITests.framework */; };
 		922D2B10246ACBB400CA6492 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922D2B0F246ACBB400CA6492 /* AppDelegate.swift */; };
 		922D2B12246ACBB400CA6492 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922D2B11246ACBB400CA6492 /* SceneDelegate.swift */; };
 		922D2B14246ACBB400CA6492 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922D2B13246ACBB400CA6492 /* ViewController.swift */; };
@@ -29,11 +30,10 @@
 		92925C7324751D63000F6500 /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92925C7224751D63000F6500 /* RegistrationVC.swift */; };
 		92CD7577247BDA4E00EED562 /* DelayMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CD7576247BDA4E00EED562 /* DelayMessageVC.swift */; };
 		92CD7579247BFC5000EED562 /* ProfileContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CD7578247BFC5000EED562 /* ProfileContactVC.swift */; };
-		92D786B58E6AED29E2840FA4 /* Pods_I_m_home_I_m_homeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E44918F489F7AF632875AB8 /* Pods_I_m_home_I_m_homeUITests.framework */; };
 		92DD21A12478FD2300849AB2 /* RequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD21A02478FD2300849AB2 /* RequestCell.swift */; };
 		92DD21A32479495900849AB2 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD21A22479495900849AB2 /* SettingsVC.swift */; };
-		95438041D86C84363EA58C55 /* Pods_I_m_homeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D3A392B9C713F26F6876BC /* Pods_I_m_homeTests.framework */; };
-		E01D5815C7290ECF46FCCA25 /* Pods_I_m_home.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C739CDE7C03496BE3D2EC82 /* Pods_I_m_home.framework */; };
+		A5717083CA93208164CD4417 /* Pods_ImHomeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7D0F2BB37FD64AB72BAE2F7 /* Pods_ImHomeTests.framework */; };
+		F34185285CEB8F90BFF3C79A /* Pods_ImHome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD1E5273FDD16EA75FD04F9 /* Pods_ImHome.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,11 +54,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C3E0E9FA00C8C9AB1B01F6A /* Pods-I'm home-I'm homeUITests.debug copy.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-I'm home-I'm homeUITests.debug copy.xcconfig"; path = "Target Support Files/Pods-I'm home-I'm homeUITests/Pods-I'm home-I'm homeUITests.debug copy.xcconfig"; sourceTree = "<group>"; };
 		12A5316B2CD3FDA63DA73DB7 /* Pods-I'm homeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-I'm homeTests.debug.xcconfig"; path = "Target Support Files/Pods-I'm homeTests/Pods-I'm homeTests.debug.xcconfig"; sourceTree = "<group>"; };
-		2E44918F489F7AF632875AB8 /* Pods_I_m_home_I_m_homeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_I_m_home_I_m_homeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1502C25A77A1F7862A20F165 /* Pods-ImHomeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImHomeTests.debug.xcconfig"; path = "Target Support Files/Pods-ImHomeTests/Pods-ImHomeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		176C9111C28843ACDFBE5B5F /* Pods-ImHome.debug copy.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImHome.debug copy.xcconfig"; path = "Target Support Files/Pods-ImHome/Pods-ImHome.debug copy.xcconfig"; sourceTree = "<group>"; };
+		1BD1E5273FDD16EA75FD04F9 /* Pods_ImHome.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImHome.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		477DAA0107DD27F5C2584598 /* Pods-ImHome-ImHomeUITests.debug copy.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImHome-ImHomeUITests.debug copy.xcconfig"; path = "Target Support Files/Pods-ImHome-ImHomeUITests/Pods-ImHome-ImHomeUITests.debug copy.xcconfig"; sourceTree = "<group>"; };
+		4CD9B3447060384F05170264 /* Pods-ImHomeTests.debug copy.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImHomeTests.debug copy.xcconfig"; path = "Target Support Files/Pods-ImHomeTests/Pods-ImHomeTests.debug copy.xcconfig"; sourceTree = "<group>"; };
+		6358E0BE9641DAF4050D39C0 /* Pods_ImHome_ImHomeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImHome_ImHomeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		63D424CF1D3B7D1F7B9D121B /* Pods-ImHome-ImHomeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImHome-ImHomeUITests.debug.xcconfig"; path = "Target Support Files/Pods-ImHome-ImHomeUITests/Pods-ImHome-ImHomeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7E517BA73C56F6ABE80483E6 /* Pods-I'm home.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-I'm home.debug.xcconfig"; path = "Target Support Files/Pods-I'm home/Pods-I'm home.debug.xcconfig"; sourceTree = "<group>"; };
 		82775E455AD302CBC8CB9414 /* Pods-I'm home-I'm homeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-I'm home-I'm homeUITests.debug.xcconfig"; path = "Target Support Files/Pods-I'm home-I'm homeUITests/Pods-I'm home-I'm homeUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		8C739CDE7C03496BE3D2EC82 /* Pods_I_m_home.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_I_m_home.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		922D2B0C246ACBB400CA6492 /* Я дома.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Я дома.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		922D2B0F246ACBB400CA6492 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		922D2B11246ACBB400CA6492 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,10 +73,10 @@
 		922D2B18246ACBB500CA6492 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		922D2B1B246ACBB500CA6492 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		922D2B1D246ACBB500CA6492 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		922D2B22246ACBB500CA6492 /* I'm homeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "I'm homeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		922D2B22246ACBB500CA6492 /* ImHomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImHomeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		922D2B26246ACBB500CA6492 /* I_m_homeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = I_m_homeTests.swift; sourceTree = "<group>"; };
 		922D2B28246ACBB500CA6492 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		922D2B2D246ACBB500CA6492 /* I'm homeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "I'm homeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		922D2B2D246ACBB500CA6492 /* ImHomeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImHomeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		922D2B31246ACBB500CA6492 /* I_m_homeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = I_m_homeUITests.swift; sourceTree = "<group>"; };
 		922D2B33246ACBB500CA6492 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92413DA5247AA0CC009B56B7 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
@@ -92,7 +98,10 @@
 		92CD7578247BFC5000EED562 /* ProfileContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContactVC.swift; sourceTree = "<group>"; };
 		92DD21A02478FD2300849AB2 /* RequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCell.swift; sourceTree = "<group>"; };
 		92DD21A22479495900849AB2 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
-		E2D3A392B9C713F26F6876BC /* Pods_I_m_homeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_I_m_homeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7D0F2BB37FD64AB72BAE2F7 /* Pods_ImHomeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImHomeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6F705373A51B67423F6AE9C /* Pods-I'm home.debug copy.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-I'm home.debug copy.xcconfig"; path = "Target Support Files/Pods-I'm home/Pods-I'm home.debug copy.xcconfig"; sourceTree = "<group>"; };
+		ED56878A275F48C08AD85394 /* Pods-ImHome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImHome.debug.xcconfig"; path = "Target Support Files/Pods-ImHome/Pods-ImHome.debug.xcconfig"; sourceTree = "<group>"; };
+		FE66FB4E2A7A27D995620882 /* Pods-I'm homeTests.debug copy.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-I'm homeTests.debug copy.xcconfig"; path = "Target Support Files/Pods-I'm homeTests/Pods-I'm homeTests.debug copy.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E01D5815C7290ECF46FCCA25 /* Pods_I_m_home.framework in Frameworks */,
+				F34185285CEB8F90BFF3C79A /* Pods_ImHome.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,7 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95438041D86C84363EA58C55 /* Pods_I_m_homeTests.framework in Frameworks */,
+				A5717083CA93208164CD4417 /* Pods_ImHomeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,7 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92D786B58E6AED29E2840FA4 /* Pods_I_m_home_I_m_homeUITests.framework in Frameworks */,
+				2DFFBA83334C8EBE4D2B13F6 /* Pods_ImHome_ImHomeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,9 +135,9 @@
 		922D2B03246ACBB400CA6492 = {
 			isa = PBXGroup;
 			children = (
-				922D2B0E246ACBB400CA6492 /* I'm home */,
-				922D2B25246ACBB500CA6492 /* I'm homeTests */,
-				922D2B30246ACBB500CA6492 /* I'm homeUITests */,
+				922D2B0E246ACBB400CA6492 /* ImHome */,
+				922D2B25246ACBB500CA6492 /* ImHomeTests */,
+				922D2B30246ACBB500CA6492 /* ImHomeUITests */,
 				922D2B0D246ACBB400CA6492 /* Products */,
 				9B721344D61F96F06BE4904A /* Frameworks */,
 				FE96B22DFE8DBAEF6D30B1A1 /* Pods */,
@@ -139,13 +148,13 @@
 			isa = PBXGroup;
 			children = (
 				922D2B0C246ACBB400CA6492 /* Я дома.app */,
-				922D2B22246ACBB500CA6492 /* I'm homeTests.xctest */,
-				922D2B2D246ACBB500CA6492 /* I'm homeUITests.xctest */,
+				922D2B22246ACBB500CA6492 /* ImHomeTests.xctest */,
+				922D2B2D246ACBB500CA6492 /* ImHomeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		922D2B0E246ACBB400CA6492 /* I'm home */ = {
+		922D2B0E246ACBB400CA6492 /* ImHome */ = {
 			isa = PBXGroup;
 			children = (
 				92827C3C2484C543000B4318 /* DefaultClasses */,
@@ -156,25 +165,25 @@
 				922D2B18246ACBB500CA6492 /* Assets.xcassets */,
 				922D2B1D246ACBB500CA6492 /* Info.plist */,
 			);
-			path = "I'm home";
+			path = ImHome;
 			sourceTree = "<group>";
 		};
-		922D2B25246ACBB500CA6492 /* I'm homeTests */ = {
+		922D2B25246ACBB500CA6492 /* ImHomeTests */ = {
 			isa = PBXGroup;
 			children = (
 				922D2B26246ACBB500CA6492 /* I_m_homeTests.swift */,
 				922D2B28246ACBB500CA6492 /* Info.plist */,
 			);
-			path = "I'm homeTests";
+			path = ImHomeTests;
 			sourceTree = "<group>";
 		};
-		922D2B30246ACBB500CA6492 /* I'm homeUITests */ = {
+		922D2B30246ACBB500CA6492 /* ImHomeUITests */ = {
 			isa = PBXGroup;
 			children = (
 				922D2B31246ACBB500CA6492 /* I_m_homeUITests.swift */,
 				922D2B33246ACBB500CA6492 /* Info.plist */,
 			);
-			path = "I'm homeUITests";
+			path = ImHomeUITests;
 			sourceTree = "<group>";
 		};
 		9243481A2477D7E800649D0B /* Controllers */ = {
@@ -253,9 +262,9 @@
 			isa = PBXGroup;
 			children = (
 				927E4982249278C4009B99DD /* SwiftEntryKit.framework */,
-				8C739CDE7C03496BE3D2EC82 /* Pods_I_m_home.framework */,
-				2E44918F489F7AF632875AB8 /* Pods_I_m_home_I_m_homeUITests.framework */,
-				E2D3A392B9C713F26F6876BC /* Pods_I_m_homeTests.framework */,
+				1BD1E5273FDD16EA75FD04F9 /* Pods_ImHome.framework */,
+				6358E0BE9641DAF4050D39C0 /* Pods_ImHome_ImHomeUITests.framework */,
+				B7D0F2BB37FD64AB72BAE2F7 /* Pods_ImHomeTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -266,35 +275,44 @@
 				7E517BA73C56F6ABE80483E6 /* Pods-I'm home.debug.xcconfig */,
 				82775E455AD302CBC8CB9414 /* Pods-I'm home-I'm homeUITests.debug.xcconfig */,
 				12A5316B2CD3FDA63DA73DB7 /* Pods-I'm homeTests.debug.xcconfig */,
+				E6F705373A51B67423F6AE9C /* Pods-I'm home.debug copy.xcconfig */,
+				0C3E0E9FA00C8C9AB1B01F6A /* Pods-I'm home-I'm homeUITests.debug copy.xcconfig */,
+				FE66FB4E2A7A27D995620882 /* Pods-I'm homeTests.debug copy.xcconfig */,
+				ED56878A275F48C08AD85394 /* Pods-ImHome.debug.xcconfig */,
+				176C9111C28843ACDFBE5B5F /* Pods-ImHome.debug copy.xcconfig */,
+				63D424CF1D3B7D1F7B9D121B /* Pods-ImHome-ImHomeUITests.debug.xcconfig */,
+				477DAA0107DD27F5C2584598 /* Pods-ImHome-ImHomeUITests.debug copy.xcconfig */,
+				1502C25A77A1F7862A20F165 /* Pods-ImHomeTests.debug.xcconfig */,
+				4CD9B3447060384F05170264 /* Pods-ImHomeTests.debug copy.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		922D2B0B246ACBB400CA6492 /* I'm home */ = {
+		922D2B0B246ACBB400CA6492 /* ImHome */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 922D2B36246ACBB500CA6492 /* Build configuration list for PBXNativeTarget "I'm home" */;
+			buildConfigurationList = 922D2B36246ACBB500CA6492 /* Build configuration list for PBXNativeTarget "ImHome" */;
 			buildPhases = (
 				7B5FE1C8E76AC09F73A016A3 /* [CP] Check Pods Manifest.lock */,
 				922D2B08246ACBB400CA6492 /* Sources */,
 				922D2B09246ACBB400CA6492 /* Frameworks */,
 				922D2B0A246ACBB400CA6492 /* Resources */,
+				B7D806FC9A2AF8830E574F93 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "I'm home";
+			name = ImHome;
 			productName = "I'm home";
 			productReference = 922D2B0C246ACBB400CA6492 /* Я дома.app */;
 			productType = "com.apple.product-type.application";
 		};
-		922D2B21246ACBB500CA6492 /* I'm homeTests */ = {
+		922D2B21246ACBB500CA6492 /* ImHomeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 922D2B39246ACBB500CA6492 /* Build configuration list for PBXNativeTarget "I'm homeTests" */;
+			buildConfigurationList = 922D2B39246ACBB500CA6492 /* Build configuration list for PBXNativeTarget "ImHomeTests" */;
 			buildPhases = (
 				C67B04F9C6E02C38CE0355CA /* [CP] Check Pods Manifest.lock */,
 				922D2B1E246ACBB500CA6492 /* Sources */,
@@ -306,28 +324,29 @@
 			dependencies = (
 				922D2B24246ACBB500CA6492 /* PBXTargetDependency */,
 			);
-			name = "I'm homeTests";
+			name = ImHomeTests;
 			productName = "I'm homeTests";
-			productReference = 922D2B22246ACBB500CA6492 /* I'm homeTests.xctest */;
+			productReference = 922D2B22246ACBB500CA6492 /* ImHomeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		922D2B2C246ACBB500CA6492 /* I'm homeUITests */ = {
+		922D2B2C246ACBB500CA6492 /* ImHomeUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 922D2B3C246ACBB500CA6492 /* Build configuration list for PBXNativeTarget "I'm homeUITests" */;
+			buildConfigurationList = 922D2B3C246ACBB500CA6492 /* Build configuration list for PBXNativeTarget "ImHomeUITests" */;
 			buildPhases = (
 				C832F6C518CEAE48BB058242 /* [CP] Check Pods Manifest.lock */,
 				922D2B29246ACBB500CA6492 /* Sources */,
 				922D2B2A246ACBB500CA6492 /* Frameworks */,
 				922D2B2B246ACBB500CA6492 /* Resources */,
+				19362CEF88AE87F85B70C9B9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				922D2B2F246ACBB500CA6492 /* PBXTargetDependency */,
 			);
-			name = "I'm homeUITests";
+			name = ImHomeUITests;
 			productName = "I'm homeUITests";
-			productReference = 922D2B2D246ACBB500CA6492 /* I'm homeUITests.xctest */;
+			productReference = 922D2B2D246ACBB500CA6492 /* ImHomeUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -336,7 +355,6 @@
 		922D2B04246ACBB400CA6492 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = NO;
 				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Денис Винокуров";
@@ -354,7 +372,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 922D2B07246ACBB400CA6492 /* Build configuration list for PBXProject "I'm home" */;
+			buildConfigurationList = 922D2B07246ACBB400CA6492 /* Build configuration list for PBXProject "ImHome" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -368,9 +386,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				922D2B0B246ACBB400CA6492 /* I'm home */,
-				922D2B21246ACBB500CA6492 /* I'm homeTests */,
-				922D2B2C246ACBB500CA6492 /* I'm homeUITests */,
+				922D2B0B246ACBB400CA6492 /* ImHome */,
+				922D2B21246ACBB500CA6492 /* ImHomeTests */,
+				922D2B2C246ACBB500CA6492 /* ImHomeUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -403,6 +421,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		19362CEF88AE87F85B70C9B9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ImHome-ImHomeUITests/Pods-ImHome-ImHomeUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ImHome-ImHomeUITests/Pods-ImHome-ImHomeUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ImHome-ImHomeUITests/Pods-ImHome-ImHomeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7B5FE1C8E76AC09F73A016A3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -418,11 +453,28 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-I'm home-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ImHome-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7D806FC9A2AF8830E574F93 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ImHome/Pods-ImHome-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ImHome/Pods-ImHome-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ImHome/Pods-ImHome-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C67B04F9C6E02C38CE0355CA /* [CP] Check Pods Manifest.lock */ = {
@@ -440,7 +492,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-I'm homeTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ImHomeTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -462,7 +514,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-I'm home-I'm homeUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ImHome-ImHomeUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -519,12 +571,12 @@
 /* Begin PBXTargetDependency section */
 		922D2B24246ACBB500CA6492 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 922D2B0B246ACBB400CA6492 /* I'm home */;
+			target = 922D2B0B246ACBB400CA6492 /* ImHome */;
 			targetProxy = 922D2B23246ACBB500CA6492 /* PBXContainerItemProxy */;
 		};
 		922D2B2F246ACBB500CA6492 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 922D2B0B246ACBB400CA6492 /* I'm home */;
+			target = 922D2B0B246ACBB400CA6492 /* ImHome */;
 			targetProxy = 922D2B2E246ACBB500CA6492 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -614,12 +666,12 @@
 		};
 		922D2B37246ACBB500CA6492 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7E517BA73C56F6ABE80483E6 /* Pods-I'm home.debug.xcconfig */;
+			baseConfigurationReference = ED56878A275F48C08AD85394 /* Pods-ImHome.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AWN3QD4X7Y;
-				INFOPLIST_FILE = "I'm home/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ImHome/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -633,7 +685,7 @@
 		};
 		922D2B3A246ACBB500CA6492 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 12A5316B2CD3FDA63DA73DB7 /* Pods-I'm homeTests.debug.xcconfig */;
+			baseConfigurationReference = 1502C25A77A1F7862A20F165 /* Pods-ImHomeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -650,13 +702,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/I'm home.app/I'm home";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImHome.app/ImHome";
 			};
 			name = Debug;
 		};
 		922D2B3D246ACBB500CA6492 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 82775E455AD302CBC8CB9414 /* Pods-I'm home-I'm homeUITests.debug.xcconfig */;
+			baseConfigurationReference = 63D424CF1D3B7D1F7B9D121B /* Pods-ImHome-ImHomeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -675,37 +727,165 @@
 			};
 			name = Debug;
 		};
+		92D73430249294C8007588B3 /* Debug copy */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = "Debug copy";
+		};
+		92D73431249294C8007588B3 /* Debug copy */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 176C9111C28843ACDFBE5B5F /* Pods-ImHome.debug copy.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AWN3QD4X7Y;
+				INFOPLIST_FILE = "$(SRCROOT)/ImHome/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "denis.I-m-home";
+				PRODUCT_NAME = "Я дома";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = "Debug copy";
+		};
+		92D73432249294C8007588B3 /* Debug copy */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CD9B3447060384F05170264 /* Pods-ImHomeTests.debug copy.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AWN3QD4X7Y;
+				INFOPLIST_FILE = "I'm homeTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "denis.I-m-homeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImHome.app/ImHome";
+			};
+			name = "Debug copy";
+		};
+		92D73433249294C8007588B3 /* Debug copy */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 477DAA0107DD27F5C2584598 /* Pods-ImHome-ImHomeUITests.debug copy.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AWN3QD4X7Y;
+				INFOPLIST_FILE = "I'm homeUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "denis.I-m-homeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "I'm home";
+			};
+			name = "Debug copy";
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		922D2B07246ACBB400CA6492 /* Build configuration list for PBXProject "I'm home" */ = {
+		922D2B07246ACBB400CA6492 /* Build configuration list for PBXProject "ImHome" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				922D2B34246ACBB500CA6492 /* Debug */,
+				92D73430249294C8007588B3 /* Debug copy */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		922D2B36246ACBB500CA6492 /* Build configuration list for PBXNativeTarget "I'm home" */ = {
+		922D2B36246ACBB500CA6492 /* Build configuration list for PBXNativeTarget "ImHome" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				922D2B37246ACBB500CA6492 /* Debug */,
+				92D73431249294C8007588B3 /* Debug copy */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		922D2B39246ACBB500CA6492 /* Build configuration list for PBXNativeTarget "I'm homeTests" */ = {
+		922D2B39246ACBB500CA6492 /* Build configuration list for PBXNativeTarget "ImHomeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				922D2B3A246ACBB500CA6492 /* Debug */,
+				92D73432249294C8007588B3 /* Debug copy */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		922D2B3C246ACBB500CA6492 /* Build configuration list for PBXNativeTarget "I'm homeUITests" */ = {
+		922D2B3C246ACBB500CA6492 /* Build configuration list for PBXNativeTarget "ImHomeUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				922D2B3D246ACBB500CA6492 /* Debug */,
+				92D73433249294C8007588B3 /* Debug copy */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
