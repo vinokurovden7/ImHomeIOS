@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftEntryKit
 
 class ProfileVC: UITableViewController {
 
@@ -83,6 +84,7 @@ class ProfileVC: UITableViewController {
         self.view.endEditing(true)
     }
     @IBAction func saveBtnAction(_ sender: CustomButton) {
+        SwiftEntryKit.display(entry: CustomNotification.sharedCustomNotification.getSaveNotifContentView(text: "Сохранено"), using: CustomNotification.sharedCustomNotification.saveNotifAttributes)
         dismiss(animated: true)
     }
     

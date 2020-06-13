@@ -45,19 +45,20 @@ class LoginVC: UIViewController {
         performSegue(withIdentifier: "showRegistrationScreen", sender: self)
     }
     @IBAction func autorizeBtnAction(_ sender: CustomButton) {
+        var desc = ""
+        if nameTextField.text!.isEmpty && !passwordTextField.text!.isEmpty {
+            desc = "Кажется, кто-то забыл заполнить поле имени пользователя 😱"
+        } else if !nameTextField.text!.isEmpty && passwordTextField.text!.isEmpty {
+            desc = "Кажется, кто-то забыл заполнить поле пароля 😱"
+        } else {
+            desc = "Кажется, кто-то забыл заполнить поля имени пользователя и пароля 😱"
+        }
+        
         if nameTextField.text!.isEmpty || passwordTextField.text!.isEmpty {
-            let title = "Kofi Shop"
-            let desc = "Over two weeks of quality coffee beans concentrated into a single entry kit"
-            let image = "ic_coffee_light"
-            var attributes = bottomAlertAttributes
-            attributes.statusBar = .light
-            showNotificationMessage(attributes: attributes,
-            title: title,
-            desc: desc,
-            textColor: EKColor(UIColor(named: "notifTextViewColor")!),
-            imageName: image)
+            let contentView = CustomNotification.sharedCustomNotification.getFloatContentView(title: "Упс", desc: desc, textColor: EKColor(UIColor(named: "notifTextViewColor")!), imageColor: EKColor(UIColor.systemOrange), imageName: "exclamationmark.triangle.fill")
+            let attributes = CustomNotification.sharedCustomNotification.bottomAlertAttributes
+            SwiftEntryKit.display(entry: contentView, using: attributes)
             UINotificationFeedbackGenerator().notificationOccurred(.error)
-            
         } else {
             performSegue(withIdentifier: "autorizeAction", sender: self)
         }
@@ -107,101 +108,7 @@ class LoginVC: UIViewController {
     }
 }
 
-// Bumps a notification structured entry
-private func showNotificationMessage(attributes: EKAttributes,
-                                     title: String,
-                                     desc: String,
-                                     textColor: EKColor,
-                                     imageName: String? = nil) {
-    let title = EKProperty.LabelContent(
-        text: title,
-        style: .init(
-            font: UIFont.systemFont(ofSize: 16),
-            color: textColor,
-            displayMode: .inferred
-        ),
-        accessibilityIdentifier: "title"
-    )
-    let description = EKProperty.LabelContent(
-        text: desc,
-        style: .init(
-            font: UIFont.systemFont(ofSize: 16),
-            color: textColor,
-            displayMode: .inferred
-        ),
-        accessibilityIdentifier: "description"
-    )
-    var image: EKProperty.ImageContent?
-    if let imageName = imageName {
-        image = EKProperty.ImageContent(
-            image: UIImage(named: imageName)!.withRenderingMode(.alwaysTemplate),
-            displayMode: .inferred,
-            size: CGSize(width: 35, height: 35),
-            tint: textColor,
-            accessibilityIdentifier: "thumbnail"
-        )
-    }
-    let simpleMessage = EKSimpleMessage(
-        image: image,
-        title: title,
-        description: description
-    )
-    let notificationMessage = EKNotificationMessage(simpleMessage: simpleMessage)
-    let contentView = EKNotificationMessageView(with: notificationMessage)
-    SwiftEntryKit.display(entry: contentView, using: attributes)
-}
 
-// Cumputed for the sake of reusability
-var bottomAlertAttributes: EKAttributes {
-    var attributes = EKAttributes.topFloat
-    attributes.hapticFeedbackType = .none
-    attributes.displayDuration = .infinity
-    attributes.statusBar = .light
-    attributes.entryBackground = .color(color: EKColor(UIColor(named: "rombColor")!))
-    attributes.screenBackground = .color(color: EKColor(UIColor(named: "notifFonColor")!))
-    attributes.shadow = .active(
-        with: .init(
-            color: .black,
-            opacity: 0.3,
-            radius: 8
-        )
-    )
-    attributes.screenInteraction = .dismiss
-    attributes.entryInteraction = .absorbTouches
-    attributes.scroll = .enabled(
-        swipeable: true,
-        pullbackAnimation: .jolt
-    )
-    attributes.roundCorners = .all(radius: 25)
-    attributes.entranceAnimation = .init(
-        translate: .init(
-            duration: 0.4,
-            spring: .init(damping: 1, initialVelocity: 0)
-        ),
-        scale: .init(
-            from: 1.05,
-            to: 1,
-            duration: 0.2,
-            spring: .init(damping: 1, initialVelocity: 0)
-        )
-    )
-    attributes.exitAnimation = .init(
-        translate: .init(duration: 0.2)
-    )
-    attributes.popBehavior = .animated(
-        animation: .init(
-            translate: .init(duration: 0.2)
-        )
-    )
-    attributes.positionConstraints.verticalOffset = 10
-    attributes.positionConstraints.size = .init(
-        width: .offset(value: 20),
-        height: .intrinsic
-    )
-    attributes.positionConstraints.maxSize = .init(
-        width: .constant(value: UIScreen.main.bounds.width),
-        height: .intrinsic
-    )
-    attributes.statusBar = .dark
-    return attributes
-}
+
+
+

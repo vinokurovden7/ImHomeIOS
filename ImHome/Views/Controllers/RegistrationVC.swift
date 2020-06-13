@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftEntryKit
 
 class RegistrationVC: UITableViewController {
 
@@ -81,7 +82,10 @@ class RegistrationVC: UITableViewController {
 
     //MARK: Обработчики
     @IBAction func loginBtnAction(_ sender: CustomButton) {
-        dismiss(animated: true)
+        showPopupMessage(attributes: CustomNotification.sharedCustomNotification.bottomAlertAttributes, title: "Заголовок", titleColor: EKColor(UIColor(named: "notifTextViewColor")!), description: "Подзаголовок", descriptionColor: EKColor(UIColor(named: "notifTextViewColor")!), buttonTitleColor: EKColor(UIColor(named: "inputTextViewColor")!), buttonBackgroundColor: EKColor(UIColor(named: "notifTextViewColor")!), image: UIImage(systemName: "person.fill"), completion: {
+            self.dismiss(animated: true)
+        })
+        
     }
     @IBAction func goLoginScreenBtnAction(_ sender: CustomButton) {
         dismiss(animated: true)
@@ -97,4 +101,71 @@ class RegistrationVC: UITableViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
     }
+}
+
+private func showPopupMessage(attributes: EKAttributes,
+                              title: String,
+                              titleColor: EKColor,
+                              description: String,
+                              descriptionColor: EKColor,
+                              buttonTitleColor: EKColor,
+                              buttonBackgroundColor: EKColor,
+                              image: UIImage? = nil, completion: @escaping () -> ()) {
+    
+    var themeImage: EKPopUpMessage.ThemeImage?
+    
+    if let image = image {
+        themeImage = EKPopUpMessage.ThemeImage(
+            image: EKProperty.ImageContent(
+                image: image,
+                displayMode: .inferred,
+                size: CGSize(width: 60, height: 60),
+                tint: titleColor,
+                contentMode: .scaleAspectFit
+            )
+        )
+    }
+    let title = EKProperty.LabelContent(
+        text: title,
+        style: .init(
+            font: UIFont.systemFont(ofSize: 24),
+            color: titleColor,
+            alignment: .center,
+            displayMode: .inferred
+        )
+    )
+    let description = EKProperty.LabelContent(
+        text: description,
+        style: .init(
+            font: UIFont.systemFont(ofSize: 16),
+            color: descriptionColor,
+            alignment: .center,
+            displayMode: .inferred
+        )
+    )
+    let button = EKProperty.ButtonContent(
+        label: .init(
+            text: "Ок",
+            style: .init(
+                font: UIFont.systemFont(ofSize: 16),
+                color: buttonTitleColor,
+                displayMode: .inferred
+            )
+        ),
+        backgroundColor: buttonBackgroundColor,
+        highlightedBackgroundColor: buttonTitleColor.with(alpha: 0.05),
+        displayMode: .inferred,
+        action: {
+            print("Ok")
+        }
+    )
+    let message = EKPopUpMessage(
+        themeImage: themeImage,
+        title: title,
+        description: description,
+        button: button) {
+            SwiftEntryKit.dismiss()
+    }
+    let contentView = EKPopUpMessageView(with: message)
+    SwiftEntryKit.display(entry: contentView, using: attributes)
 }
