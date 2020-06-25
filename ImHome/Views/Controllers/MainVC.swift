@@ -9,16 +9,124 @@
 import UIKit
 
 class MainVC: UIViewController {
-
+    
+    //MARK: Variables
+    private var sec: Int?
+    private var pressedMainButton = false
+    
+    //MARK: IBOutlets
+    @IBOutlet weak var mainTimerTimeLabel: UILabel! {
+        didSet {
+            mainTimerTimeLabel.isHidden = true
+        }
+    }
+    @IBOutlet weak var messageTimerTimeLabel: UILabel! {
+        didSet {
+            messageTimerTimeLabel.isHidden = true
+        }
+    }
+    @IBOutlet weak var mainButton: UIButton!
+    @IBOutlet weak var cancelAlarm: UIButton! {
+        didSet {
+            cancelAlarm.isHidden = true
+        }
+    }
+    //MARK: Главная функция
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        mainButton.addTarget(self, action: #selector(downTapped), for: .touchDown)
+        mainButton.addTarget(self, action: #selector(upInside), for: .touchUpInside)
+        mainButton.addTarget(self, action: #selector(dragExit), for: .touchDragExit)
+        mainButton.addTarget(self, action: #selector(allEvents), for: .allEvents)
     }
     
     //MARK: Обработчики
+    
+    //MARK: Переход на экран отправки отложенного сообщения
     @IBAction func delayMessageBtnAction(_ sender: CustomButton) {
         performSegue(withIdentifier: "showDelayMessageScreen", sender: self)
+    }
+    
+    //MARK: Главная кнопка
+    @IBAction func mainButton(_ sender: CustomMainButton) {
+        sendHelpMessage()
+    }
+    
+    //MARK: Кнопка отмены отправки сообщения
+    @IBAction func cancelAlarmAction(_ sender: UIButton) {
+        self.tabBarItem.badgeValue = nil
+        self.sec = -1
+        cancelAlarm.isHidden = true
+        mainTimerTimeLabel.isHidden = true
+        mainButton.tintColor = .white
+        pressedMainButton = false
+    }
+    
+    //MARK: Функция, отвечающая за нажатие на кнопку
+    @objc func downTapped(){
+        if !pressedMainButton {
+            mainButton.tintColor = .systemOrange
+            UIView.animate(withDuration: 0.12, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 4, options: .curveEaseIn, animations: {
+                self.mainButton.transform.a = 0.9
+                self.mainButton.transform.d = 0.9
+            })
+        }
+    }
+    
+    //MARK: Функция, отвечающая за любое взаимодействие с кнопкой
+    @objc func allEvents(){
+        mainButton.isHighlighted = false
+    }
+
+    //MARK: Функция, отвечающая за отпускание нажатой кнопки
+    @objc func upInside(){
+        UIImpactFeedbackGenerator.init(style: .soft).impactOccurred()
+        UIView.animate(withDuration: 0.12, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
+            self.mainButton.transform.a = 1
+            self.mainButton.transform.d = 1
+        })
+    }
+    
+    //MARK: Функция, отвечающая за отведения пальца с кнопки без отпускания
+    @objc func dragExit(){
+        sendHelpMessage()
+        UIView.animate(withDuration: 0.12, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
+            self.mainButton.transform.a = 1
+            self.mainButton.transform.d = 1
+        })
+    }
+    
+    //MARK: Функция обратного отсчета и отправки сообщения о помощи
+    private func sendHelpMessage(){
+        if !pressedMainButton {
+            mainTimerTimeLabel.isHidden = false
+            self.sec = 10
+            self.mainTimerTimeLabel.text = "\(self.sec!) c"
+            self.tabBarItem.badgeValue = "\(self.sec!)"
+            cancelAlarm.isHidden = false
+            Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+                DispatchQueue.main.async {
+                    if self.sec! > -1 {
+                        self.tabBarItem.badgeValue = "\(self.sec!)"
+                        self.mainTimerTimeLabel.text = "\(self.sec!) c"
+                    }
+                }
+                if self.sec! <= 0 {
+                    if self.sec != -1 {
+                        UINotificationFeedbackGenerator().notificationOccurred(.error)
+                        self.mainButton.tintColor = .systemRed
+                        self.tabBarItem.badgeValue = "!!!"
+                        self.mainTimerTimeLabel.isHidden = true
+                    }
+                    timer.invalidate()
+                }
+                if self.sec! <= 6 && self.sec! > 0 {
+                    UIImpactFeedbackGenerator.init(style: .heavy).impactOccurred()
+                }
+                self.sec! -= 1
+            }
+        }
+        pressedMainButton = true
     }
     
     //MARK: Визуальное оформление
@@ -26,5 +134,4 @@ class MainVC: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
     }
-    
 }

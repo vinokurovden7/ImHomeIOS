@@ -8,8 +8,22 @@
 
 import UIKit
 import SwiftEntryKit
+import NVActivityIndicatorView
 
 class RegistrationVC: UITableViewController {
+    
+    private var indicator: NVActivityIndicatorView = {
+       
+        let indicator = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 80, height: 80), type: .ballScaleMultiple, color: .red, padding: 5)
+        indicator.color = .white
+        indicator.backgroundColor = UIColor(named: "backgroundViewColor")!
+        indicator.layer.cornerRadius = indicator.frame.height / 2
+        indicator.layer.borderColor = UIColor.white.cgColor
+        indicator.layer.borderWidth = 2
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        return indicator
+        
+    }()
 
     @IBOutlet var emailTextField: UITextField! {
         didSet {
@@ -65,11 +79,14 @@ class RegistrationVC: UITableViewController {
             registrationBtn.layer.cornerRadius = registrationBtn.frame.height / 2
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.backgroundView = UIImageView(image: UIImage(named: "fonBackground"))
         tableView.backgroundView?.alpha = 0.07
-        
+        self.view.addSubview(indicator)
+        indicator.centerYAnchor.constraint(equalToSystemSpacingBelow: self.view.centerYAnchor, multiplier: 0).isActive = true
+        indicator.centerXAnchor.constraint(equalToSystemSpacingAfter: self.view.centerXAnchor, multiplier: 0).isActive = true
     }
     
     fileprivate func textFieldSetup(textField: UITextField){
@@ -82,10 +99,36 @@ class RegistrationVC: UITableViewController {
 
     //MARK: Обработчики
     @IBAction func loginBtnAction(_ sender: CustomButton) {
-        showPopupMessage(attributes: CustomNotification.sharedCustomNotification.bottomAlertAttributes, title: "Заголовок", titleColor: EKColor(UIColor(named: "notifTextViewColor")!), description: "Подзаголовок", descriptionColor: EKColor(UIColor(named: "notifTextViewColor")!), buttonTitleColor: EKColor(UIColor(named: "inputTextViewColor")!), buttonBackgroundColor: EKColor(UIColor(named: "notifTextViewColor")!), image: UIImage(systemName: "person.fill"), completion: {
-            self.dismiss(animated: true)
-        })
+        var description = ""
         
+        if passwordTextField.text!.isEmpty {
+            description = "Не заполнен пароль"
+        }
+        
+        if usernameTextField.text!.isEmpty {
+            description = "Не заполнено имя пользователя"
+        }
+        
+        if firstNameUser.text!.isEmpty {
+            description = "Не заполнено имя"
+        }
+        
+        if secondNameUser.text!.isEmpty {
+            description = "Не заполнена фамилия"
+        }
+        
+        if emailTextField.text!.isEmpty {
+            description = "Не заполнен Email"
+        }
+
+        if !description.isEmpty {
+            let contentView = CustomNotification.sharedCustomNotification.getFloatContentView(title: "Упс", desc: description, textColor: EKColor(UIColor(named: "notifTextViewColor")!), imageColor: EKColor(UIColor.systemOrange), imageName: "exclamationmark.triangle.fill")
+            let attributes = CustomNotification.sharedCustomNotification.bottomAlertAttributes
+            SwiftEntryKit.display(entry: contentView, using: attributes)
+            return
+        } else {
+            indicator.startAnimating()
+        }
     }
     @IBAction func goLoginScreenBtnAction(_ sender: CustomButton) {
         dismiss(animated: true)
@@ -101,71 +144,4 @@ class RegistrationVC: UITableViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
     }
-}
-
-private func showPopupMessage(attributes: EKAttributes,
-                              title: String,
-                              titleColor: EKColor,
-                              description: String,
-                              descriptionColor: EKColor,
-                              buttonTitleColor: EKColor,
-                              buttonBackgroundColor: EKColor,
-                              image: UIImage? = nil, completion: @escaping () -> ()) {
-    
-    var themeImage: EKPopUpMessage.ThemeImage?
-    
-    if let image = image {
-        themeImage = EKPopUpMessage.ThemeImage(
-            image: EKProperty.ImageContent(
-                image: image,
-                displayMode: .inferred,
-                size: CGSize(width: 60, height: 60),
-                tint: titleColor,
-                contentMode: .scaleAspectFit
-            )
-        )
-    }
-    let title = EKProperty.LabelContent(
-        text: title,
-        style: .init(
-            font: UIFont.systemFont(ofSize: 24),
-            color: titleColor,
-            alignment: .center,
-            displayMode: .inferred
-        )
-    )
-    let description = EKProperty.LabelContent(
-        text: description,
-        style: .init(
-            font: UIFont.systemFont(ofSize: 16),
-            color: descriptionColor,
-            alignment: .center,
-            displayMode: .inferred
-        )
-    )
-    let button = EKProperty.ButtonContent(
-        label: .init(
-            text: "Ок",
-            style: .init(
-                font: UIFont.systemFont(ofSize: 16),
-                color: buttonTitleColor,
-                displayMode: .inferred
-            )
-        ),
-        backgroundColor: buttonBackgroundColor,
-        highlightedBackgroundColor: buttonTitleColor.with(alpha: 0.05),
-        displayMode: .inferred,
-        action: {
-            print("Ok")
-        }
-    )
-    let message = EKPopUpMessage(
-        themeImage: themeImage,
-        title: title,
-        description: description,
-        button: button) {
-            SwiftEntryKit.dismiss()
-    }
-    let contentView = EKPopUpMessageView(with: message)
-    SwiftEntryKit.display(entry: contentView, using: attributes)
 }

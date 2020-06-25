@@ -46,12 +46,12 @@ class LoginVC: UIViewController {
     }
     @IBAction func autorizeBtnAction(_ sender: CustomButton) {
         var desc = ""
-        if nameTextField.text!.isEmpty && !passwordTextField.text!.isEmpty {
-            desc = "Кажется, кто-то забыл заполнить поле имени пользователя 😱"
-        } else if !nameTextField.text!.isEmpty && passwordTextField.text!.isEmpty {
+        if passwordTextField.text!.isEmpty {
             desc = "Кажется, кто-то забыл заполнить поле пароля 😱"
-        } else {
-            desc = "Кажется, кто-то забыл заполнить поля имени пользователя и пароля 😱"
+        }
+        
+        if nameTextField.text!.isEmpty {
+            desc = "Кажется, кто-то забыл заполнить поле имени пользователя 😱"
         }
         
         if nameTextField.text!.isEmpty || passwordTextField.text!.isEmpty {
