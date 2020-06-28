@@ -10,10 +10,6 @@ import UIKit
 
 class MainVC: UIViewController {
     
-    //MARK: Variables
-    private var sec: Int?
-    private var pressedMainButton = false
-    
     //MARK: IBOutlets
     @IBOutlet weak var mainTimerTimeLabel: UILabel! {
         didSet {
@@ -31,12 +27,17 @@ class MainVC: UIViewController {
             cancelAlarm.isHidden = true
         }
     }
-    //MARK: Главная функция
+    
+    //MARK: Variables
+    private var sec: Int?
+    private var pressedMainButton = false
+    
+    //MARK: Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainButton.addTarget(self, action: #selector(downTapped), for: .touchDown)
-        mainButton.addTarget(self, action: #selector(upInside), for: .touchUpInside)
-        mainButton.addTarget(self, action: #selector(dragExit), for: .touchDragExit)
+        mainButton.addTarget(self, action: #selector(touchDown), for: .touchDown)
+        mainButton.addTarget(self, action: #selector(touchUpInside), for: .touchUpInside)
+        mainButton.addTarget(self, action: #selector(touchDragExit), for: .touchDragExit)
         mainButton.addTarget(self, action: #selector(allEvents), for: .allEvents)
     }
     
@@ -47,8 +48,23 @@ class MainVC: UIViewController {
         performSegue(withIdentifier: "showDelayMessageScreen", sender: self)
     }
     
+    //MARK: Prepare for segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+            case "showDelayMessageScreen":
+                guard let destination = segue.destination as? DelayMessageVC else {return}
+                destination.closure = { [weak self] time in
+                    self!.messageTimerTimeLabel.text = time
+                    self!.messageTimerTimeLabel.isHidden = false
+                    self!.cancelAlarm.isHidden = false
+                }
+            default:
+                return
+        }
+    }
+    
     //MARK: Главная кнопка
-    @IBAction func mainButton(_ sender: CustomMainButton) {
+    @IBAction func mainButton(_ sender: UIButton) {
         sendHelpMessage()
     }
     
@@ -58,12 +74,13 @@ class MainVC: UIViewController {
         self.sec = -1
         cancelAlarm.isHidden = true
         mainTimerTimeLabel.isHidden = true
+        messageTimerTimeLabel.isHidden = true
         mainButton.tintColor = .white
         pressedMainButton = false
     }
     
     //MARK: Функция, отвечающая за нажатие на кнопку
-    @objc func downTapped(){
+    @objc func touchDown(){
         if !pressedMainButton {
             mainButton.tintColor = .systemOrange
             UIView.animate(withDuration: 0.12, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 4, options: .curveEaseIn, animations: {
@@ -79,7 +96,7 @@ class MainVC: UIViewController {
     }
 
     //MARK: Функция, отвечающая за отпускание нажатой кнопки
-    @objc func upInside(){
+    @objc func touchUpInside(){
         UIImpactFeedbackGenerator.init(style: .soft).impactOccurred()
         UIView.animate(withDuration: 0.12, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
             self.mainButton.transform.a = 1
@@ -88,7 +105,7 @@ class MainVC: UIViewController {
     }
     
     //MARK: Функция, отвечающая за отведения пальца с кнопки без отпускания
-    @objc func dragExit(){
+    @objc func touchDragExit(){
         sendHelpMessage()
         UIView.animate(withDuration: 0.12, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
             self.mainButton.transform.a = 1

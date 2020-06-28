@@ -10,15 +10,20 @@ import UIKit
 
 class NewContactVC: UIViewController, UISearchBarDelegate {
     
-    private var searchController: UISearchController!
+    //MARK: IBOutlets
     @IBOutlet weak var myTableView: UITableView!
+    
+    //MARK: Variables
+    private var searchController: UISearchController!
+    
+    //MARK: Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
         setSearchNavController()
-
     }
     
     //MARK: Настройка searchController и  NavigationController
+    /// Настройка searchController и  NavigationController
     func setSearchNavController(){
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
@@ -45,6 +50,7 @@ class NewContactVC: UIViewController, UISearchBarDelegate {
 
 }
 
+//MARK: Extensions UITableView Delegate & DataSource
 extension NewContactVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,6 +64,8 @@ extension NewContactVC: UITableViewDelegate, UITableViewDataSource {
         
     }
 }
+
+//MARK: Extensions search results updating
 extension NewContactVC: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
     }

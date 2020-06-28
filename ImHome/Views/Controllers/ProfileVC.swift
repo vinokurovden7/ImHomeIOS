@@ -11,12 +11,13 @@ import SwiftEntryKit
 
 class ProfileVC: UITableViewController {
 
+    //MARK: IBOutlets
     @IBOutlet weak var emailTextField: UITextField! {
         didSet {
             textFieldSetup(textField: emailTextField)
         }
     }
-    
+
     @IBOutlet weak var secondNameTextField: UITextField! {
         didSet {
             textFieldSetup(textField: secondNameTextField)
@@ -71,6 +72,7 @@ class ProfileVC: UITableViewController {
         }
     }
     
+    //MARK: Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.backgroundView = UIImageView(image: UIImage(named: "fonBackground"))
@@ -83,6 +85,7 @@ class ProfileVC: UITableViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+    //MARK: Сохранение
     @IBAction func saveBtnAction(_ sender: CustomButton) {
         SwiftEntryKit.display(entry: CustomNotification.sharedCustomNotification.getSaveNotifContentView(text: "Сохранено"), using: CustomNotification.sharedCustomNotification.saveNotifAttributes)
         dismiss(animated: true)
@@ -94,6 +97,8 @@ class ProfileVC: UITableViewController {
         return .lightContent
     }
     
+    //MARK: Кастомные функции
+    //MARK: Настройка текстовых полей
     fileprivate func textFieldSetup(textField: UITextField){
         //To apply padding
         let paddingView : UIView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
@@ -102,7 +107,7 @@ class ProfileVC: UITableViewController {
         textField.layer.cornerRadius = textField.frame.height / 2
         textField.clipsToBounds = true
     }
-    
+    //MARK: Настройка кнопок
     fileprivate func buttonSetup(button: UIButton){
         button.layer.cornerRadius = button.frame.height / 2
     }

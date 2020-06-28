@@ -10,6 +10,7 @@ import UIKit
 
 class DelayMessageVC: UIViewController {
     
+    //MARK: IBOutlets
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     var timePickerView: UIDatePicker = UIDatePicker()
@@ -40,7 +41,10 @@ class DelayMessageVC: UIViewController {
     private let cancelButton = UIBarButtonItem(title: "Отмена", style: .plain, target: self, action: #selector(cancelPicker))
     private let toolBar = UIToolbar()
     
+    //MARK: Variables
+    var closure: ((String) -> ())?
     
+    //MARK: Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,10 +52,10 @@ class DelayMessageVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWasShown), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillBeHidden), name: UIResponder.keyboardWillHideNotification, object: nil)
         
+        //MARK: Setub timePickerView
         timePickerView.date = NSDate.now
         timePickerView.datePickerMode = .time
 
-        //MARK: Настройки navigationController и toolbar-а у pickerView
         setToolBarNav()
         
     }
@@ -83,6 +87,7 @@ class DelayMessageVC: UIViewController {
     }
     
     //MARK: Настройки navigationController и toolbar-а у pickerView
+    /// Настройки navigationController и toolbar-а у pickerView
     func setToolBarNav() {
         toolBar.barStyle = .default
         toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
@@ -104,5 +109,11 @@ class DelayMessageVC: UIViewController {
     //MARK: Обработчик кнопки Отмена в picker
     @objc func cancelPicker(){
         self.view.endEditing(true)
+    }
+    
+    //MARK: Отправка отложенного сообщения
+    @IBAction func sendBtnAction(_ sender: CustomButton) {
+        closure?(delayTextField.text ?? "")
+        dismiss(animated: true)
     }
 }

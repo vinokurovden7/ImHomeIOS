@@ -10,6 +10,7 @@ import UIKit
 
 class SettingsVC: UITableViewController {
 
+    //MARK: IBOutlets
     @IBOutlet weak var timeCancelSOSSignal: UITextField! {
         didSet {
             timeCancelSOSSignal.layer.cornerRadius = timeCancelSOSSignal.frame.height / 2
@@ -39,6 +40,7 @@ class SettingsVC: UITableViewController {
         }
     }
     
+    //MARK: Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.backgroundView = UIImageView(image: UIImage(named: "fonBackground"))
@@ -51,10 +53,11 @@ class SettingsVC: UITableViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+    //MARK: Редактирование профиля
     @IBAction func editProfileBtnAction(_ sender: CustomButton) {
         performSegue(withIdentifier: "showProfile", sender: self)
     }
-    
+
     //MARK: Визуальное оформление
     //MARK: Стиль статус бара
     override var preferredStatusBarStyle: UIStatusBarStyle{

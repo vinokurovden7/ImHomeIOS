@@ -10,6 +10,7 @@ import UIKit
 
 class ProfileContactVC: UIViewController {
     
+    //MARK: IBOutlets
     @IBOutlet weak var deletePersonBtn: UIButton! {
         didSet {
             deletePersonBtn.layer.cornerRadius = deletePersonBtn.frame.height / 2
@@ -32,6 +33,8 @@ class ProfileContactVC: UIViewController {
             backgroundViewContactImage.layer.shadowColor = UIColor.black.cgColor
         }
     }
+    
+    //MARK: Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
 

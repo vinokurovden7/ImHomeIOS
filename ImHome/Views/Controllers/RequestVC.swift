@@ -10,10 +10,12 @@ import UIKit
 
 class RequestVC: UIViewController {
 
+    //MARK: IBOutlets
     @IBOutlet var requestTableView: UITableView!
+    
+    //MARK: Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     //MARK: Визуальное оформление
@@ -24,6 +26,7 @@ class RequestVC: UIViewController {
     
 }
 
+//MARK: Extensions TableView Delegate & DataSource
 extension RequestVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -9,12 +9,13 @@
 import UIKit
 import SwiftEntryKit
 
+/// Кастомные уведомления библиотеки SwiftEntryKit
 class CustomNotification {
     
     static let sharedCustomNotification = CustomNotification()
     
-    // Cumputed for the sake of reusability
-    var bottomAlertAttributes: EKAttributes {
+    //MARK: Атрибуты для уведомления с текстом
+    var floatAlertAttributes: EKAttributes {
         var attributes = EKAttributes.topFloat
         attributes.hapticFeedbackType = .none
         attributes.displayDuration = .infinity
@@ -62,6 +63,15 @@ class CustomNotification {
         return attributes
     }
     
+    //MARK: Функция уведомления с текстом
+    /// Функция уведомления с текстом
+    /// - Parameters:
+    ///   - title: Заголовок
+    ///   - desc: Основной текст уведомления
+    ///   - textColor: Цвет текста уведомления
+    ///   - imageColor: Цвет картинки уведомления
+    ///   - imageName: Название изображения
+    /// - Returns: Уведомление
     func getFloatContentView(title: String, desc: String, textColor: EKColor, imageColor: EKColor?, imageName: String? = nil) -> EKNotificationMessageView {
         let title = EKProperty.LabelContent(
             text: title,
@@ -100,8 +110,8 @@ class CustomNotification {
         return EKNotificationMessageView(with: notificationMessage)
     }
     
+    //MARK: Атрибуты системного уведомления (Зелёный)
     var saveNotifAttributes:EKAttributes {
-        // Preset I
         var noteAttributes = EKAttributes.topNote
         noteAttributes.displayMode = EKAttributes.DisplayMode.inferred
         noteAttributes.hapticFeedbackType = .none
@@ -122,7 +132,10 @@ class CustomNotification {
         return noteAttributes
     }
     
-    // Bumps a standard note
+    //MARK: Системное уведомление
+    /// Системное уведомление
+    /// - Parameter text: Текст уведомления
+    /// - Returns: Уведомление
     func getSaveNotifContentView(text: String) -> EKNoteMessageView{
         let text = text
         let style = EKProperty.LabelStyle(

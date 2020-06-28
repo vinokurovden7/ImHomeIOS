@@ -10,8 +10,7 @@ import UIKit
 import SwiftEntryKit
 
 class LoginVC: UIViewController {
-    var i = 0
-
+    
     //MARK: IBOutlets
     @IBOutlet var fonImage: UIImageView!
     @IBOutlet var nameTextField: UITextField! {
@@ -37,13 +36,17 @@ class LoginVC: UIViewController {
         self.view.endEditing(true)
     }
     
+    //MARK: Забыл пароль
     @IBAction func fogotPasswordBtnAction(_ sender: CustomButton) {
         
     }
     
+    //MARK: Регистрация
     @IBAction func registrationBtnAction(_ sender: CustomButton) {
         performSegue(withIdentifier: "showRegistrationScreen", sender: self)
     }
+    
+    //MARK: Авторизация
     @IBAction func autorizeBtnAction(_ sender: CustomButton) {
         var desc = ""
         if passwordTextField.text!.isEmpty {
@@ -56,7 +59,7 @@ class LoginVC: UIViewController {
         
         if nameTextField.text!.isEmpty || passwordTextField.text!.isEmpty {
             let contentView = CustomNotification.sharedCustomNotification.getFloatContentView(title: "Упс", desc: desc, textColor: EKColor(UIColor(named: "notifTextViewColor")!), imageColor: EKColor(UIColor.systemOrange), imageName: "exclamationmark.triangle.fill")
-            let attributes = CustomNotification.sharedCustomNotification.bottomAlertAttributes
+            let attributes = CustomNotification.sharedCustomNotification.floatAlertAttributes
             SwiftEntryKit.display(entry: contentView, using: attributes)
             UINotificationFeedbackGenerator().notificationOccurred(.error)
         } else {
@@ -68,18 +71,6 @@ class LoginVC: UIViewController {
     //MARK: Стиль статус бара
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
-    }
-    
-    //MARK: Анимация полей ввода
-    fileprivate func animateTextField(_ animationView: UIView){
-        UIView.animate(withDuration: 0.12, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 4, options: .curveEaseIn, animations: {
-            animationView.frame.size.width += 10
-        }) { (_) in
-            UIView.animate(withDuration: 0.12, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
-                animationView.frame.size.width -= 10
-            }, completion: nil)
-
-        }
     }
     
     //MARK: Настройка полей ввода

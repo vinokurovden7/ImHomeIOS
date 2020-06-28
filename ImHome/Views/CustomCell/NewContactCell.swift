@@ -8,8 +8,10 @@
 
 import UIKit
 
+/// Кастомный класс ячейки нового контакта
 class NewContactCell: UITableViewCell {
 
+    //MARK: View подложка под изображение для добавления тени
     @IBOutlet weak var backgroundViewNewContactImage: UIView! {
         didSet {
             backgroundViewNewContactImage.layer.cornerRadius = backgroundViewNewContactImage.frame.height / 2
@@ -19,6 +21,7 @@ class NewContactCell: UITableViewCell {
             backgroundViewNewContactImage.layer.shadowColor = UIColor.black.cgColor
         }
     }
+    //MARK: Изображение контакта
     @IBOutlet weak var newContactImage: UIImageView! {
         didSet {
             newContactImage.layer.cornerRadius = newContactImage.frame.height / 2

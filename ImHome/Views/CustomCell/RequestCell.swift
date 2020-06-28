@@ -8,14 +8,21 @@
 
 import UIKit
 
+/// Кастомный класс ячейки из раздела запросов
 class RequestCell: UITableViewCell {
     
+    //MARK: Constraints
     @IBOutlet weak var rightStackConstraint: NSLayoutConstraint!
     @IBOutlet weak var leftStackConstraint: NSLayoutConstraint!
+    //MARK: Кнопка отмены
     @IBOutlet weak var declineButton: UIButton!
+    //MARK: Кнопка добавления
     @IBOutlet weak var acceptButton: UIButton!
+    //MARK: Стек с кнопками
     @IBOutlet weak var buttonStack: UIStackView!
+    //MARK: Главное фоновое view
     @IBOutlet weak var mainView: UIView!
+    //MARK: View подложка под изображение для добавления тени
     @IBOutlet weak var backImageRequestView: UIView! {
         didSet {
             backImageRequestView.layer.cornerRadius = backImageRequestView.frame.height / 2
@@ -25,6 +32,7 @@ class RequestCell: UITableViewCell {
             backImageRequestView.layer.shadowColor = UIColor.black.cgColor
         }
     }
+    //MARK: Изображение контакта
     @IBOutlet weak var imageRequest: UIImageView! {
         didSet {
             imageRequest.layer.cornerRadius = imageRequest.frame.height / 2

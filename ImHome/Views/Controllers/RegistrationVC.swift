@@ -11,20 +11,8 @@ import SwiftEntryKit
 import NVActivityIndicatorView
 
 class RegistrationVC: UITableViewController {
-    
-    private var indicator: NVActivityIndicatorView = {
-       
-        let indicator = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 80, height: 80), type: .ballScaleMultiple, color: .red, padding: 5)
-        indicator.color = .white
-        indicator.backgroundColor = UIColor(named: "backgroundViewColor")!
-        indicator.layer.cornerRadius = indicator.frame.height / 2
-        indicator.layer.borderColor = UIColor.white.cgColor
-        indicator.layer.borderWidth = 2
-        indicator.translatesAutoresizingMaskIntoConstraints = false
-        return indicator
-        
-    }()
 
+    //MARK: IBOutlets
     @IBOutlet var emailTextField: UITextField! {
         didSet {
             textFieldSetup(textField: emailTextField)
@@ -80,6 +68,19 @@ class RegistrationVC: UITableViewController {
         }
     }
     
+    //MARK: Variables
+    private var indicator: NVActivityIndicatorView = {
+        let indicator = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 80, height: 80), type: .ballScaleMultiple, color: .red, padding: 5)
+        indicator.color = .white
+        indicator.backgroundColor = UIColor(named: "backgroundViewColor")!
+        indicator.layer.cornerRadius = indicator.frame.height / 2
+        indicator.layer.borderColor = UIColor.white.cgColor
+        indicator.layer.borderWidth = 2
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        return indicator
+    }()
+    
+    //MARK: Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.backgroundView = UIImageView(image: UIImage(named: "fonBackground"))
@@ -89,6 +90,8 @@ class RegistrationVC: UITableViewController {
         indicator.centerXAnchor.constraint(equalToSystemSpacingAfter: self.view.centerXAnchor, multiplier: 0).isActive = true
     }
     
+    //MARK: Кастомные функции
+    //MARK: Настройка текстовых полей
     fileprivate func textFieldSetup(textField: UITextField){
         let paddingView : UIView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
         textField.leftView = paddingView
@@ -123,13 +126,15 @@ class RegistrationVC: UITableViewController {
 
         if !description.isEmpty {
             let contentView = CustomNotification.sharedCustomNotification.getFloatContentView(title: "Упс", desc: description, textColor: EKColor(UIColor(named: "notifTextViewColor")!), imageColor: EKColor(UIColor.systemOrange), imageName: "exclamationmark.triangle.fill")
-            let attributes = CustomNotification.sharedCustomNotification.bottomAlertAttributes
+            let attributes = CustomNotification.sharedCustomNotification.floatAlertAttributes
             SwiftEntryKit.display(entry: contentView, using: attributes)
             return
         } else {
             indicator.startAnimating()
         }
     }
+    
+    //MARK: Возвращение на экран авторизации
     @IBAction func goLoginScreenBtnAction(_ sender: CustomButton) {
         dismiss(animated: true)
     }

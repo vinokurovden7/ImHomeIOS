@@ -17,13 +17,13 @@ class CustomButton: UIButton {
         super.init(coder: coder)
         self.layer.cornerRadius = self.frame.height / 2
         self.clipsToBounds = true
-        self.addTarget(self, action: #selector(downTapped), for: .touchDown)
-        self.addTarget(self, action: #selector(upInside), for: .touchUpInside)
-        self.addTarget(self, action: #selector(dragExit), for: .touchDragExit)
+        self.addTarget(self, action: #selector(touchDown), for: .touchDown)
+        self.addTarget(self, action: #selector(touchUpInside), for: .touchUpInside)
+        self.addTarget(self, action: #selector(touchDragExit), for: .touchDragExit)
     }
     
-    /// Функция, отвечающая за нажатие на кнопку
-    @objc func downTapped(){
+    //MARK: Функция, отвечающая за нажатие на кнопку
+    @objc func touchDown(){
         self.isHighlighted = true
         UIView.animate(withDuration: 0.12, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 4, options: .curveEaseIn, animations: {
             self.transform.a = 0.9
@@ -31,19 +31,18 @@ class CustomButton: UIButton {
         })
     }
 
-    /// Функция, отвечающая за отпускание нажатой кнопки
-    @objc func upInside(){
+    //MARK: Функция, отвечающая за отпускание нажатой кнопки
+    @objc func touchUpInside(){
         self.isHighlighted = false
         UIImpactFeedbackGenerator.init(style: .soft).impactOccurred()
-        //Haptic.softFeedback.impactOccurred()
         UIView.animate(withDuration: 0.12, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
             self.transform.a = 1
             self.transform.d = 1
         })
     }
     
-    /// Функция, отвечающая за отведения пальца с кнопки без отпускания
-    @objc func dragExit(){
+    //MARK: Функция, отвечающая за отведения пальца с кнопки без отпускания
+    @objc func touchDragExit(){
         UIView.animate(withDuration: 0.12, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
             self.transform.a = 1
             self.transform.d = 1

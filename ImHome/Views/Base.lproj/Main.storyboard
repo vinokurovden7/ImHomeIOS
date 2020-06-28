@@ -384,7 +384,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="sendBtnAction:" destination="4ax-6k-BMS" eventType="touchUpInside" id="hWS-mC-1P6"/>
+                                    <action selector="sendBtnAction:" destination="4ax-6k-BMS" eventType="touchUpInside" id="DQN-fH-WiY"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="время" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8NV-MX-Qp8">

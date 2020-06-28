@@ -8,9 +8,13 @@
 
 import UIKit
 
+/// Кастомный класс ячейки из раздела контактов
 class ContactsCell: UICollectionViewCell {
+    //MARK: Фоновое View ячейки
     @IBOutlet weak var backgroundViewContacts: UIView!
+    //MARK: Constraint ширины ячейки для динамического изменения
     @IBOutlet weak var widthConstraintPlit: NSLayoutConstraint!
+    //MARK: View подложка под изображение для наложения тени
     @IBOutlet weak var backImageContactView: UIView! {
         didSet {
             backImageContactView.layer.cornerRadius = backImageContactView.frame.height / 2
@@ -20,6 +24,7 @@ class ContactsCell: UICollectionViewCell {
             backImageContactView.layer.shadowColor = UIColor.black.cgColor
         }
     }
+    //MARK: Изображение контакта
     @IBOutlet var imageContact: UIImageView! {
         didSet {
             imageContact.layer.cornerRadius = imageContact.frame.height / 2

@@ -8,23 +8,30 @@
 
 import UIKit
 
-private let reuseIdentifier = "contactsCell"
-private var searchController: UISearchController!
 
-let countItems = CGFloat(2)
-let paddingPlit = CGFloat(16)
 
 class ContactsVC: UICollectionViewController, UISearchBarDelegate {
     
+    //MARK: Variables
+    private let reuseIdentifier = "contactsCell"
+    private var searchController: UISearchController!
+
+    private let countItems = CGFloat(2)
+    private let paddingPlit = CGFloat(16)
+    
+    //MARK: Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setSearchNavController()
     }
     
+    //MARK: Обработчики
+    //MARK: Добавление нового контакта
     @IBAction func addContactBtnAction(_ sender: UIBarButtonItem) {
         UIImpactFeedbackGenerator.init(style: .soft).impactOccurred()
     }
+    
     //MARK: Setup
     /// Настройка searchController и  navigationController
     func setSearchNavController(){
@@ -83,12 +90,10 @@ extension ContactsVC: UICollectionViewDelegateFlowLayout {
     }
     
     // MARK: UICollectionViewDataSource
-
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
@@ -97,15 +102,13 @@ extension ContactsVC: UICollectionViewDelegateFlowLayout {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ContactsCell
-        
         cell.widthConstraintPlit.constant = (collectionView.frame.width - paddingPlit * countItems) / countItems
-        
         return cell
     }
 }
 
+//MARK: Extensions search results updating
 extension ContactsVC: UISearchResultsUpdating {
-    
     func updateSearchResults(for searchController: UISearchController) {
         print(searchController.searchBar.text ?? "")
     }
