@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 /// Класс кастомного NavigationController, устанавливающий светлый цвет
 class CustomNavigationViewController: UINavigationController {
     override var preferredStatusBarStyle : UIStatusBarStyle {
@@ -17,5 +16,4 @@ class CustomNavigationViewController: UINavigationController {
         }
         return .default
     }
-
 }

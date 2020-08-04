@@ -10,6 +10,36 @@ import UIKit
 
 class ProfileContactVC: UIViewController {
     
+    @IBOutlet weak var nameContactLabel: UILabel! {
+        didSet {
+            if color == UIColor.systemOrange {
+                nameContactLabel.textColor = .white
+            }
+        }
+    }
+    @IBOutlet weak var emailContactLabel: UILabel! {
+        didSet {
+            if color == UIColor.systemOrange {
+                emailContactLabel.textColor = .white
+            }
+        }
+    }
+    @IBOutlet weak var micTextLabel: UILabel! {
+        didSet {
+            if color == UIColor.systemOrange {
+                micTextLabel.textColor = .white
+            }
+        }
+    }
+    @IBOutlet weak var mapTextLabel: UILabel! {
+        didSet {
+            if color == UIColor.systemOrange {
+                mapTextLabel.textColor = .white
+            }
+        }
+    }
+    var color: UIColor?
+    
     //MARK: IBOutlets
     @IBOutlet weak var deletePersonBtn: UIButton! {
         didSet {
@@ -31,6 +61,11 @@ class ProfileContactVC: UIViewController {
             backgroundViewContactImage.layer.shadowOffset = CGSize(width: 0, height: 3)
             backgroundViewContactImage.layer.shadowOpacity = 1
             backgroundViewContactImage.layer.shadowColor = UIColor.black.cgColor
+        }
+    }
+    @IBOutlet weak var mainView: UIView! {
+        didSet {
+            mainView.backgroundColor = color ?? UIColor.white
         }
     }
     

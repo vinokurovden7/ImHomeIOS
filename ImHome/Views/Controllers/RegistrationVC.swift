@@ -131,6 +131,10 @@ class RegistrationVC: UITableViewController {
             return
         } else {
             indicator.startAnimating()
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5)) {
+                self.indicator.stopAnimating()
+                self.dismiss(animated: true)
+            }
         }
     }
     

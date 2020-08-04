@@ -8,16 +8,19 @@
 
 import UIKit
 
-
-
 class ContactsVC: UICollectionViewController, UISearchBarDelegate {
+    
+    @IBOutlet var myCollectionView: UICollectionView!
     
     //MARK: Variables
     private let reuseIdentifier = "contactsCell"
     private var searchController: UISearchController!
+    var row: Int?
 
+    //Количество ячеек в строке
     private let countItems = CGFloat(2)
-    private let paddingPlit = CGFloat(16)
+    //Отступ от краев экрана и по-середине
+    private let paddingPlit = CGFloat(25)
     
     //MARK: Жизненный цикл
     override func viewDidLoad() {
@@ -57,6 +60,16 @@ class ContactsVC: UICollectionViewController, UISearchBarDelegate {
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showContactProfile" {
+            guard let destination = segue.destination as? ProfileContactVC else { return }
+            if row == 2 {
+                destination.color = .systemOrange
+            }
+            
+        }
+    }
 
 }
 
@@ -66,12 +79,19 @@ extension ContactsVC: UICollectionViewDelegateFlowLayout {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell: ContactsCell = collectionView.cellForItem(at: indexPath) as? ContactsCell else {return}
         cell.pulseAnimate(cell) {
-            self.performSegue(withIdentifier: "showContactProfile", sender: self)
+            self.row = indexPath.row
+            switch indexPath.row {
+                case 0:
+                    self.performSegue(withIdentifier: "showHelpMessageProfileContact", sender: self)
+                    break
+                case 1:
+                    self.performSegue(withIdentifier: "showHelpMapProfileContact", sender: self)
+                    break
+                default:
+                    self.performSegue(withIdentifier: "showContactProfile", sender: self)
+                break
+            }
         }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return CGFloat(bitPattern: 10)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -102,6 +122,22 @@ extension ContactsVC: UICollectionViewDelegateFlowLayout {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ContactsCell
+        if indexPath.row < 2 {
+            cell.backgroundViewContacts.backgroundColor = .systemRed
+            cell.nameContact.textColor = .white
+            cell.emailContact.textColor = .white
+            cell.micButton.tintColor = .white
+            cell.mapButton.tintColor = .white
+            cell.messageButton.tintColor = .white
+        }
+        if indexPath.row == 2 {
+            cell.backgroundViewContacts.backgroundColor = .systemOrange
+            cell.nameContact.textColor = .white
+            cell.emailContact.textColor = .white
+            cell.micButton.tintColor = .white
+            cell.mapButton.tintColor = .white
+            cell.messageButton.tintColor = .white
+        }
         cell.widthConstraintPlit.constant = (collectionView.frame.width - paddingPlit * countItems) / countItems
         return cell
     }

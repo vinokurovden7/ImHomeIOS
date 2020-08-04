@@ -63,6 +63,8 @@ class LoginVC: UIViewController {
             SwiftEntryKit.display(entry: contentView, using: attributes)
             UINotificationFeedbackGenerator().notificationOccurred(.error)
         } else {
+            self.nameTextField.text = ""
+            self.passwordTextField.text = ""
             performSegue(withIdentifier: "autorizeAction", sender: self)
         }
     }
@@ -98,8 +100,3 @@ class LoginVC: UIViewController {
         textField.overrideUserInterfaceStyle = .light
     }
 }
-
-
-
-
-

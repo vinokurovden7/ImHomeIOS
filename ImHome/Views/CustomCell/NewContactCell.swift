@@ -11,6 +11,9 @@ import UIKit
 /// Кастомный класс ячейки нового контакта
 class NewContactCell: UITableViewCell {
 
+    @IBOutlet weak var nameContact: UILabel!
+    @IBOutlet weak var emailContact: UILabel!
+
     //MARK: View подложка под изображение для добавления тени
     @IBOutlet weak var backgroundViewNewContactImage: UIView! {
         didSet {
@@ -21,6 +24,7 @@ class NewContactCell: UITableViewCell {
             backgroundViewNewContactImage.layer.shadowColor = UIColor.black.cgColor
         }
     }
+    
     //MARK: Изображение контакта
     @IBOutlet weak var newContactImage: UIImageView! {
         didSet {

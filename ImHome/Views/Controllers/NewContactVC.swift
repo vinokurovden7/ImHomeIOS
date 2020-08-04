@@ -12,9 +12,9 @@ class NewContactVC: UIViewController, UISearchBarDelegate {
     
     //MARK: IBOutlets
     @IBOutlet weak var myTableView: UITableView!
-    
     //MARK: Variables
     private var searchController: UISearchController!
+    private var counRecord = 10
     
     //MARK: Жизненный цикл
     override func viewDidLoad() {
@@ -54,15 +54,26 @@ class NewContactVC: UIViewController, UISearchBarDelegate {
 extension NewContactVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return counRecord
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! NewContactCell
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor.clear
+        cell.selectedBackgroundView = backgroundView
+        cell.nameContact.text = "Иванов Иван Иванович"
         return cell
-        
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+//        counRecord -= 1
+//        self.myTableView.deleteRows(at: [indexPath], with: .fade)
+        self.performSegue(withIdentifier: "showAddedContact", sender: self)
+    }
+    
 }
 
 //MARK: Extensions search results updating

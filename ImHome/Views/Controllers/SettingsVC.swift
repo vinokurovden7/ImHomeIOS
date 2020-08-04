@@ -26,11 +26,8 @@ class SettingsVC: UITableViewController {
             backgroundImageView.layer.shadowColor = UIColor.black.cgColor
         }
     }
-    @IBOutlet weak var editAccountButton: UIButton! {
-        didSet {
-            editAccountButton.layer.cornerRadius = editAccountButton.frame.height / 2
-        }
-    }
+    @IBOutlet weak var editAccountButton: CustomButton!
+    @IBOutlet weak var logoutAccounButton: CustomButton!
     @IBOutlet weak var profileImageVIew: UIImageView! {
         didSet {
             profileImageVIew.layer.cornerRadius = profileImageVIew.frame.width / 2
@@ -56,6 +53,11 @@ class SettingsVC: UITableViewController {
     //MARK: Редактирование профиля
     @IBAction func editProfileBtnAction(_ sender: CustomButton) {
         performSegue(withIdentifier: "showProfile", sender: self)
+    }
+    //MARK: Выход из аккаунта
+    @IBAction func logoutAccount(_ sender: CustomButton) {
+        dismiss(animated: true)
+        performSegue(withIdentifier: "logoutAccount", sender: self)
     }
 
     //MARK: Визуальное оформление

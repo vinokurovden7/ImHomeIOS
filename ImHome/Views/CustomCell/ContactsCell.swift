@@ -10,6 +10,11 @@ import UIKit
 
 /// Кастомный класс ячейки из раздела контактов
 class ContactsCell: UICollectionViewCell {
+    @IBOutlet weak var nameContact: UILabel!
+    @IBOutlet weak var emailContact: UILabel!
+    @IBOutlet weak var micButton: UIImageView!
+    @IBOutlet weak var mapButton: UIImageView!
+    @IBOutlet weak var messageButton: UIImageView!
     //MARK: Фоновое View ячейки
     @IBOutlet weak var backgroundViewContacts: UIView!
     //MARK: Constraint ширины ячейки для динамического изменения
