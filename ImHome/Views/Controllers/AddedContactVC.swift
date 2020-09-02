@@ -10,9 +10,13 @@ import UIKit
 
 class AddedContactVC: UIViewController {
     
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var messageTextView: UITextView!
     @IBOutlet weak var imageContact: UIImageView! {
         didSet {
-            imageContact.layer.cornerRadius = 20
+            imageContact.layer.cornerRadius = imageContact.frame.height / 2
             imageContact.layer.borderWidth = 2
             imageContact.layer.borderColor = UIColor.white.cgColor
             imageContact.clipsToBounds = true
@@ -20,7 +24,7 @@ class AddedContactVC: UIViewController {
     }
     @IBOutlet weak var backgroundViewContactImage: UIView! {
         didSet {
-            backgroundViewContactImage.layer.cornerRadius = 20
+            backgroundViewContactImage.layer.cornerRadius = backgroundViewContactImage.frame.height / 2
             backgroundViewContactImage.layer.shadowRadius = 4
             backgroundViewContactImage.layer.shadowOffset = CGSize(width: 0, height: 3)
             backgroundViewContactImage.layer.shadowOpacity = 1
@@ -30,8 +34,54 @@ class AddedContactVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //MARK: Наблюдатель появления и скрытия клавиатуры
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWasShown), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillBeHidden), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+    }
+    
+    //MARK: Обработчик появления клавиатуры
+    @objc func keyboardWasShown(_ notification: Notification) {
+        if self.messageTextView.isEditable {
+           // let keyboardInfo  = notification.userInfo as NSDictionary?
+           // let keyboardFrameEnd: NSValue? = (keyboardInfo?.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as? NSValue)
+            //let keyboardFrameEndRect: CGRect? = keyboardFrameEnd?.cgRectValue
+            self.bottomConstraint.constant = 210
+            self.view.layoutIfNeeded()
+//            if messageTextView.frame.origin.y + messageTextView.frame.size.height + 30 >= (keyboardFrameEndRect?.origin.y)! {
+//                UIView.animate(withDuration: 0.3, delay: 0, options: .transitionFlipFromTop, animations: {() -> Void in
+////                    self.topConstraint.constant = -(self.messageTextView.frame.origin.y + self.messageTextView.frame.size.height - (keyboardFrameEndRect?.origin.y)!) + 50
+//                    self.bottomConstraint.constant += keyboardFrameEndRect?.origin.y ?? 0
+//                    self.view.layoutIfNeeded()
+//                }, completion: {(_ finished: Bool) -> Void in
+//
+//                })
+//            }
+        }
+//        } else {
+//            let keyboardInfo  = notification.userInfo as NSDictionary?
+//            let keyboardFrameEnd: NSValue? = (keyboardInfo?.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as? NSValue)
+//            let keyboardFrameEndRect: CGRect? = keyboardFrameEnd?.cgRectValue
+//            if messageTextView.frame.origin.y + messageTextView.frame.size.height + 30 >= (keyboardFrameEndRect?.origin.y)! {
+//                UIView.animate(withDuration: 0.3, delay: 0, options: .transitionFlipFromTop, animations: {() -> Void in
+//                    self.bottomConstraint.constant = (self.delayTextField.frame.origin.y + self.delayTextField.frame.size.height - (keyboardFrameEndRect?.origin.y)!) - 15.0
+//                    self.view.layoutIfNeeded()
+//                }, completion: {(_ finished: Bool) -> Void in
+//
+//                })
+//            }
+//        }
+    }
 
-        // Do any additional setup after loading the view.
+    //MARK: Обработчик скрытия клавиатуры
+    @objc func keyboardWillBeHidden(_ notification: Notification) {
+        UIView.animate(withDuration: 0.3, animations: {() -> Void in
+            self.topConstraint.constant = 10
+            self.bottomConstraint.constant = 10
+            self.view.layoutIfNeeded()
+            
+        })
     }
 
 }

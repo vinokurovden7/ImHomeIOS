@@ -11,6 +11,7 @@ import UIKit
 /// Кастомный класс ячейки нового контакта
 class NewContactCell: UITableViewCell {
 
+    @IBOutlet weak var mainViewContactCell: UIView!
     @IBOutlet weak var nameContact: UILabel!
     @IBOutlet weak var emailContact: UILabel!
 
@@ -31,6 +32,25 @@ class NewContactCell: UITableViewCell {
             newContactImage.layer.cornerRadius = newContactImage.frame.height / 2
             newContactImage.layer.borderColor = UIColor.white.cgColor
             newContactImage.layer.borderWidth = 2
+        }
+    }
+    
+    /// Пульсирующая анимация, имитирующая нажатие
+    /// - Parameters:
+    ///   - animationView: view, к которому применяется анимация
+    func pulseAnimate(_ animationView: UIView, completion: @escaping () -> ()){
+        UIView.animate(withDuration: 0.12, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 4, options: .curveEaseIn, animations: {
+            animationView.transform.a = 0.9
+            animationView.transform.d = 0.9
+            UIImpactFeedbackGenerator.init(style: .soft).impactOccurred()
+        }) { (_) in
+            UIView.animate(withDuration: 0.12, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
+                animationView.transform.a = 1
+                animationView.transform.d = 1
+            }, completion: {(_) in
+                completion()
+            })
+
         }
     }
     

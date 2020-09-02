@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftEntryKit
+import RealmSwift
 
 class LoginVC: UIViewController {
     
@@ -27,7 +28,6 @@ class LoginVC: UIViewController {
     //MARK: Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     //MARK: Обработчики
@@ -38,7 +38,6 @@ class LoginVC: UIViewController {
     
     //MARK: Забыл пароль
     @IBAction func fogotPasswordBtnAction(_ sender: CustomButton) {
-        
     }
     
     //MARK: Регистрация

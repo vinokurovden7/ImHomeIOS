@@ -22,6 +22,10 @@ class RequestCell: UITableViewCell {
     @IBOutlet weak var buttonStack: UIStackView!
     //MARK: Главное фоновое view
     @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var messageTextLabel: UILabel!
+    @IBOutlet weak var nameContactLabel: UILabel!
+    @IBOutlet weak var emailContactLabel: UILabel!
+    @IBOutlet weak var staticMessageLabel: UILabel!
     //MARK: View подложка под изображение для добавления тени
     @IBOutlet weak var backImageRequestView: UIView! {
         didSet {

@@ -69,9 +69,11 @@ extension NewContactVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-//        counRecord -= 1
-//        self.myTableView.deleteRows(at: [indexPath], with: .fade)
-        self.performSegue(withIdentifier: "showAddedContact", sender: self)
+        guard let cell: NewContactCell = myTableView.cellForRow(at: indexPath) as? NewContactCell else {return}
+        cell.pulseAnimate(cell.mainViewContactCell) {
+            self.performSegue(withIdentifier: "showAddedContact", sender: self)
+        }
+        
     }
     
 }

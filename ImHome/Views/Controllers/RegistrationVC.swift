@@ -70,12 +70,12 @@ class RegistrationVC: UITableViewController {
     
     //MARK: Variables
     private var indicator: NVActivityIndicatorView = {
-        let indicator = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 80, height: 80), type: .ballScaleMultiple, color: .red, padding: 5)
-        indicator.color = .white
-        indicator.backgroundColor = UIColor(named: "backgroundViewColor")!
+        let indicator = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 60, height: 60), type: .ballPulse, color: .red, padding: 0)
+        indicator.color = .gray
+        //indicator.backgroundColor = UIColor(named: "backgroundViewColor")!
         indicator.layer.cornerRadius = indicator.frame.height / 2
         indicator.layer.borderColor = UIColor.white.cgColor
-        indicator.layer.borderWidth = 2
+        indicator.layer.borderWidth = 0
         indicator.translatesAutoresizingMaskIntoConstraints = false
         return indicator
     }()

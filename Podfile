@@ -8,6 +8,7 @@ target 'ImHome' do
   # Pods for I'm home
   pod 'SwiftEntryKit', '1.2.3'
   pod 'NVActivityIndicatorView'
+  pod 'RealmSwift'
 
   target 'ImHomeTests' do
     inherit! :search_paths

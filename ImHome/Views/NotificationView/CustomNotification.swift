@@ -15,6 +15,7 @@ class CustomNotification {
     static let sharedCustomNotification = CustomNotification()
     
     //MARK: Атрибуты для уведомления с текстом
+    ///Атрибуты для уведомления с текстом
     var floatAlertAttributes: EKAttributes {
         var attributes = EKAttributes.topFloat
         attributes.hapticFeedbackType = .none

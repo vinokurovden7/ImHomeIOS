@@ -9,6 +9,8 @@
 import UIKit
 
 class RequestVC: UIViewController {
+    
+    let arrayMessage = ["There are numerous success stories you will hear about businesses making it good on the internet . The troubling thing is, there are maybe a tenfold or even a hundredfold of stories inconsistent to theirs. Many have unsuccessfully launched a business venture that is internet based but only a handful shall succeed. There are numerous success stories you will hear about businesses making it good on the internet . The troubling thing is, there are maybe a tenfold or even a hundredfold of stories inconsistent to theirs. Many have unsuccessfully launched a business venture that is internet based but only a handful shall succeed.","There are numerous success stories you will hear about businesses making it good on the internet. Many have unsuccessfully. inconsistent to theirs", "Many have unsuccessfully "]
 
     //MARK: IBOutlets
     @IBOutlet var requestTableView: UITableView!
@@ -30,11 +32,18 @@ class RequestVC: UIViewController {
 extension RequestVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return arrayMessage.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "requestCell") as! RequestCell
+//        var rowHeight = cell.imageRequest.frame.height + cell.nameContactLabel.frame.height + cell.emailContactLabel.frame.height
+//        rowHeight += cell.staticMessageLabel.frame.height + cell.messageTextLabel.frame.height
+//        rowHeight += cell.buttonStack.frame.height + 38
+//
+//        tableView.rowHeight = rowHeight > 330 ? rowHeight : 330
+        
+        cell.messageTextLabel.text = arrayMessage[indexPath.row]
         return cell
     }
     

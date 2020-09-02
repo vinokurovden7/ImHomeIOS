@@ -28,6 +28,8 @@
 		92628B4C24936111003CCA3F /* CustomNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92628B4B24936111003CCA3F /* CustomNotification.swift */; };
 		9268A12424862612007D75BD /* CustomNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9268A12324862612007D75BD /* CustomNavigationViewController.swift */; };
 		92925C7324751D63000F6500 /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92925C7224751D63000F6500 /* RegistrationVC.swift */; };
+		92B82DB224ED7DC3002B8366 /* DBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B82DB124ED7DC3002B8366 /* DBModel.swift */; };
+		92B82DB424ED7DDF002B8366 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B82DB324ED7DDF002B8366 /* StorageManager.swift */; };
 		92CD7577247BDA4E00EED562 /* DelayMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CD7576247BDA4E00EED562 /* DelayMessageVC.swift */; };
 		92CD7579247BFC5000EED562 /* ProfileContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CD7578247BFC5000EED562 /* ProfileContactVC.swift */; };
 		92DAA1A124A99D4C0065A6F4 /* HelpProfileContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DAA1A024A99D4C0065A6F4 /* HelpProfileContactVC.swift */; };
@@ -96,6 +98,8 @@
 		9268A12324862612007D75BD /* CustomNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationViewController.swift; sourceTree = "<group>"; };
 		927E4982249278C4009B99DD /* SwiftEntryKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftEntryKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92925C7224751D63000F6500 /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
+		92B82DB124ED7DC3002B8366 /* DBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBModel.swift; sourceTree = "<group>"; };
+		92B82DB324ED7DDF002B8366 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		92CD7576247BDA4E00EED562 /* DelayMessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayMessageVC.swift; sourceTree = "<group>"; };
 		92CD7578247BFC5000EED562 /* ProfileContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContactVC.swift; sourceTree = "<group>"; };
 		92DAA1A024A99D4C0065A6F4 /* HelpProfileContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpProfileContactVC.swift; sourceTree = "<group>"; };
@@ -161,6 +165,7 @@
 		922D2B0E246ACBB400CA6492 /* ImHome */ = {
 			isa = PBXGroup;
 			children = (
+				92B82DB024ED7751002B8366 /* Realm */,
 				92827C3C2484C543000B4318 /* DefaultClasses */,
 				9243481C2477D81200649D0B /* Protocols */,
 				9268A11E24862272007D75BD /* CustomElements */,
@@ -270,6 +275,15 @@
 				922D2B11246ACBB400CA6492 /* SceneDelegate.swift */,
 			);
 			path = DefaultClasses;
+			sourceTree = "<group>";
+		};
+		92B82DB024ED7751002B8366 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				92B82DB124ED7DC3002B8366 /* DBModel.swift */,
+				92B82DB324ED7DDF002B8366 /* StorageManager.swift */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 		9B721344D61F96F06BE4904A /* Frameworks */ = {
@@ -551,6 +565,7 @@
 				924B094B247D7B74002F7267 /* NewContactCell.swift in Sources */,
 				924348262478FB0C00649D0B /* RequestVC.swift in Sources */,
 				92E1E04024D8F88500D17FF7 /* AddedContactVC.swift in Sources */,
+				92B82DB224ED7DC3002B8366 /* DBModel.swift in Sources */,
 				922D2B10246ACBB400CA6492 /* AppDelegate.swift in Sources */,
 				924B0949247D6BA9002F7267 /* NewContactVC.swift in Sources */,
 				924348242478049D00649D0B /* ContactsVC.swift in Sources */,
@@ -563,6 +578,7 @@
 				92925C7324751D63000F6500 /* RegistrationVC.swift in Sources */,
 				922D2B12246ACBB400CA6492 /* SceneDelegate.swift in Sources */,
 				92628B4C24936111003CCA3F /* CustomNotification.swift in Sources */,
+				92B82DB424ED7DDF002B8366 /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

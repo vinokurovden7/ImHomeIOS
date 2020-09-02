@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsVC: UITableViewController {
+class SettingsVC: UITableViewController, UITextFieldDelegate {
 
     //MARK: IBOutlets
     @IBOutlet weak var timeCancelSOSSignal: UITextField! {
@@ -58,6 +58,22 @@ class SettingsVC: UITableViewController {
     @IBAction func logoutAccount(_ sender: CustomButton) {
         dismiss(animated: true)
         performSegue(withIdentifier: "logoutAccount", sender: self)
+    }
+    //MARK: Ограничение на ввод больше 2 цифр
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if Int(string) ?? 0 > 0 && timeCancelSOSSignal.text?.count ?? 0 > 0 && Int(timeCancelSOSSignal.text!) ?? 0 >= 3 {
+            timeCancelSOSSignal.text = "30"
+        }
+        
+        if range.length + range.location > (timeCancelSOSSignal.text?.count)! {
+            return false
+        }
+        
+        let newLimit = (timeCancelSOSSignal.text?.count)! + string.count - range.length
+        
+        return newLimit <= 2
+        
     }
 
     //MARK: Визуальное оформление
