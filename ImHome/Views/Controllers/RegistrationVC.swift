@@ -80,6 +80,8 @@ class RegistrationVC: UITableViewController {
         return indicator
     }()
     
+    private let myNotification = CustomNotification()
+    
     //MARK: Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -125,9 +127,7 @@ class RegistrationVC: UITableViewController {
         }
 
         if !description.isEmpty {
-            let contentView = CustomNotification.sharedCustomNotification.getFloatContentView(title: "Упс", desc: description, textColor: EKColor(UIColor(named: "notifTextViewColor")!), imageColor: EKColor(UIColor.systemOrange), imageName: "exclamationmark.triangle.fill")
-            let attributes = CustomNotification.sharedCustomNotification.floatAlertAttributes
-            SwiftEntryKit.display(entry: contentView, using: attributes)
+            myNotification.showNotification(title: "Упс", message: description, imageColor: nil, image: nil)
             return
         } else {
             indicator.startAnimating()

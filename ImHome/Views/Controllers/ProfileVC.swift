@@ -72,6 +72,8 @@ class ProfileVC: UITableViewController {
         }
     }
     
+    private let myNotification = CustomNotification()
+    
     //MARK: Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,8 +89,20 @@ class ProfileVC: UITableViewController {
     }
     //MARK: Сохранение
     @IBAction func saveBtnAction(_ sender: CustomButton) {
-        SwiftEntryKit.display(entry: CustomNotification.sharedCustomNotification.getSaveNotifContentView(text: "Сохранено"), using: CustomNotification.sharedCustomNotification.saveNotifAttributes)
-        dismiss(animated: true)
+        
+        if emailTextField.text!.isEmpty {
+            myNotification.showNotification(title: "Упс", message: "Укажите email", imageColor: nil, image: nil)
+            return
+        } else if secondNameTextField.text!.isEmpty {
+            myNotification.showNotification(title: "Упс", message: "Укажите фамилию", imageColor: nil, image: nil)
+            return
+        } else if firstNameTextField.text!.isEmpty {
+            myNotification.showNotification(title: "Упс", message: "Укажите имя", imageColor: nil, image: nil)
+            return
+        } else {
+            myNotification.miniNotification(text: "Сохранено", color: .systemGreen)
+            dismiss(animated: true)
+        }
     }
     
     //MARK: Визуальное оформление

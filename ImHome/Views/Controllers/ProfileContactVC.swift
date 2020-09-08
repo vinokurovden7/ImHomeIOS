@@ -65,7 +65,7 @@ class ProfileContactVC: UIViewController {
     }
     @IBOutlet weak var mainView: UIView! {
         didSet {
-            mainView.backgroundColor = color ?? UIColor.white
+            mainView.backgroundColor = color ?? UIColor.init(named: "viewPlitsColor")
         }
     }
     

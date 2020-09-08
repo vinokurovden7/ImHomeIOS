@@ -12,6 +12,7 @@ class AddedContactVC: UIViewController {
     
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomButtonAddContact: CustomButton!
     
     @IBOutlet weak var messageTextView: UITextView!
     @IBOutlet weak var imageContact: UIImageView! {
@@ -44,34 +45,16 @@ class AddedContactVC: UIViewController {
     //MARK: Обработчик появления клавиатуры
     @objc func keyboardWasShown(_ notification: Notification) {
         if self.messageTextView.isEditable {
-           // let keyboardInfo  = notification.userInfo as NSDictionary?
-           // let keyboardFrameEnd: NSValue? = (keyboardInfo?.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as? NSValue)
-            //let keyboardFrameEndRect: CGRect? = keyboardFrameEnd?.cgRectValue
-            self.bottomConstraint.constant = 210
-            self.view.layoutIfNeeded()
-//            if messageTextView.frame.origin.y + messageTextView.frame.size.height + 30 >= (keyboardFrameEndRect?.origin.y)! {
-//                UIView.animate(withDuration: 0.3, delay: 0, options: .transitionFlipFromTop, animations: {() -> Void in
-////                    self.topConstraint.constant = -(self.messageTextView.frame.origin.y + self.messageTextView.frame.size.height - (keyboardFrameEndRect?.origin.y)!) + 50
-//                    self.bottomConstraint.constant += keyboardFrameEndRect?.origin.y ?? 0
-//                    self.view.layoutIfNeeded()
-//                }, completion: {(_ finished: Bool) -> Void in
-//
-//                })
-//            }
+            let keyboardInfo  = notification.userInfo as NSDictionary?
+            let keyboardFrameEnd: NSValue? = (keyboardInfo?.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as? NSValue)
+            let keyboardFrameEndRect: CGRect? = keyboardFrameEnd?.cgRectValue
+            UIView.animate(withDuration: 0.3, delay: 0, options: .transitionFlipFromTop, animations: {() -> Void in
+                self.bottomConstraint.constant = (self.messageTextView.frame.origin.y + self.messageTextView.frame.size.height - (keyboardFrameEndRect?.origin.y)!) + 70.0
+                self.view.layoutIfNeeded()
+            }, completion: {(_ finished: Bool) -> Void in
+                
+            })
         }
-//        } else {
-//            let keyboardInfo  = notification.userInfo as NSDictionary?
-//            let keyboardFrameEnd: NSValue? = (keyboardInfo?.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as? NSValue)
-//            let keyboardFrameEndRect: CGRect? = keyboardFrameEnd?.cgRectValue
-//            if messageTextView.frame.origin.y + messageTextView.frame.size.height + 30 >= (keyboardFrameEndRect?.origin.y)! {
-//                UIView.animate(withDuration: 0.3, delay: 0, options: .transitionFlipFromTop, animations: {() -> Void in
-//                    self.bottomConstraint.constant = (self.delayTextField.frame.origin.y + self.delayTextField.frame.size.height - (keyboardFrameEndRect?.origin.y)!) - 15.0
-//                    self.view.layoutIfNeeded()
-//                }, completion: {(_ finished: Bool) -> Void in
-//
-//                })
-//            }
-//        }
     }
 
     //MARK: Обработчик скрытия клавиатуры

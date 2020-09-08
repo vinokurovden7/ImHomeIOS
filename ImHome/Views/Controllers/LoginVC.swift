@@ -8,11 +8,13 @@
 
 import UIKit
 import SwiftEntryKit
-import RealmSwift
+import LocalAuthentication
 
 class LoginVC: UIViewController {
     
     //MARK: IBOutlets
+    
+    @IBOutlet weak var lockImageButton: CustomButton!
     @IBOutlet var fonImage: UIImageView!
     @IBOutlet var nameTextField: UITextField! {
         didSet {
@@ -25,9 +27,23 @@ class LoginVC: UIViewController {
         }
     }
     
+    private let myNotification = CustomNotification()
+    private let keychain = Keychain()
+    private let nameAccount = "Home"
+    private var context = LAContext()
+    
     //MARK: Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if let dict = keychain.getKey(userAccount: nameAccount) {
+            lockImageButton.tintColor = .systemGreen
+            nameTextField.text = dict["login"] as? String
+        } else {
+            lockImageButton.tintColor = .lightGray
+        }
     }
     
     //MARK: Обработчики
@@ -57,14 +73,54 @@ class LoginVC: UIViewController {
         }
         
         if nameTextField.text!.isEmpty || passwordTextField.text!.isEmpty {
-            let contentView = CustomNotification.sharedCustomNotification.getFloatContentView(title: "Упс", desc: desc, textColor: EKColor(UIColor(named: "notifTextViewColor")!), imageColor: EKColor(UIColor.systemOrange), imageName: "exclamationmark.triangle.fill")
-            let attributes = CustomNotification.sharedCustomNotification.floatAlertAttributes
-            SwiftEntryKit.display(entry: contentView, using: attributes)
-            UINotificationFeedbackGenerator().notificationOccurred(.error)
+            myNotification.showNotification(title: "Упс", message: desc, imageColor: nil, image: nil)
         } else {
-            self.nameTextField.text = ""
-            self.passwordTextField.text = ""
-            performSegue(withIdentifier: "autorizeAction", sender: self)
+            if keychain.getKey(userAccount: nameAccount)?.isEmpty ?? true {
+                keychain.addKey(data: ["login" : nameTextField.text!, "password" : passwordTextField.text!], userAccount: nameAccount)
+                self.nameTextField.text = ""
+                self.passwordTextField.text = ""
+                performSegue(withIdentifier: "autorizeAction", sender: self)
+            } else {
+                guard let dict = keychain.getKey(userAccount: nameAccount) else {return}
+                if nameTextField.text == dict["login"] as? String && passwordTextField.text == dict["password"] as? String {
+                    self.nameTextField.text = ""
+                    self.passwordTextField.text = ""
+                    performSegue(withIdentifier: "autorizeAction", sender: self)
+                } else {
+                    myNotification.showNotification(title: "Ошибка", message: "Неверно указан логин или пароль", imageColor: .systemRed, image: "xmark.octagon.fill")
+                }
+            }
+        }
+    }
+    
+    //MARK: Нажатие на значок замка в поле ввода пароля
+    @IBAction func lockImageButtonAction(_ sender: CustomButton) {
+        if let _ = keychain.getKey(userAccount: nameAccount) {
+            showBiomentricAutorization()
+        }
+    }
+    
+    /// Вызов авторизации через Touch или Face ID
+    private func showBiomentricAutorization() {
+        context = LAContext()
+        if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: nil) {
+            context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "Автозаполнение пароля") { (success, error) in
+                if success {
+                    DispatchQueue.main.async {
+                        if let dict = self.keychain.getKey(userAccount: self.nameAccount) {
+                            self.lockImageButton.tintColor = .systemGreen
+                            self.nameTextField.text = dict["login"] as? String
+                            self.passwordTextField.text = dict["password"] as? String
+                            self.context.invalidate()
+                            self.nameTextField.text = ""
+                            self.passwordTextField.text = ""
+                            self.performSegue(withIdentifier: "autorizeAction", sender: self)
+                        }
+                    }
+                } else {
+                    print("Ошибка авторизации через биометрию")
+                }
+            }
         }
     }
     

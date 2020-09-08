@@ -37,6 +37,8 @@ class SettingsVC: UITableViewController, UITextFieldDelegate {
         }
     }
     
+    private let keychain = Keychain()
+    
     //MARK: Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +57,12 @@ class SettingsVC: UITableViewController, UITextFieldDelegate {
         performSegue(withIdentifier: "showProfile", sender: self)
     }
     //MARK: Выход из аккаунта
-    @IBAction func logoutAccount(_ sender: CustomButton) {
+    @IBAction func removeAccount(_ sender: CustomButton) {
+        keychain.removeKey(userAccount: "Home")
+        dismiss(animated: true)
+        performSegue(withIdentifier: "logoutAccount", sender: self)
+    }
+    @IBAction func logout(_ sender: CustomButton) {
         dismiss(animated: true)
         performSegue(withIdentifier: "logoutAccount", sender: self)
     }

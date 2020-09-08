@@ -12,7 +12,7 @@ import SwiftEntryKit
 /// Кастомные уведомления библиотеки SwiftEntryKit
 class CustomNotification {
     
-    static let sharedCustomNotification = CustomNotification()
+    //static let sharedCustomNotification = CustomNotification()
     
     //MARK: Атрибуты для уведомления с текстом
     ///Атрибуты для уведомления с текстом
@@ -111,13 +111,33 @@ class CustomNotification {
         return EKNotificationMessageView(with: notificationMessage)
     }
     
-    //MARK: Атрибуты системного уведомления (Зелёный)
-    var saveNotifAttributes:EKAttributes {
+    //MARK: Системное уведомление
+    /// Системное уведомление
+    /// - Parameter text: Текст уведомления
+    /// - Returns: Уведомление
+    func smallNotifContentView(text: String) -> EKNoteMessageView{
+        let text = text
+        let style = EKProperty.LabelStyle(
+            font: UIFont.systemFont(ofSize: 14),
+            color: .white,
+            alignment: .center
+        )
+        let labelContent = EKProperty.LabelContent(
+            text: text,
+            style: style
+        )
+        return EKNoteMessageView(with: labelContent)
+    }
+    
+    /// Получить атрибуты системного уведомления
+    /// - Parameter color: Цвет
+    /// - Returns: Атрибуты
+    func getSmallNotificationAttributes(color: UIColor) -> EKAttributes {
         var noteAttributes = EKAttributes.topNote
         noteAttributes.displayMode = EKAttributes.DisplayMode.inferred
         noteAttributes.hapticFeedbackType = .none
         noteAttributes.popBehavior = .animated(animation: .translation)
-        noteAttributes.entryBackground = .color(color: EKColor(UIColor.systemGreen))
+        noteAttributes.entryBackground = .color(color: EKColor(color))
         noteAttributes.shadow = .none
         noteAttributes.statusBar = .light
         noteAttributes.entranceAnimation = .init(
@@ -133,21 +153,22 @@ class CustomNotification {
         return noteAttributes
     }
     
-    //MARK: Системное уведомление
-    /// Системное уведомление
-    /// - Parameter text: Текст уведомления
-    /// - Returns: Уведомление
-    func getSaveNotifContentView(text: String) -> EKNoteMessageView{
-        let text = text
-        let style = EKProperty.LabelStyle(
-            font: UIFont.systemFont(ofSize: 14),
-            color: .white,
-            alignment: .center
-        )
-        let labelContent = EKProperty.LabelContent(
-            text: text,
-            style: style
-        )
-        return EKNoteMessageView(with: labelContent)
+    /// Показ  уведомления
+    /// - Parameters:
+    ///   - title: Заголовок
+    ///   - message: Текст сообщения
+    ///   - image: Название картинки
+    func showNotification(title: String, message: String, imageColor: UIColor? ,image: String?){
+        let contentView = getFloatContentView(title: title, desc: message, textColor: EKColor(UIColor(named: "notifTextViewColor")!), imageColor: EKColor(imageColor ?? UIColor.systemOrange), imageName: image ?? "exclamationmark.triangle.fill")
+        SwiftEntryKit.display(entry: contentView, using: floatAlertAttributes)
+        UINotificationFeedbackGenerator().notificationOccurred(.error)
+    }
+    
+    /// Мини уведомление
+    /// - Parameters:
+    ///   - text: Текст сообщения
+    ///   - color: Цвет сообщения
+    func miniNotification(text: String, color: UIColor) {
+        SwiftEntryKit.display(entry: smallNotifContentView(text: text), using: getSmallNotificationAttributes(color: color))
     }
 }

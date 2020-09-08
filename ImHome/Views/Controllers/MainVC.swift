@@ -30,15 +30,16 @@ class MainVC: UIViewController {
     }
     
     //MARK: Variables
-    private var sec = 10
+    var sec = 10
     var hour = 0
     var minutes = 0
     private var pressedMainButton = false
-    var timer: Timer?
+    let timeClass: CustomTimer = CustomTimer()
     
     //MARK: Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(update_timer(notification:)), name: Notification.Name("update_timer"), object: nil)
         mainButton.addTarget(self, action: #selector(touchDown), for: .touchDown)
         mainButton.addTarget(self, action: #selector(touchUpInside), for: .touchUpInside)
         mainButton.addTarget(self, action: #selector(touchDragExit), for: .touchDragExit)
@@ -57,33 +58,40 @@ class MainVC: UIViewController {
             case "showDelayMessageScreen":
                 guard let destination = segue.destination as? DelayMessageVC else {return}
                 destination.closure = { [weak self] time in
-                    var times: [String] = []
                     let timeArr = time.components(separatedBy: ":")
                     if timeArr.count == 3 {
                         self!.hour = Int(timeArr[0]) ?? 0
                         self!.minutes = Int(timeArr[1]) ?? 0
                         self!.sec = Int(timeArr[2]) ?? 0
-                    } else if timeArr.count == 2{
+                    } else if timeArr.count == 2 {
                         self!.minutes = Int(timeArr[0]) ?? 0
                         self!.sec = Int(timeArr[1]) ?? 0
                     } else {
                         self!.sec = Int(timeArr[0]) ?? 0
                     }
-                    if self!.hour > 0 {
-                        times.append("\(self!.hour)ч")
-                    }
-                    if self!.minutes > 0 || self!.hour > 0 {
-                      times.append("\(self!.minutes)м")
-                    }
-                    times.append("\(self!.sec)с")
-                    self!.messageTimerTimeLabel.text = times.joined(separator: " ")
-                    self!.mainTimerTimeLabel.text = times.joined(separator: " ")
                     self!.mainTimerTimeLabel.isHidden = true
                     self!.messageTimerTimeLabel.isHidden = false
                     self!.cancelAlarm.isHidden = false
                     self!.delayMessageButton.backgroundColor = .systemOrange
-                    self!.createTimer()
+                    self!.timeClass.createTimer(hour: self!.hour, minutes: self!.minutes, seconds: self!.sec)
                 }
+            case "showLocker":
+                guard let destination = segue.destination as? LockerViewController else {return}
+                destination.closure = {[weak self] success in
+                    if success {
+                        self!.timeClass.stopTimer()
+                        self!.tabBarItem.badgeValue = nil
+                        self!.cancelAlarm.isHidden = true
+                        self!.mainTimerTimeLabel.isHidden = true
+                        self!.messageTimerTimeLabel.isHidden = true
+                        self!.mainButton.tintColor = .white
+                        self!.delayMessageButton.backgroundColor = .white
+                        self!.delayMessageButton.isEnabled = true
+                        self!.pressedMainButton = false
+                        self!.mainTimerTimeLabel.text = ""
+                        self!.messageTimerTimeLabel.text = ""
+                    }
+            }
             default:
                 return
         }
@@ -97,15 +105,7 @@ class MainVC: UIViewController {
     
     //MARK: Кнопка отмены отправки сообщения
     @IBAction func cancelAlarmAction(_ sender: UIButton) {
-        self.tabBarItem.badgeValue = nil
-        self.sec = -1
-        cancelAlarm.isHidden = true
-        mainTimerTimeLabel.isHidden = true
-        messageTimerTimeLabel.isHidden = true
-        mainButton.tintColor = .white
-        delayMessageButton.backgroundColor = .white
-        delayMessageButton.isEnabled = true
-        pressedMainButton = false
+        performSegue(withIdentifier: "showLocker", sender: self)
     }
     
     //MARK: Функция, отвечающая за нажатие на кнопку
@@ -148,115 +148,47 @@ class MainVC: UIViewController {
             delayMessageButton.backgroundColor = .white
             mainTimerTimeLabel.isHidden = false
             messageTimerTimeLabel.isHidden = true
-            hour = 0
-            minutes = 0
-            sec = 10
-            var times: [String] = []
-            if hour > 0 {
-              times.append("\(hour)ч")
-            }
-            if minutes > 0 {
-              times.append("\(minutes)м")
-            }
-            times.append("\(sec)с")
-            if sec <= 5 && sec > 0 && minutes == 0 && hour == 0 {
-                UIImpactFeedbackGenerator.init(style: .heavy).impactOccurred()
-            }
-            self.tabBarItem.badgeValue = times.joined(separator: " ")
-            self.mainTimerTimeLabel.text = times.joined(separator: " ")
             cancelAlarm.isHidden = false
-            createTimer()
+            timeClass.createTimer(hour: 0, minutes: 0, seconds: 10)
         }
         pressedMainButton = true
     }
     
-    //MARK: Создание таймера
-    func createTimer() {
-        timer?.invalidate()
-        timer = nil
-      if timer == nil {
-        let timer = Timer(timeInterval: 1.0,
-          target: self,
-          selector: #selector(updateTimer),
-          userInfo: nil,
-          repeats: true)
-        RunLoop.current.add(timer, forMode: .common)
-        timer.tolerance = 0.1
-        
-        self.timer = timer
-      }
-    }
-    
-    //MARK: Функция таймера
-    @objc func updateTimer() {
-        var times: [String] = []
-        if hour > 0 {
-            if minutes > 0 {
-                if sec > 0 {
-                    sec -= 1
-                } else if sec == 0 {
-                    sec = 59
-                    minutes -= 1
-                }
-            } else if minutes == 0 {
-                if hour > 0 {
-                    minutes = 59
-                }
-                sec = 59
-                hour -= 1
-            }
-        } else {
-            if minutes > 0 {
-                if sec > 0 {
-                    sec -= 1
-                } else if sec == 0 {
-                    sec = 59
-                    minutes -= 1
-                }
-            } else if minutes == 0 {
-                if sec > 0 {
-                    sec -= 1
+    //MARK: Функция обработки обновления таймера (слушатель таймера)
+    @objc func update_timer(notification: Notification){
+        if let userInfo = notification.userInfo as? [String: Any]
+        {
+            if let date = userInfo["time"] as? [String] {
+                if date.count > 0 {
+                    if date.count == 3 {
+                        self.hour = Int(date[0]) ?? 0
+                        self.minutes = Int(date[1]) ?? 0
+                        self.sec = Int(date[2]) ?? 0
+                    } else if date.count == 2 {
+                        self.minutes = Int(date[0]) ?? 0
+                        self.sec = Int(date[1]) ?? 0
+                    } else {
+                        self.sec = Int(date[0]) ?? 0
+                    }
+                    if sec <= 5 && sec > 0 && minutes == 0 && hour == 0 {
+                        UIImpactFeedbackGenerator.init(style: .heavy).impactOccurred()
+                    }
+                    self.tabBarItem.badgeValue = date.joined(separator: ":")
+                    self.mainTimerTimeLabel.text = date.joined(separator: ":")
+                    self.messageTimerTimeLabel.text = date.joined(separator: ":")
+                } else {
+                    UINotificationFeedbackGenerator().notificationOccurred(.error)
+                    if !mainTimerTimeLabel.isHidden {
+                        self.mainButton.tintColor = .systemRed
+                    } else {
+                        self.delayMessageButton.backgroundColor = .systemRed
+                    }
+                    self.tabBarItem.badgeValue = "!!!"
+                    UINotificationFeedbackGenerator().notificationOccurred(.error)
+                    self.mainTimerTimeLabel.isHidden = true
+                    self.messageTimerTimeLabel.isHidden = true
                 }
             }
-        }
-        
-        if sec == 0 && hour == 0 && minutes == 0 {
-            UINotificationFeedbackGenerator().notificationOccurred(.error)
-            if !mainTimerTimeLabel.isHidden {
-                self.mainButton.tintColor = .systemRed
-            } else {
-                self.delayMessageButton.backgroundColor = .systemRed
-            }
-            self.tabBarItem.badgeValue = "!!!"
-            UINotificationFeedbackGenerator().notificationOccurred(.error)
-            self.mainTimerTimeLabel.isHidden = true
-            self.messageTimerTimeLabel.isHidden = true
-            timer?.invalidate()
-            timer = nil
-        } else {
-            if hour > 0 {
-              times.append("\(hour)ч")
-            }
-            if minutes > 0 || hour > 0 {
-              times.append("\(minutes)м")
-            }
-            times.append("\(sec)с")
-            if sec <= 5 && sec > 0 && minutes == 0 && hour == 0 {
-                UIImpactFeedbackGenerator.init(style: .heavy).impactOccurred()
-            }
-            self.tabBarItem.badgeValue = times.joined(separator: " ")
-            self.mainTimerTimeLabel.text = times.joined(separator: " ")
-            self.messageTimerTimeLabel.text = times.joined(separator: " ")
-            
-        }
-        
-        if sec == -1 {
-            self.tabBarItem.badgeValue = nil
-            self.mainTimerTimeLabel.text = ""
-            self.messageTimerTimeLabel.text = ""
-            delayMessageButton.isEnabled = true
-            timer?.invalidate()
-            timer = nil
         }
     }
     
