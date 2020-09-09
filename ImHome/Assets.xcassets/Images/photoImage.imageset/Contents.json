@@ -1,17 +1,16 @@
 {
   "images" : [
     {
-      "filename" : "closed_eye.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "closed_eye-1.png",
+      "filename" : "photo@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "closed_eye-2.png",
+      "filename" : "photo@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

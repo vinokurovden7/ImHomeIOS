@@ -57,17 +57,13 @@ class SettingsVC: UITableViewController, UITextFieldDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        switch segue.identifier {
-            case "showProfile":
-                guard let destination = segue.destination as? ProfileVC else {return}
-                destination.closure = {[weak self] success in
-                    if success {
-                        self!.performSegue(withIdentifier: "logoutAccount", sender: self)
-                    }
+        if segue.identifier == "showProfile" {
+            guard let destination = segue.destination as? ProfileVC else {return}
+            destination.closure = {[weak self] success in
+                if success {
+                    self!.performSegue(withIdentifier: "logoutAccount", sender: self)
+                }
             }
-            default:
-                dismiss(animated: true)
-            return
         }
     }
     

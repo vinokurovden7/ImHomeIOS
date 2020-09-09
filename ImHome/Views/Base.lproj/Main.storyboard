@@ -36,12 +36,15 @@
                                     <constraint firstAttribute="height" constant="40" id="xKc-L1-3zI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="17"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="SbB-GM-0eM" id="9cb-Ci-W7M"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L5W-Rx-VxZ">
                                 <rect key="frame" x="15" y="468" width="329" height="40"/>
@@ -50,7 +53,10 @@
                                     <constraint firstAttribute="height" constant="40" id="kaq-va-yUV"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="SbB-GM-0eM" id="WFo-0X-gPm"/>
+                                </connections>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QxR-5U-9Uv">
                                 <rect key="frame" x="25" y="407.33333333333337" width="25" height="22.333333333333314"/>
@@ -682,7 +688,7 @@
                                 </constraints>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="next"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Время, через которое сообщение будет отправлено" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DlA-tR-8cC">
                                 <rect key="frame" x="16" y="616.33333333333337" width="382" height="47.666666666666629"/>
@@ -712,7 +718,7 @@
                                     <constraint firstAttribute="height" constant="34" id="rIh-Bs-2f6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" name="backgroundViewColor"/>
@@ -1074,7 +1080,7 @@
                                                         <constraint firstAttribute="width" constant="50" id="wlD-Sf-vUs"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="htl-ds-WV1" id="Syk-KC-dx3"/>
                                                     </connections>
@@ -1227,7 +1233,10 @@
                                                                 <constraint firstAttribute="height" constant="34" id="pEw-ym-CLK"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="kYe-3K-TNs" id="uE6-zd-xLn"/>
+                                                            </connections>
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
@@ -1266,7 +1275,10 @@
                                                                 <constraint firstAttribute="height" constant="34" id="j4o-6t-xp3"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="kYe-3K-TNs" id="QXc-ge-7Bu"/>
+                                                            </connections>
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
@@ -1304,7 +1316,10 @@
                                                                 <constraint firstAttribute="height" constant="34" id="jYj-rA-5be"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="kYe-3K-TNs" id="hHb-Qe-pId"/>
+                                                            </connections>
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
@@ -1342,7 +1357,10 @@
                                                                 <constraint firstAttribute="height" constant="34" id="kbi-ft-5pU"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="kYe-3K-TNs" id="xKc-Kh-Tbs"/>
+                                                            </connections>
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
@@ -1473,7 +1491,6 @@
                         <outlet property="saveBtn" destination="trz-Ke-P3y" id="Iek-25-xCW"/>
                         <outlet property="secondNameTextField" destination="2BU-Oo-xBv" id="Qzr-mO-P8A"/>
                         <outlet property="thirdNameTextField" destination="MB3-X3-0PS" id="75f-OB-6TN"/>
-                        <segue destination="SbB-GM-0eM" kind="presentation" modalPresentationStyle="fullScreen" id="MhM-Id-NTp"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qRW-8Z-kK5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1540,6 +1557,7 @@
                     </view>
                     <connections>
                         <segue destination="SbB-GM-0eM" kind="presentation" identifier="showLoginScreen" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="O5G-oF-Q2H"/>
+                        <segue destination="VYK-Bl-ZHS" kind="presentation" identifier="skipLoginScreen" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="YZM-tW-3Zg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9BH-Ko-Lx8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1761,7 +1779,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Иванов Вася Пупкин" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PJO-3o-q48">
-                                        <rect key="frame" x="16" y="99.666666666666686" width="382" height="40"/>
+                                        <rect key="frame" x="16" y="100" width="382" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="vZU-wW-ltt"/>
                                         </constraints>
@@ -1770,7 +1788,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vasya@mail.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="De2-8R-fdu">
-                                        <rect key="frame" x="16" y="159.66666666666669" width="382" height="40"/>
+                                        <rect key="frame" x="16" y="160" width="382" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="8Z6-Jf-zDW"/>
                                         </constraints>
@@ -1823,11 +1841,11 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xkg-e1-XaJ">
-                                <rect key="frame" x="103.66666666666667" y="49.999999999999986" width="206.66666666666663" height="206.66666666666663"/>
+                                <rect key="frame" x="103.66666666666669" y="50" width="207" height="207"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sherlock" translatesAutoresizingMaskIntoConstraints="NO" id="JnE-SO-NcU">
-                                <rect key="frame" x="103.66666666666667" y="49.999999999999986" width="206.66666666666663" height="206.66666666666663"/>
+                                <rect key="frame" x="103.66666666666669" y="50" width="207" height="207"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="JnE-SO-NcU" secondAttribute="height" multiplier="1:1" id="kwd-El-qU8"/>
                                 </constraints>
@@ -2352,6 +2370,9 @@
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
                                                             <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="XJb-OH-pZL" id="bBL-Lz-oqm"/>
+                                                            </connections>
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
@@ -2400,6 +2421,9 @@
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="next" textContentType="family-name"/>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="XJb-OH-pZL" id="cSv-ES-tYN"/>
+                                                            </connections>
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
@@ -2447,6 +2471,9 @@
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="next" textContentType="name"/>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="XJb-OH-pZL" id="IGG-BP-Llf"/>
+                                                            </connections>
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
@@ -2494,6 +2521,9 @@
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="next" textContentType="name"/>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="XJb-OH-pZL" id="fKa-pR-eUO"/>
+                                                            </connections>
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
@@ -2541,6 +2571,9 @@
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
                                                             <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="username"/>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="XJb-OH-pZL" id="p7R-aH-UXm"/>
+                                                            </connections>
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
@@ -2611,6 +2644,9 @@
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
                                                             <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES" textContentType="new-password"/>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="XJb-OH-pZL" id="T37-7K-j9B"/>
+                                                            </connections>
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
@@ -2658,6 +2694,9 @@
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
                                                             <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="new-password"/>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="XJb-OH-pZL" id="3fg-w1-PEs"/>
+                                                            </connections>
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
@@ -2690,7 +2729,7 @@
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
                                                             <connections>
-                                                                <action selector="loginBtnAction:" destination="XJb-OH-pZL" eventType="touchUpInside" id="Be5-TB-wQb"/>
+                                                                <action selector="registrationBtnAction:" destination="XJb-OH-pZL" eventType="touchUpInside" id="Be5-TB-wQb"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJK-bo-pdE" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
@@ -2747,6 +2786,7 @@
                         <outlet property="shieldImagePassword" destination="WZ1-WO-yfx" id="SCy-s4-Dnt"/>
                         <outlet property="thirdNameUser" destination="aRg-n5-vOe" id="6Kj-W6-pE4"/>
                         <outlet property="usernameTextField" destination="UTT-Ka-fh2" id="sNF-y8-gfW"/>
+                        <segue destination="VYK-Bl-ZHS" kind="presentation" identifier="authAction" modalPresentationStyle="fullScreen" id="fcm-13-Vvk"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T6K-v3-0YU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2810,12 +2850,15 @@
                                 <color key="backgroundColor" name="inputTextViewColor"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="YgU-wk-yG1" id="eBz-9b-JPg"/>
+                                </connections>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" name="backgroundViewColor"/>
@@ -2861,7 +2904,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="MhM-Id-NTp"/>
+        <segue reference="oc1-Sy-V6b"/>
+        <segue reference="aae-ew-RzT"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Home" width="380" height="423"/>

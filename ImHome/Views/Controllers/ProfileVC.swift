@@ -70,6 +70,7 @@ class ProfileVC: UITableViewController {
             imageProfile.layer.borderColor = UIColor.white.cgColor
             imageProfile.layer.borderWidth = 2
             imageProfile.clipsToBounds = true
+            imageProfile.isUserInteractionEnabled = true
         }
     }
     
@@ -83,10 +84,40 @@ class ProfileVC: UITableViewController {
         super.viewDidLoad()
         tableView.backgroundView = UIImageView(image: UIImage(named: "fonBackground"))
         tableView.backgroundView?.alpha = 0.07
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        imageProfile.addGestureRecognizer(tapGestureRecognizer)
 
     }
 
     //MARK: Обработчики
+    
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+        let cameraIcon = UIImage.init(named: "camera")
+        let photoIcon = UIImage.init(named: "photoImage")
+        
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let camera = UIAlertAction(title: "Сделать снимок", style: .default) { _ in
+            self.chooseImagePicker(source: .camera)
+        }
+        camera.setValue(cameraIcon, forKey: "image")
+        camera.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
+        
+        let photo = UIAlertAction(title: "Выбрать из галереи", style: .default) { _ in
+            self.chooseImagePicker(source: .photoLibrary)
+        }
+        photo.setValue(photoIcon, forKey: "image")
+        photo.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
+        
+        let cancel = UIAlertAction(title: "Отмена", style: .cancel)
+        
+        actionSheet.addAction(camera)
+        actionSheet.addAction(photo)
+        actionSheet.addAction(cancel)
+        
+        present(actionSheet,animated: true)
+    }
+    
     //MARK: Нажатие на любое пустое место на экране
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -108,11 +139,13 @@ class ProfileVC: UITableViewController {
         }
     }
     
+    
+    
     //MARK: Удаление аккаунта
     @IBAction func deleteAccountAction(_ sender: CustomButton) {
         keychain.removeKey(userAccount: "Home")
-        closure?(true)
         dismiss(animated: true)
+        closure?(true)
     }
     
     //MARK: Переход к работе с паролями
@@ -138,5 +171,43 @@ class ProfileVC: UITableViewController {
     //MARK: Настройка кнопок
     fileprivate func buttonSetup(button: UIButton){
         button.layer.cornerRadius = button.frame.height / 2
+    }
+}
+
+extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate{
+    
+    func chooseImagePicker(source: UIImagePickerController.SourceType){
+        
+        if UIImagePickerController.isSourceTypeAvailable(source){
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.allowsEditing = true
+            imagePicker.sourceType = source
+            present(imagePicker,animated: true)
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        imageProfile.image = info[.editedImage] as? UIImage
+        imageProfile.contentMode = .scaleAspectFill
+        imageProfile.clipsToBounds = true
+        dismiss(animated: true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+            case emailTextField:
+                secondNameTextField.becomeFirstResponder()
+            case secondNameTextField:
+                firstNameTextField.becomeFirstResponder()
+            case firstNameTextField:
+                thirdNameTextField.becomeFirstResponder()
+            case thirdNameTextField:
+                self.view.endEditing(true)
+            default:
+                self.view.endEditing(true)
+        }
+        return true
     }
 }

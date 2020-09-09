@@ -37,6 +37,7 @@
 		92CD7577247BDA4E00EED562 /* DelayMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CD7576247BDA4E00EED562 /* DelayMessageVC.swift */; };
 		92CD7579247BFC5000EED562 /* ProfileContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CD7578247BFC5000EED562 /* ProfileContactVC.swift */; };
 		92CDF61D25087A63003E063D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CDF61C25087A63003E063D /* Extensions.swift */; };
+		92CDF61F2508BFD3003E063D /* PasswordStronger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CDF61E2508BFD3003E063D /* PasswordStronger.swift */; };
 		92DAA1A124A99D4C0065A6F4 /* HelpProfileContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DAA1A024A99D4C0065A6F4 /* HelpProfileContactVC.swift */; };
 		92DD21A12478FD2300849AB2 /* RequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD21A02478FD2300849AB2 /* RequestCell.swift */; };
 		92DD21A32479495900849AB2 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD21A22479495900849AB2 /* SettingsVC.swift */; };
@@ -112,6 +113,7 @@
 		92CD7576247BDA4E00EED562 /* DelayMessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayMessageVC.swift; sourceTree = "<group>"; };
 		92CD7578247BFC5000EED562 /* ProfileContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContactVC.swift; sourceTree = "<group>"; };
 		92CDF61C25087A63003E063D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		92CDF61E2508BFD3003E063D /* PasswordStronger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStronger.swift; sourceTree = "<group>"; };
 		92DAA1A024A99D4C0065A6F4 /* HelpProfileContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpProfileContactVC.swift; sourceTree = "<group>"; };
 		92DD21A02478FD2300849AB2 /* RequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCell.swift; sourceTree = "<group>"; };
 		92DD21A22479495900849AB2 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				92084D0225025B3E003F1580 /* CustomTimer.swift */,
 				929F40F9250689B500607D9C /* Keychain.swift */,
 				929F40FB2506A28C00607D9C /* BiometrickAuth.swift */,
+				92CDF61E2508BFD3003E063D /* PasswordStronger.swift */,
 			);
 			path = CustomElements;
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 				924348262478FB0C00649D0B /* RequestVC.swift in Sources */,
 				92E1E04024D8F88500D17FF7 /* AddedContactVC.swift in Sources */,
 				92B82DB224ED7DC3002B8366 /* DBModel.swift in Sources */,
+				92CDF61F2508BFD3003E063D /* PasswordStronger.swift in Sources */,
 				922D2B10246ACBB400CA6492 /* AppDelegate.swift in Sources */,
 				924B0949247D6BA9002F7267 /* NewContactVC.swift in Sources */,
 				92AA6F522500BDB8007E51E4 /* LockerViewController.swift in Sources */,

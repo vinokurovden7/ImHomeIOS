@@ -11,7 +11,7 @@ import LocalAuthentication
 class BiometrickAuth {
     private var context = LAContext()
     
-    /// Получение изображения для кнопки относительно типа биометрии
+    /// Получение изображения относительно типа биометрической аутентификации
     /// - Returns: Изображение
     func getimageForBiometrickType() -> UIImage {
         let _ = context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
@@ -23,5 +23,12 @@ class BiometrickAuth {
             default:
                 return UIImage()
         }
+    }
+    
+    /// Получение типа биометрической аутентификации
+    /// - Returns: Тип биометрической аутентификации
+    func getBiometrickType() -> LABiometryType {
+        let _ = context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
+        return context.biometryType
     }
 }

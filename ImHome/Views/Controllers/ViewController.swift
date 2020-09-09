@@ -10,12 +10,23 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    //MARK: Variables
+    private let keychain = Keychain()
+    private let nameAccount = "Home"
+    
     //MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1){
-            self.performSegue(withIdentifier: "showLoginScreen", sender: self)
-        }        
+        if let _ = keychain.getKey(userAccount: nameAccount) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+                self.performSegue(withIdentifier: "skipLoginScreen", sender: self)
+            }
+        } else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+                self.performSegue(withIdentifier: "showLoginScreen", sender: self)
+            }
+        }
+               
     }
 
     //MARK: Визуальное оформление

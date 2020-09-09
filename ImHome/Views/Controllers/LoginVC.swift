@@ -32,6 +32,7 @@ class LoginVC: UIViewController {
         }
     }
     
+    //MARK: Variables
     private let myNotification = CustomNotification()
     private let keychain = Keychain()
     private let nameAccount = "Home"
@@ -92,6 +93,17 @@ class LoginVC: UIViewController {
     /// Изменение значения в поле ввода пароля
     @objc func editPasswordTF() {
         showHidePasswordButton()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showRegistrationScreen" {
+            guard let destination = segue.destination as? RegistrationVC else {return}
+            destination.closure = {[weak self] dict in
+                self!.keychain.addKey(data: dict, userAccount: self!.nameAccount)
+                self!.nameTextField.text = dict["login"]
+                self!.passwordTextField.text = dict["password"]
+            }
+        }
     }
     
     //MARK: Нажатие на любое пустое место на экране
@@ -189,7 +201,7 @@ class LoginVC: UIViewController {
         //To apply Shadow
         textField.layer.shadowOpacity = 0.2
         textField.layer.shadowRadius = 5.0
-        //To apply padding
+        //To apply paddings
         let paddingView : UIView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: textField.frame.height))
         textField.leftView = paddingView
         textField.leftViewMode = UITextField.ViewMode.always
@@ -200,5 +212,16 @@ class LoginVC: UIViewController {
         textField.leftViewMode = UITextField.ViewMode.always
         textField.leftView = spacerView
         textField.overrideUserInterfaceStyle = .light
+    }
+}
+extension LoginVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+            case nameTextField:
+                passwordTextField.becomeFirstResponder()
+            default:
+                self.view.endEditing(true)
+        }
+        return true
     }
 }
