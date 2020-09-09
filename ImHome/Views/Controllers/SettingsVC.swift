@@ -44,10 +44,33 @@ class SettingsVC: UITableViewController, UITextFieldDelegate {
         super.viewDidLoad()
         tableView.backgroundView = UIImageView(image: UIImage(named: "fonBackground"))
         tableView.backgroundView?.alpha = 0.07
+        timeCancelSOSSignal.addTarget(self, action: #selector(endChangeVal), for: .editingDidEnd)
         
     }
     
     //MARK: Обработчики
+    /// Окончание изменений в поле времени отмены вызова
+    @objc func endChangeVal() {
+        if Int(timeCancelSOSSignal.text!) ?? 0 > 30 {
+            timeCancelSOSSignal.text = "30"
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+            case "showProfile":
+                guard let destination = segue.destination as? ProfileVC else {return}
+                destination.closure = {[weak self] success in
+                    if success {
+                        self!.performSegue(withIdentifier: "logoutAccount", sender: self)
+                    }
+            }
+            default:
+                dismiss(animated: true)
+            return
+        }
+    }
+    
     //MARK: Нажатие на любое пустое место на экране
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -57,13 +80,7 @@ class SettingsVC: UITableViewController, UITextFieldDelegate {
         performSegue(withIdentifier: "showProfile", sender: self)
     }
     //MARK: Выход из аккаунта
-    @IBAction func removeAccount(_ sender: CustomButton) {
-        keychain.removeKey(userAccount: "Home")
-        dismiss(animated: true)
-        performSegue(withIdentifier: "logoutAccount", sender: self)
-    }
     @IBAction func logout(_ sender: CustomButton) {
-        dismiss(animated: true)
         performSegue(withIdentifier: "logoutAccount", sender: self)
     }
     //MARK: Ограничение на ввод больше 2 цифр

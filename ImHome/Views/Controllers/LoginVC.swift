@@ -14,6 +14,11 @@ class LoginVC: UIViewController {
     
     //MARK: IBOutlets
     
+    @IBOutlet weak var showPasswordButton: UIButton! {
+        didSet {
+            showPasswordButton.isHidden = true
+        }
+    }
     @IBOutlet weak var lockImageButton: CustomButton!
     @IBOutlet var fonImage: UIImageView!
     @IBOutlet var nameTextField: UITextField! {
@@ -35,9 +40,23 @@ class LoginVC: UIViewController {
     //MARK: Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
+        showHidePasswordButton()
+        changeColorLockImage()
+        passwordTextField.addTarget(self, action: #selector(editPasswordTF), for: .allEditingEvents)
+        showPasswordButton.addTarget(self, action: #selector(touchDownBtn), for: .touchDown)
+        showPasswordButton.addTarget(self, action: #selector(touchUpInsideBtn), for: [.touchUpInside,.touchDragExit])
+        showPasswordButton.addTarget(self, action: #selector(allEvents), for: .allEvents)
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        showHidePasswordButton()
+        changeColorLockImage()
+    }
+    
+    //MARK: Обработчики
+    
+    /// Изменение цвета  замка на поле ввода пароля
+    private func changeColorLockImage() {
         if let dict = keychain.getKey(userAccount: nameAccount) {
             lockImageButton.tintColor = .systemGreen
             nameTextField.text = dict["login"] as? String
@@ -46,7 +65,35 @@ class LoginVC: UIViewController {
         }
     }
     
-    //MARK: Обработчики
+    /// Обработчик любого взаимодействия с кнопкой показа пароля
+    @objc func allEvents(){
+        showPasswordButton.isHighlighted = false
+    }
+    
+    /// Отображение кнопки показа пароля
+    private func showHidePasswordButton() {
+            showPasswordButton.isHidden = passwordTextField.text!.isEmpty
+    }
+    
+    /// Нажатие кнопки показать пароль
+    @objc func touchDownBtn() {
+        UIImpactFeedbackGenerator.init(style: .soft).impactOccurred()
+        showPasswordButton.setImage(UIImage.init(systemName: "eye"), for: .normal)
+        passwordTextField.isSecureTextEntry = false
+    }
+    
+    /// Отпускание кнопки показа пароля
+    @objc func touchUpInsideBtn() {
+        showPasswordButton.setImage(UIImage.init(named: "closedEye"), for: .normal)
+        showHidePasswordButton()
+        passwordTextField.isSecureTextEntry = true
+    }
+    
+    /// Изменение значения в поле ввода пароля
+    @objc func editPasswordTF() {
+        showHidePasswordButton()
+    }
+    
     //MARK: Нажатие на любое пустое место на экране
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)

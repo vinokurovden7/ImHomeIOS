@@ -18,8 +18,7 @@ class CustomButton: UIButton {
         self.layer.cornerRadius = self.frame.height / 2
         self.clipsToBounds = true
         self.addTarget(self, action: #selector(touchDown), for: .touchDown)
-        self.addTarget(self, action: #selector(touchUpInside), for: .touchUpInside)
-        self.addTarget(self, action: #selector(touchDragExit), for: .touchDragExit)
+        self.addTarget(self, action: #selector(touchUpInside), for: [.touchUpInside,.touchDragExit])
     }
     
     //MARK: Функция, отвечающая за нажатие на кнопку
@@ -35,14 +34,6 @@ class CustomButton: UIButton {
     @objc func touchUpInside(){
         self.isHighlighted = false
         UIImpactFeedbackGenerator.init(style: .soft).impactOccurred()
-        UIView.animate(withDuration: 0.12, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
-            self.transform.a = 1
-            self.transform.d = 1
-        })
-    }
-    
-    //MARK: Функция, отвечающая за отведения пальца с кнопки без отпускания
-    @objc func touchDragExit(){
         UIView.animate(withDuration: 0.12, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
             self.transform.a = 1
             self.transform.d = 1

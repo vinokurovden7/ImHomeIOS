@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftEntryKit
+import LocalAuthentication
 
 class ProfileVC: UITableViewController {
 
@@ -72,7 +73,10 @@ class ProfileVC: UITableViewController {
         }
     }
     
+    //MARK: Variables
     private let myNotification = CustomNotification()
+    private let keychain = Keychain()
+    var closure: ((Bool) -> ())?
     
     //MARK: Жизненный цикл
     override func viewDidLoad() {
@@ -89,7 +93,6 @@ class ProfileVC: UITableViewController {
     }
     //MARK: Сохранение
     @IBAction func saveBtnAction(_ sender: CustomButton) {
-        
         if emailTextField.text!.isEmpty {
             myNotification.showNotification(title: "Упс", message: "Укажите email", imageColor: nil, image: nil)
             return
@@ -103,6 +106,17 @@ class ProfileVC: UITableViewController {
             myNotification.miniNotification(text: "Сохранено", color: .systemGreen)
             dismiss(animated: true)
         }
+    }
+    
+    //MARK: Удаление аккаунта
+    @IBAction func deleteAccountAction(_ sender: CustomButton) {
+        keychain.removeKey(userAccount: "Home")
+        closure?(true)
+        dismiss(animated: true)
+    }
+    
+    //MARK: Переход к работе с паролями
+    @IBAction func showPasswordManagerAction(_ sender: CustomButton) {
     }
     
     //MARK: Визуальное оформление
