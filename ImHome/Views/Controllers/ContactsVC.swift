@@ -149,3 +149,4 @@ extension ContactsVC: UISearchResultsUpdating {
         print(searchController.searchBar.text ?? "")
     }
 }
+

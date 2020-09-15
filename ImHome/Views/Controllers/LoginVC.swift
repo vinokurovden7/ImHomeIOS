@@ -13,7 +13,6 @@ import LocalAuthentication
 class LoginVC: UIViewController {
     
     //MARK: IBOutlets
-    
     @IBOutlet weak var showPasswordButton: UIButton! {
         didSet {
             showPasswordButton.isHidden = true
@@ -55,7 +54,6 @@ class LoginVC: UIViewController {
     }
     
     //MARK: Обработчики
-    
     /// Изменение цвета  замка на поле ввода пароля
     private func changeColorLockImage() {
         if let dict = keychain.getKey(userAccount: nameAccount) {

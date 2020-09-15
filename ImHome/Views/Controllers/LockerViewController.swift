@@ -42,21 +42,43 @@ class LockerViewController: UIViewController {
     @IBOutlet weak var zeroNumberButton: CustomButton!
     
     //MARK: IBOutlets
-    @IBOutlet weak var deleteSymbolCloseScreenButton: UIButton!
+    @IBOutlet weak var deleteSymbolCloseScreenButton: UIButton! {
+        didSet {
+            deleteSymbolCloseScreenButton.isHidden = UserDefaults.standard.string(forKey: "localPassword")?.isEmpty ?? true
+        }
+    }
     @IBOutlet weak var touchFaceIDButton: CustomButton! {
         didSet {
             touchFaceIDButton.setImage(biometrickAuth.getimageForBiometrickType(), for: .normal)
         }
     }
+    @IBOutlet weak var topImage: UIImageView!
+    @IBOutlet weak var topTextLabel: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         context.localizedCancelTitle = "Отмена"
-        showBiomentricAutorization()
+        if !(UserDefaults.standard.string(forKey: "localPassword")?.isEmpty ?? true) {
+            showBiomentricAutorization()
+        }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if UserDefaults.standard.string(forKey: "localPassword")?.isEmpty ?? true {
+            topImage.image = UIImage(named: "key")
+            topTextLabel.text = """
+                              Перед началом, задайте код-пароль.
+                              Для чего? Расскажу дальше 😉
+                              """
+            touchFaceIDButton.isHidden = true
+        } else {
+            topImage.image = UIImage(systemName: "lock.fill")
+            topTextLabel.text = "Введите код-пароль"
+            touchFaceIDButton.isHidden = false
+        }
+    }
     
     override func viewDidLayoutSubviews() {
         if password == "" {
@@ -106,7 +128,7 @@ class LockerViewController: UIViewController {
             //self.view.layoutIfNeeded()
         }
         if password.count > 0 {
-                deleteSymbolCloseScreenButton.titleLabel?.text = "Удалить"
+            deleteSymbolCloseScreenButton.titleLabel?.text = "Удалить"
         } else {
             deleteSymbolCloseScreenButton.titleLabel?.text = "Закрыть"
         }
@@ -234,9 +256,24 @@ class LockerViewController: UIViewController {
         }
         
         deleteSymbolCloseScreenButton.titleLabel?.text = "Удалить"
-        if password == "524069" {
+        
+        if UserDefaults.standard.string(forKey: "localPassword")?.isEmpty ?? true && password.count == 6 {
+            UserDefaults.standard.set(password, forKey: "localPassword")
+            dismiss(animated: true)
+        } else if password == UserDefaults.standard.string(forKey: "localPassword") {
             closure?(true)
             dismiss(animated: true)
+        }
+        
+        if password.count == 6 && password != UserDefaults.standard.string(forKey: "localPassword")  {
+            password = ""
+            firstIndicatorView.backgroundColor = .clear
+            secondIndicatorView.backgroundColor = .clear
+            thirdIndicatorView.backgroundColor = .clear
+            fourIndicatorView.backgroundColor = .clear
+            fiveIndicatorView.backgroundColor = .clear
+            sixIndicatorView.backgroundColor = .clear
+            UINotificationFeedbackGenerator().notificationOccurred(.error)
         }
     }
     

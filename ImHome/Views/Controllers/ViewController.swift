@@ -17,16 +17,33 @@ class ViewController: UIViewController {
     //MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        //checkLoginData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        if UserDefaults.standard.string(forKey: "localPassword")?.isEmpty ?? true {
+            performSegue(withIdentifier: "setLocalPassword", sender: self)
+        } else if !UserDefaults.standard.bool(forKey: "presentationWasViewed") {
+            performSegue(withIdentifier: "showPresentation", sender: self)
+        } else {
+            checkLoginData()
+        }
+        
+    }
+    
+    func checkLoginData() {
         if let _ = keychain.getKey(userAccount: nameAccount) {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+            DispatchQueue.main.async {
                 self.performSegue(withIdentifier: "skipLoginScreen", sender: self)
             }
         } else {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+            DispatchQueue.main.async {
                 self.performSegue(withIdentifier: "showLoginScreen", sender: self)
             }
         }
-               
     }
 
     //MARK: Визуальное оформление

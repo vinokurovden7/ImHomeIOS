@@ -22,8 +22,7 @@ class CustomTimer {
     ///   - minutes: минуты
     ///   - seconds: секунды
     func createTimer(hour: Int, minutes: Int, seconds: Int) {
-        timer?.invalidate()
-        timer = nil
+        stopTimer()
         self.hour = hour
         self.minutes = minutes
         self.seconds = seconds
@@ -41,7 +40,7 @@ class CustomTimer {
     }
     
     //MARK: Функция таймера
-    @objc func updateTimer() {
+    @objc private func updateTimer() {
         var times: [String] = []
         if hour > 0 {
             if minutes > 0 {

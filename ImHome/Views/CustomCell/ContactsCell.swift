@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 /// Кастомный класс ячейки из раздела контактов
 class ContactsCell: UICollectionViewCell {
     @IBOutlet weak var nameContact: UILabel!
@@ -38,6 +40,8 @@ class ContactsCell: UICollectionViewCell {
         }
     }
     
+    
+    
     /// Пульсирующая анимация, имитирующая нажатие
     /// - Parameters:
     ///   - animationView: view, к которому применяется анимация
@@ -56,4 +60,7 @@ class ContactsCell: UICollectionViewCell {
 
         }
     }
+    
+    
+    
 }

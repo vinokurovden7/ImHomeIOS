@@ -174,7 +174,7 @@ class ProfileVC: UITableViewController {
     }
 }
 
-extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate{
+extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     func chooseImagePicker(source: UIImagePickerController.SourceType){
         

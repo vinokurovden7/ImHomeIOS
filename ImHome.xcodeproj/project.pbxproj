@@ -26,6 +26,8 @@
 		924B094B247D7B74002F7267 /* NewContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924B094A247D7B74002F7267 /* NewContactCell.swift */; };
 		924F9E05246AD2340065056E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924F9E04246AD2340065056E /* LoginVC.swift */; };
 		925228E6249104D0006E3836 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925228E5249104D0006E3836 /* CustomButton.swift */; };
+		925CED7C250FA06B0070CC7D /* ContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925CED7B250FA06B0070CC7D /* ContentVC.swift */; };
+		925CED7E250FA0870070CC7D /* PageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925CED7D250FA0870070CC7D /* PageVC.swift */; };
 		92628B4C24936111003CCA3F /* CustomNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92628B4B24936111003CCA3F /* CustomNotification.swift */; };
 		9268A12424862612007D75BD /* CustomNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9268A12324862612007D75BD /* CustomNavigationViewController.swift */; };
 		92925C7324751D63000F6500 /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92925C7224751D63000F6500 /* RegistrationVC.swift */; };
@@ -101,6 +103,8 @@
 		924F9E08246AF0DD0065056E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		924F9E09246AF0DD0065056E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		925228E5249104D0006E3836 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		925CED7B250FA06B0070CC7D /* ContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentVC.swift; sourceTree = "<group>"; };
+		925CED7D250FA0870070CC7D /* PageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageVC.swift; sourceTree = "<group>"; };
 		92628B4B24936111003CCA3F /* CustomNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNotification.swift; sourceTree = "<group>"; };
 		9268A12324862612007D75BD /* CustomNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationViewController.swift; sourceTree = "<group>"; };
 		927E4982249278C4009B99DD /* SwiftEntryKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftEntryKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -224,6 +228,8 @@
 				92DAA1A024A99D4C0065A6F4 /* HelpProfileContactVC.swift */,
 				92E1E03F24D8F88500D17FF7 /* AddedContactVC.swift */,
 				92AA6F512500BDB8007E51E4 /* LockerViewController.swift */,
+				925CED7B250FA06B0070CC7D /* ContentVC.swift */,
+				925CED7D250FA0870070CC7D /* PageVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -576,6 +582,7 @@
 			files = (
 				92413DA6247AA0CC009B56B7 /* ProfileVC.swift in Sources */,
 				92CD7577247BDA4E00EED562 /* DelayMessageVC.swift in Sources */,
+				925CED7C250FA06B0070CC7D /* ContentVC.swift in Sources */,
 				92DD21A32479495900849AB2 /* SettingsVC.swift in Sources */,
 				922D2B14246ACBB400CA6492 /* ViewController.swift in Sources */,
 				9268A12424862612007D75BD /* CustomNavigationViewController.swift in Sources */,
@@ -598,6 +605,7 @@
 				925228E6249104D0006E3836 /* CustomButton.swift in Sources */,
 				92CD7579247BFC5000EED562 /* ProfileContactVC.swift in Sources */,
 				92DAA1A124A99D4C0065A6F4 /* HelpProfileContactVC.swift in Sources */,
+				925CED7E250FA0870070CC7D /* PageVC.swift in Sources */,
 				92925C7324751D63000F6500 /* RegistrationVC.swift in Sources */,
 				922D2B12246ACBB400CA6492 /* SceneDelegate.swift in Sources */,
 				92628B4C24936111003CCA3F /* CustomNotification.swift in Sources */,
