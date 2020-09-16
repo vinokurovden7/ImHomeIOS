@@ -22,9 +22,8 @@ class ContentVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         textLabel.text = textForLabel
-        pageControl.currentPage = currentPage
         pageControl.numberOfPages = totalPages
-        closePresentationButton.isHidden = hideClosePresentationBtn
+        pageControl.currentPage = currentPage
     }
     @IBAction func closePresentationAction(_ sender: CustomButton) {
         UserDefaults.standard.set(true, forKey: "presentationWasViewed")

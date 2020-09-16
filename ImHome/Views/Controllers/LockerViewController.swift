@@ -129,7 +129,7 @@ class LockerViewController: UIViewController {
         }
         if password.count > 0 {
             deleteSymbolCloseScreenButton.titleLabel?.text = "Удалить"
-        } else {
+        } else if password.count == 0 && UserDefaults.standard.string(forKey: "localPassword")?.isEmpty ?? true {
             deleteSymbolCloseScreenButton.titleLabel?.text = "Закрыть"
         }
     }
@@ -164,6 +164,9 @@ class LockerViewController: UIViewController {
                     return
             }
         }
+        
+        
+        deleteSymbolCloseScreenButton.isHidden = password.count <= 0 && UserDefaults.standard.string(forKey: "localPassword")?.isEmpty ?? true
         
     }
     
@@ -264,6 +267,8 @@ class LockerViewController: UIViewController {
             closure?(true)
             dismiss(animated: true)
         }
+        
+        deleteSymbolCloseScreenButton.isHidden = password.count <= 0 && UserDefaults.standard.string(forKey: "localPassword")?.isEmpty ?? true
         
         if password.count == 6 && password != UserDefaults.standard.string(forKey: "localPassword")  {
             password = ""

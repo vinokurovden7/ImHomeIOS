@@ -286,8 +286,8 @@
                                 <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="currentPageIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pageControl>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IqG-Bh-bwI" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
-                                <rect key="frame" x="341" y="808.66666666666663" width="60" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IqG-Bh-bwI" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
+                                <rect key="frame" x="334" y="808.66666666666663" width="60" height="30"/>
                                 <state key="normal" title="Закрыть">
                                     <color key="titleColor" name="textLabelColor"/>
                                 </state>
@@ -303,13 +303,15 @@
                             <constraint firstItem="PA1-eT-ZpL" firstAttribute="centerX" secondItem="P6e-2c-Ba6" secondAttribute="centerX" id="DA2-54-ajZ"/>
                             <constraint firstItem="PA1-eT-ZpL" firstAttribute="centerY" secondItem="P6e-2c-Ba6" secondAttribute="centerY" id="EE2-4e-2V3"/>
                             <constraint firstItem="PA1-eT-ZpL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="P6e-2c-Ba6" secondAttribute="leading" constant="16" id="HF8-we-OMo"/>
+                            <constraint firstItem="PA1-eT-ZpL" firstAttribute="top" relation="greaterThanOrEqual" secondItem="P6e-2c-Ba6" secondAttribute="top" constant="16" id="HVm-Wj-riZ"/>
                             <constraint firstItem="P6e-2c-Ba6" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PA1-eT-ZpL" secondAttribute="trailing" constant="16" id="K0Z-GH-1NB"/>
                             <constraint firstItem="lQq-aj-qvr" firstAttribute="leading" secondItem="P6e-2c-Ba6" secondAttribute="leading" id="Qi4-lu-G2F"/>
                             <constraint firstItem="lQq-aj-qvr" firstAttribute="top" secondItem="AqT-pJ-qod" secondAttribute="top" id="UGl-Iu-gzV"/>
+                            <constraint firstItem="swe-3j-ved" firstAttribute="top" relation="greaterThanOrEqual" secondItem="PA1-eT-ZpL" secondAttribute="bottom" constant="16" id="YW5-mr-HyU"/>
                             <constraint firstItem="IqG-Bh-bwI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="swe-3j-ved" secondAttribute="trailing" constant="16" id="e0u-p7-UNo"/>
                             <constraint firstAttribute="bottom" secondItem="lQq-aj-qvr" secondAttribute="bottom" id="lEQ-QH-ner"/>
                             <constraint firstItem="lQq-aj-qvr" firstAttribute="trailing" secondItem="P6e-2c-Ba6" secondAttribute="trailing" id="tFP-cy-iVO"/>
-                            <constraint firstItem="P6e-2c-Ba6" firstAttribute="trailing" secondItem="IqG-Bh-bwI" secondAttribute="trailing" constant="13" id="uQS-zD-d5N"/>
+                            <constraint firstItem="P6e-2c-Ba6" firstAttribute="trailing" secondItem="IqG-Bh-bwI" secondAttribute="trailing" constant="20" id="uQS-zD-d5N"/>
                             <constraint firstItem="swe-3j-ved" firstAttribute="centerX" secondItem="P6e-2c-Ba6" secondAttribute="centerX" id="wam-9p-swe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="P6e-2c-Ba6"/>
@@ -1104,8 +1106,39 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="70" id="41g-IH-xsK">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="70" id="fKx-8i-CUP">
                                         <rect key="frame" x="0.0" y="238" width="414" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fKx-8i-CUP" id="hX6-gw-vey">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLG-SJ-SeR" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="8" width="382" height="50"/>
+                                                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="o1l-no-dpQ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
+                                                    <state key="normal" title="Редактировать аккаунт">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="editProfileBtnAction:" destination="htl-ds-WV1" eventType="touchUpInside" id="Ulv-3e-0aY"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="jLG-SJ-SeR" secondAttribute="bottom" constant="8" id="79y-3y-OAs"/>
+                                                <constraint firstAttribute="trailing" secondItem="jLG-SJ-SeR" secondAttribute="trailing" constant="16" id="HgQ-eZ-4g5"/>
+                                                <constraint firstItem="jLG-SJ-SeR" firstAttribute="leading" secondItem="hX6-gw-vey" secondAttribute="leading" constant="16" id="K6J-LO-oxQ"/>
+                                                <constraint firstItem="jLG-SJ-SeR" firstAttribute="top" secondItem="hX6-gw-vey" secondAttribute="top" constant="8" id="bCj-yI-UbY"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="70" id="41g-IH-xsK">
+                                        <rect key="frame" x="0.0" y="308" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="41g-IH-xsK" id="ke3-Hq-Eae">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
@@ -1113,16 +1146,16 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tdc-sh-x2g" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                                     <rect key="frame" x="16" y="8" width="382" height="50"/>
-                                                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="Beh-hl-0jh"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
-                                                    <state key="normal" title="Редактировать аккаунт">
+                                                    <state key="normal" title="Крадкое руководство">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="editProfileBtnAction:" destination="htl-ds-WV1" eventType="touchUpInside" id="OVP-MK-yN5"/>
+                                                        <action selector="showPresentationAction:" destination="htl-ds-WV1" eventType="touchUpInside" id="zdN-cP-4aw"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -1136,7 +1169,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="55" id="tg9-JG-GUB">
-                                        <rect key="frame" x="0.0" y="308" width="414" height="55"/>
+                                        <rect key="frame" x="0.0" y="378" width="414" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tg9-JG-GUB" id="r1v-9m-iiE">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="55"/>
@@ -1178,7 +1211,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="55" id="G7j-KD-phH">
-                                        <rect key="frame" x="0.0" y="363" width="414" height="55"/>
+                                        <rect key="frame" x="0.0" y="433" width="414" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="G7j-KD-phH" id="Bj9-Wf-V78">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="55"/>
@@ -1232,6 +1265,7 @@
                         <outlet property="timeCancelSOSSignal" destination="Wln-Z6-ypB" id="zNN-Im-7gf"/>
                         <segue destination="kYe-3K-TNs" kind="show" identifier="showProfile" id="NQ0-L5-JoZ"/>
                         <segue destination="SbB-GM-0eM" kind="presentation" identifier="logoutAccount" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="aae-ew-RzT"/>
+                        <segue destination="Fwk-Ty-vX4" kind="presentation" identifier="showPresent" modalPresentationStyle="fullScreen" id="QzT-K7-opg"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SMf-G7-76A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2987,7 +3021,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="YZM-tW-3Zg"/>
         <segue reference="TjU-Yc-Fqh"/>
-        <segue reference="O5G-oF-Q2H"/>
+        <segue reference="QzT-K7-opg"/>
+        <segue reference="aae-ew-RzT"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Home" width="380" height="423"/>

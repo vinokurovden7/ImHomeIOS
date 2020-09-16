@@ -56,6 +56,10 @@ class SettingsVC: UITableViewController, UITextFieldDelegate {
         }
     }
     
+    @IBAction func showPresentationAction(_ sender: CustomButton) {
+        performSegue(withIdentifier: "showPresent", sender: self)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showProfile" {
             guard let destination = segue.destination as? ProfileVC else {return}

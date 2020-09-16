@@ -25,6 +25,20 @@ class BiometrickAuth {
         }
     }
     
+    /// Получение названия относительно типа биометрической аутентификации
+    /// - Returns: Изображение
+    func getStringForBiometrickType() -> String {
+        let _ = context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
+        switch context.biometryType {
+            case .faceID:
+                return "Face ID"
+            case .touchID:
+                return "Touch ID"
+            default:
+                return "Undefined biometrick system"
+        }
+    }
+    
     /// Получение типа биометрической аутентификации
     /// - Returns: Тип биометрической аутентификации
     func getBiometrickType() -> LABiometryType {
