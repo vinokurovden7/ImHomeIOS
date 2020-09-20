@@ -188,7 +188,7 @@ class LoginVC: UIViewController {
     }
     
     //MARK: Настройка полей ввода
-    fileprivate func setupTextFields(_ textField: UITextField) {
+    private func setupTextFields(_ textField: UITextField) {
         //Basic texfield Setup
         textField.borderStyle = .none
         textField.backgroundColor = .white

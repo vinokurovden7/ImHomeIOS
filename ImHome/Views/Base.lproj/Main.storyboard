@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wHF-we-4to">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wHF-we-4to">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,7 +33,7 @@
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Имя пользователя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iIJ-Py-gq0">
                                 <rect key="frame" x="15" y="398" width="329" height="40"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="xKc-L1-3zI"/>
                                 </constraints>
@@ -48,7 +50,7 @@
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L5W-Rx-VxZ">
                                 <rect key="frame" x="15" y="468" width="329" height="40"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="kaq-va-yUV"/>
                                 </constraints>
@@ -89,7 +91,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ДОМА" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYZ-aS-lJe">
                                                 <rect key="frame" x="19.333333333333314" y="0.0" width="70.666666666666671" height="35"/>
                                                 <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="23"/>
-                                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" systemColor="systemRedColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -107,7 +109,7 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfe-XG-TUS" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                 <rect key="frame" x="243" y="528" width="155" height="60"/>
-                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="155" id="BEe-Qk-WyQ"/>
                                     <constraint firstAttribute="height" constant="60" id="YWk-8v-YVY"/>
@@ -142,7 +144,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ДОМА" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLE-Jz-dpm">
                                         <rect key="frame" x="19.333333333333336" y="0.0" width="70.666666666666657" height="35"/>
                                         <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="23"/>
-                                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -151,7 +153,7 @@
                                     <constraint firstAttribute="height" constant="35" id="cHD-KU-cmN"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0J-Fi-Che" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0J-Fi-Che" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                 <rect key="frame" x="154" y="816" width="106" height="36"/>
                                 <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
                                 <color key="tintColor" red="0.29497301580000002" green="0.55425816770000003" blue="0.80395334959999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -162,7 +164,7 @@
                                     <action selector="registrationBtnAction:" destination="SbB-GM-0eM" eventType="touchUpInside" id="oK3-BH-3la"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JbQ-uS-qBV" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JbQ-uS-qBV" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                 <rect key="frame" x="15" y="597" width="157" height="32"/>
                                 <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="14"/>
                                 <state key="normal" title="Забыли пароль ?">
@@ -198,6 +200,7 @@
                                 </state>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="OsD-vc-ix4"/>
                         <color key="backgroundColor" name="backgroundViewColor"/>
                         <constraints>
                             <constraint firstItem="cHO-DG-5Uq" firstAttribute="leading" secondItem="OsD-vc-ix4" secondAttribute="leading" id="1Ch-tw-hve"/>
@@ -239,7 +242,6 @@
                             <constraint firstItem="U25-5h-4bS" firstAttribute="leading" secondItem="OsD-vc-ix4" secondAttribute="leading" constant="15" id="utj-bW-vd5"/>
                             <constraint firstItem="OsD-vc-ix4" firstAttribute="bottom" secondItem="IFW-vn-KoV" secondAttribute="bottom" constant="20" id="yM9-zv-R8j"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="OsD-vc-ix4"/>
                     </view>
                     <navigationItem key="navigationItem" id="0ho-c6-Rm7"/>
                     <connections>
@@ -282,12 +284,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="swe-3j-ved">
-                                <rect key="frame" x="187.66666666666666" y="805" width="39" height="37"/>
+                                <rect key="frame" x="146.33333333333334" y="814.66666666666663" width="121.33333333333334" height="27.333333333333371"/>
                                 <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="currentPageIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pageControl>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IqG-Bh-bwI" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
-                                <rect key="frame" x="334" y="808.66666666666663" width="60" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IqG-Bh-bwI" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
+                                <rect key="frame" x="334" y="813.33333333333337" width="60" height="30"/>
                                 <state key="normal" title="Закрыть">
                                     <color key="titleColor" name="textLabelColor"/>
                                 </state>
@@ -296,6 +298,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="P6e-2c-Ba6"/>
                         <color key="backgroundColor" name="backgroundViewColor"/>
                         <constraints>
                             <constraint firstItem="P6e-2c-Ba6" firstAttribute="bottom" secondItem="swe-3j-ved" secondAttribute="bottom" constant="20" id="9M9-d5-zGO"/>
@@ -314,7 +317,6 @@
                             <constraint firstItem="P6e-2c-Ba6" firstAttribute="trailing" secondItem="IqG-Bh-bwI" secondAttribute="trailing" constant="20" id="uQS-zD-d5N"/>
                             <constraint firstItem="swe-3j-ved" firstAttribute="centerX" secondItem="P6e-2c-Ba6" secondAttribute="centerX" id="wam-9p-swe"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="P6e-2c-Ba6"/>
                     </view>
                     <connections>
                         <outlet property="closePresentationButton" destination="IqG-Bh-bwI" id="bts-0b-G9r"/>
@@ -346,12 +348,12 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите код-пароль" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wXR-Nm-r9H">
-                                <rect key="frame" x="125.33333333333333" y="114" width="163.33333333333337" height="20.333333333333343"/>
+                                <rect key="frame" x="125.66666666666667" y="114" width="162.66666666666663" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="textLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBQ-wZ-PqH" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBQ-wZ-PqH" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                 <rect key="frame" x="164.66666666666666" y="620" width="84.666666666666657" height="84.666666666666629"/>
                                 <color key="backgroundColor" name="fonBackgroundImageColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
@@ -362,7 +364,7 @@
                                     <action selector="zeroNumberButtonAction:" destination="XdD-Sm-RNI" eventType="touchUpInside" id="GiJ-c6-x1n"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WM7-6D-xsF">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WM7-6D-xsF">
                                 <rect key="frame" x="312" y="812" width="60" height="30"/>
                                 <state key="normal" title="Закрыть">
                                     <color key="titleColor" name="textLabelColor"/>
@@ -377,7 +379,7 @@
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="iph-hl-bnq">
                                         <rect key="frame" x="0.0" y="0.0" width="294" height="84.666666666666671"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAt-Ur-UaN" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAt-Ur-UaN" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="84.666666666666671" height="84.666666666666671"/>
                                                 <color key="backgroundColor" name="fonBackgroundImageColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
@@ -388,7 +390,7 @@
                                                     <action selector="firstNumberButtonAction:" destination="XdD-Sm-RNI" eventType="touchUpInside" id="o9W-gk-HlV"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sjf-NT-ojk" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sjf-NT-ojk" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                                 <rect key="frame" x="104.66666666666666" y="0.0" width="84.666666666666657" height="84.666666666666671"/>
                                                 <color key="backgroundColor" name="fonBackgroundImageColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
@@ -399,7 +401,7 @@
                                                     <action selector="secondNumberButtonAction:" destination="XdD-Sm-RNI" eventType="touchUpInside" id="Tb7-Yq-Zqt"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8p-bv-5ML" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8p-bv-5ML" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                                 <rect key="frame" x="209.33333333333331" y="0.0" width="84.666666666666686" height="84.666666666666671"/>
                                                 <color key="backgroundColor" name="fonBackgroundImageColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
@@ -415,7 +417,7 @@
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="f6F-7G-1qf">
                                         <rect key="frame" x="0.0" y="104.66666666666669" width="294" height="84.666666666666686"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wGA-kL-sma" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wGA-kL-sma" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="84.666666666666671" height="84.666666666666671"/>
                                                 <color key="backgroundColor" name="fonBackgroundImageColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
@@ -426,7 +428,7 @@
                                                     <action selector="fourNumberButtonAction:" destination="XdD-Sm-RNI" eventType="touchUpInside" id="Ksb-CX-Ljc"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TD7-q4-1Bm" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TD7-q4-1Bm" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                                 <rect key="frame" x="104.66666666666666" y="0.0" width="84.666666666666657" height="84.666666666666671"/>
                                                 <color key="backgroundColor" name="fonBackgroundImageColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
@@ -437,7 +439,7 @@
                                                     <action selector="fiveNumberButtonAction:" destination="XdD-Sm-RNI" eventType="touchUpInside" id="giJ-q6-aOP"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAK-aN-7gR" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAK-aN-7gR" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                                 <rect key="frame" x="209.33333333333331" y="0.0" width="84.666666666666686" height="84.666666666666671"/>
                                                 <color key="backgroundColor" name="fonBackgroundImageColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
@@ -453,7 +455,7 @@
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="HlV-dh-Zhu">
                                         <rect key="frame" x="0.0" y="209.33333333333337" width="294" height="84.666666666666686"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyI-xx-9Na" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyI-xx-9Na" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="84.666666666666671" height="84.666666666666671"/>
                                                 <color key="backgroundColor" name="fonBackgroundImageColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
@@ -464,7 +466,7 @@
                                                     <action selector="sevenNumberButtonAction:" destination="XdD-Sm-RNI" eventType="touchUpInside" id="asV-Ij-Gf0"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8L-1C-XO0" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8L-1C-XO0" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                                 <rect key="frame" x="104.66666666666666" y="0.0" width="84.666666666666657" height="84.666666666666671"/>
                                                 <color key="backgroundColor" name="fonBackgroundImageColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
@@ -475,7 +477,7 @@
                                                     <action selector="eightNumberButtonAction:" destination="XdD-Sm-RNI" eventType="touchUpInside" id="D4P-S0-cXJ"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K3C-dV-VoJ" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K3C-dV-VoJ" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                                 <rect key="frame" x="209.33333333333331" y="0.0" width="84.666666666666686" height="84.666666666666671"/>
                                                 <color key="backgroundColor" name="fonBackgroundImageColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
@@ -498,7 +500,7 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="02y-G9-hSe">
                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="2QW-uJ-G1S"/>
                                             <constraint firstAttribute="height" constant="20" id="ope-RN-wOz"/>
@@ -506,7 +508,7 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YlR-0M-zIm">
                                         <rect key="frame" x="40" y="0.0" width="20" height="20"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="9Ek-4A-ycT"/>
                                             <constraint firstAttribute="width" constant="20" id="dmU-Mr-CPx"/>
@@ -514,7 +516,7 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eMQ-de-VvQ">
                                         <rect key="frame" x="80" y="0.0" width="20" height="20"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="7dW-cr-Cwe"/>
                                             <constraint firstAttribute="height" constant="20" id="wL3-Kg-169"/>
@@ -522,7 +524,7 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tRZ-ba-JEm">
                                         <rect key="frame" x="120" y="0.0" width="20" height="20"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="90R-g0-X1U"/>
                                             <constraint firstAttribute="height" constant="20" id="hVi-Gi-4yg"/>
@@ -530,7 +532,7 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KbK-1J-0dh">
                                         <rect key="frame" x="160" y="0.0" width="20" height="20"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="amj-fN-GBa"/>
                                             <constraint firstAttribute="height" constant="20" id="u09-fe-fXJ"/>
@@ -538,7 +540,7 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8iL-Co-op2">
                                         <rect key="frame" x="200" y="0.0" width="20" height="20"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="5JN-MQ-A1p"/>
                                             <constraint firstAttribute="width" constant="20" id="QjH-Ba-7uX"/>
@@ -561,6 +563,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="R2R-3B-x4Q"/>
                         <color key="backgroundColor" name="backgroundViewColor"/>
                         <constraints>
                             <constraint firstItem="JOl-64-elt" firstAttribute="top" secondItem="wXR-Nm-r9H" secondAttribute="bottom" constant="20" id="22Q-Y0-oTQ"/>
@@ -592,7 +595,6 @@
                             <constraint firstItem="676-Qp-7eO" firstAttribute="centerY" secondItem="R2R-3B-x4Q" secondAttribute="centerY" id="y6h-dX-upe"/>
                             <constraint firstItem="bKW-Ay-LKY" firstAttribute="centerX" secondItem="oBQ-wZ-PqH" secondAttribute="centerX" id="yZq-Km-7m6"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="R2R-3B-x4Q"/>
                     </view>
                     <connections>
                         <outlet property="centerConstraintNumberpadStackView" destination="y6h-dX-upe" id="dEU-uz-55b"/>
@@ -680,17 +682,18 @@
                                 <color key="textColor" name="textLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qVD-c1-zwk">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qVD-c1-zwk">
                                 <rect key="frame" x="20" y="732" width="81" height="36"/>
                                 <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
                                 <state key="normal" title="Отменить">
-                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" systemColor="systemRedColor"/>
                                 </state>
                                 <connections>
                                     <action selector="cancelAlarmAction:" destination="rj1-kM-JaT" eventType="touchUpInside" id="awN-XN-SiA"/>
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="C1y-5u-vvH"/>
                         <color key="backgroundColor" name="backgroundViewColor"/>
                         <constraints>
                             <constraint firstItem="8hy-GI-HbN" firstAttribute="top" secondItem="Jae-rA-HqD" secondAttribute="bottom" constant="20" id="5pQ-XZ-OKT"/>
@@ -718,7 +721,6 @@
                             <constraint firstItem="U6N-8A-mhm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qVD-c1-zwk" secondAttribute="trailing" constant="20" id="tDs-Jm-feZ"/>
                             <constraint firstItem="FWd-Ae-VeS" firstAttribute="top" secondItem="U6N-8A-mhm" secondAttribute="bottom" constant="5" id="vye-7I-xbm"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="C1y-5u-vvH"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Главная" image="homeIcon" landscapeImage="exclamationmark.triangle.fill" largeContentSizeImage="exclamationmark.triangle.fill" id="rBh-Wp-DBq"/>
                     <connections>
@@ -758,7 +760,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="a0l-6j-6CV"/>
                                 </constraints>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="next"/>
                             </textView>
@@ -768,9 +770,9 @@
                                 <color key="textColor" name="textLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HxY-wL-rMp" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HxY-wL-rMp" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                 <rect key="frame" x="16" y="728" width="382" height="50"/>
-                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="5nN-0m-v8K"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="xsR-gJ-560"/>
@@ -793,6 +795,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="NRN-Td-3Wi"/>
                         <color key="backgroundColor" name="backgroundViewColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="5zG-Yd-Sd8" secondAttribute="bottom" id="Ah3-rs-hgr"/>
@@ -817,7 +820,6 @@
                             <constraint firstItem="DlA-tR-8cC" firstAttribute="top" secondItem="YWp-XW-HjH" secondAttribute="bottom" constant="10" id="xwQ-Rm-K24"/>
                             <constraint firstItem="NRN-Td-3Wi" firstAttribute="bottom" secondItem="HxY-wL-rMp" secondAttribute="bottom" constant="30" id="zhO-NL-Kzb"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="NRN-Td-3Wi"/>
                     </view>
                     <navigationItem key="navigationItem" id="8VP-UP-cnr"/>
                     <connections>
@@ -901,7 +903,7 @@
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hfI-U5-3ND">
                                                     <rect key="frame" x="42.666666666666657" y="-25" width="60" height="60"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 </view>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sherlock" translatesAutoresizingMaskIntoConstraints="NO" id="JC0-ee-kzZ">
                                                     <rect key="frame" x="42.666666666666657" y="-25" width="60" height="60"/>
@@ -926,7 +928,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin.and.ellipse" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="XzC-Qp-Vxq">
-                                                            <rect key="frame" x="48.333333333333336" y="0.33333333333333393" width="28.333333333333336" height="20"/>
+                                                            <rect key="frame" x="48.333333333333336" y="0.0" width="28.333333333333336" height="20"/>
                                                             <color key="tintColor" name="buttonImageColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="GZU-MP-zLf"/>
@@ -997,7 +999,8 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Контакты" largeTitleDisplayMode="always" id="fNk-d3-kF0">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="person.badge.plus.fill" catalog="system" id="YC5-DG-Fi9">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="person.fill.badge.plus" catalog="system" id="YC5-DG-Fi9">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="addContactBtnAction:" destination="JEb-SK-Zha" id="QCX-6m-aS5"/>
                                 <segue destination="LWi-jD-Z6C" kind="show" id="LVx-24-JXg"/>
@@ -1035,7 +1038,7 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FoM-c1-D6D">
                                                     <rect key="frame" x="16" y="5" width="120" height="120"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 </view>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sherlock" translatesAutoresizingMaskIntoConstraints="NO" id="0ow-dX-MsM">
                                                     <rect key="frame" x="16" y="5" width="120" height="120"/>
@@ -1082,9 +1085,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJz-xG-mB8" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJz-xG-mB8" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                                     <rect key="frame" x="16" y="8" width="382" height="50"/>
-                                                    <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="Rxk-Xi-NJ1"/>
                                                     </constraints>
@@ -1113,9 +1116,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLG-SJ-SeR" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLG-SJ-SeR" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                                     <rect key="frame" x="16" y="8" width="382" height="50"/>
-                                                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" systemColor="systemBlueColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="o1l-no-dpQ"/>
                                                     </constraints>
@@ -1144,9 +1147,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tdc-sh-x2g" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tdc-sh-x2g" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                                     <rect key="frame" x="16" y="8" width="382" height="50"/>
-                                                    <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="Beh-hl-0jh"/>
                                                     </constraints>
@@ -1219,7 +1222,7 @@
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g02-2i-BbB">
                                                     <rect key="frame" x="347" y="12.666666666666664" width="49" height="30"/>
-                                                    <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" systemColor="systemRedColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="C0i-z3-syQ"/>
                                                         <constraint firstAttribute="width" constant="47" id="nOu-S6-QJD"/>
@@ -1287,7 +1290,7 @@
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y8J-38-KKU">
                                     <rect key="frame" x="92" y="20" width="230" height="230"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </view>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="RYi-Th-qt5">
                                     <rect key="frame" x="92" y="20.999999999999986" width="230" height="228.66666666666669"/>
@@ -1489,9 +1492,9 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZLj-N0-4C8">
                                                     <rect key="frame" x="16" y="10" width="382" height="50"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17S-yt-E2M" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17S-yt-E2M" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="186" height="50"/>
-                                                            <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="50" id="J8k-VK-d2L"/>
                                                             </constraints>
@@ -1503,9 +1506,9 @@
                                                                 <action selector="showPasswordManagerAction:" destination="kYe-3K-TNs" eventType="touchUpInside" id="Fm9-xS-5UK"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trz-Ke-P3y" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
+                                                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trz-Ke-P3y" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                                             <rect key="frame" x="196" y="0.0" width="186" height="50"/>
-                                                            <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="50" id="bS4-lO-pmF"/>
                                                             </constraints>
@@ -1541,9 +1544,9 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mdT-F9-9sg">
                                                     <rect key="frame" x="16" y="10" width="382" height="50"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wd-Rq-fPF" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
+                                                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wd-Rq-fPF" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
-                                                            <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="backgroundColor" systemColor="systemRedColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="50" id="sr6-si-nQ4"/>
                                                             </constraints>
@@ -1632,7 +1635,7 @@
                                             <constraint firstAttribute="height" constant="60" id="Uwl-qx-iiG"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="50"/>
-                                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -1641,6 +1644,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="rcc-Eo-iIg"/>
                         <color key="backgroundColor" name="backgroundViewColor"/>
                         <constraints>
                             <constraint firstItem="L9Y-ay-vx4" firstAttribute="leading" secondItem="rcc-Eo-iIg" secondAttribute="leading" id="70P-PD-UP4"/>
@@ -1657,7 +1661,6 @@
                             <constraint firstItem="L9Y-ay-vx4" firstAttribute="top" secondItem="2WF-WO-S5k" secondAttribute="top" id="nhb-FN-d0E"/>
                             <constraint firstItem="hAf-ox-qCJ" firstAttribute="centerY" secondItem="rcc-Eo-iIg" secondAttribute="centerY" id="qik-F2-JUh"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="rcc-Eo-iIg"/>
                     </view>
                     <connections>
                         <segue destination="SbB-GM-0eM" kind="presentation" identifier="showLoginScreen" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="O5G-oF-Q2H"/>
@@ -1746,7 +1749,7 @@
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8Q-Ta-d4V" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="156" height="36"/>
-                                                                    <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="36" id="5eb-dx-30s"/>
                                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="ahD-1o-EUU"/>
@@ -1764,7 +1767,7 @@
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcr-mw-21x" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                                                     <rect key="frame" x="186" y="0.0" width="156" height="36"/>
-                                                                    <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="backgroundColor" systemColor="systemRedColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="3mg-XW-Rez"/>
                                                                         <constraint firstAttribute="height" constant="36" id="cMV-b9-xe4"/>
@@ -1847,6 +1850,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="UmJ-BK-ehB"/>
                         <color key="backgroundColor" name="backgroundViewColor"/>
                         <constraints>
                             <constraint firstItem="7Zj-om-5J2" firstAttribute="top" secondItem="080-PY-let" secondAttribute="top" id="5E1-t4-JHA"/>
@@ -1858,7 +1862,6 @@
                             <constraint firstItem="7Zj-om-5J2" firstAttribute="leading" secondItem="UmJ-BK-ehB" secondAttribute="leading" id="tml-K5-NJm"/>
                             <constraint firstItem="7Zj-om-5J2" firstAttribute="bottom" secondItem="UmJ-BK-ehB" secondAttribute="bottom" id="vdw-lt-Ydd"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="UmJ-BK-ehB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Заявки" image="person.2.fill" catalog="system" landscapeImage="person.2.fill" largeContentSizeImage="person.2.fill" selectedImage="person.2.fill" id="DQe-gH-M5O"/>
                     <connections>
@@ -1917,9 +1920,9 @@
                                             <constraint firstAttribute="height" constant="48" id="I5h-pU-Dbw"/>
                                             <constraint firstAttribute="width" constant="48" id="N3O-x8-hzn"/>
                                         </constraints>
-                                        <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" systemColor="systemRedColor"/>
                                         <state key="normal" image="mic.slash.fill" catalog="system">
-                                            <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" systemColor="systemRedColor"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="42"/>
                                         </state>
                                     </button>
@@ -1929,9 +1932,9 @@
                                             <constraint firstAttribute="width" constant="48" id="PVt-xf-5GK"/>
                                             <constraint firstAttribute="height" constant="48" id="gGb-DT-vg3"/>
                                         </constraints>
-                                        <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" systemColor="systemRedColor"/>
                                         <state key="normal" image="mappin.slash" catalog="system">
-                                            <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" systemColor="systemRedColor"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="42"/>
                                         </state>
                                     </button>
@@ -1957,7 +1960,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xkg-e1-XaJ">
                                 <rect key="frame" x="103.66666666666669" y="50" width="207" height="207"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sherlock" translatesAutoresizingMaskIntoConstraints="NO" id="JnE-SO-NcU">
                                 <rect key="frame" x="103.66666666666669" y="50" width="207" height="207"/>
@@ -1965,9 +1968,9 @@
                                     <constraint firstAttribute="width" secondItem="JnE-SO-NcU" secondAttribute="height" multiplier="1:1" id="kwd-El-qU8"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fq-JT-HMP" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fq-JT-HMP" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                 <rect key="frame" x="16" y="748" width="382" height="50"/>
-                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Jrs-Dg-TX6"/>
                                 </constraints>
@@ -1977,6 +1980,7 @@
                                 </state>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="M8O-AD-2bv"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="PJO-3o-q48" firstAttribute="leading" secondItem="M8O-AD-2bv" secondAttribute="leading" constant="16" id="3cz-v9-3qd"/>
@@ -2003,7 +2007,6 @@
                             <constraint firstItem="M8O-AD-2bv" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JnE-SO-NcU" secondAttribute="trailing" constant="16" id="oYx-88-J7m"/>
                             <constraint firstItem="M8O-AD-2bv" firstAttribute="bottom" secondItem="2fq-JT-HMP" secondAttribute="bottom" constant="10" id="qac-7s-D1R"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="M8O-AD-2bv"/>
                     </view>
                     <navigationItem key="navigationItem" id="mWn-Jj-ncM"/>
                     <connections>
@@ -2067,7 +2070,7 @@
                                             <constraint firstAttribute="height" constant="216" id="Xyi-rD-ggs"/>
                                         </constraints>
                                         <string key="text">Я поехал домой в 21:00 с адреса Говорова 2 до адреса Декбристов 1-а. Сел в такси рено логан гос. номер р195ка66, зеленого цвета  </string>
-                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <userDefinedRuntimeAttributes>
@@ -2101,7 +2104,7 @@
                                         </state>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
                                 <constraints>
                                     <constraint firstItem="RpV-MY-jPq" firstAttribute="leading" secondItem="MqI-ge-Shb" secondAttribute="leading" constant="16" id="6iH-24-KKK"/>
                                     <constraint firstItem="cGy-LK-y7k" firstAttribute="top" secondItem="RpV-MY-jPq" secondAttribute="bottom" constant="20" id="94P-4S-aSX"/>
@@ -2118,7 +2121,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vNI-9n-q6A">
                                 <rect key="frame" x="20" y="50" width="374" height="374"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sherlock" translatesAutoresizingMaskIntoConstraints="NO" id="2jP-up-cg7">
                                 <rect key="frame" x="20" y="50" width="374" height="374"/>
@@ -2126,7 +2129,7 @@
                                     <constraint firstAttribute="width" secondItem="2jP-up-cg7" secondAttribute="height" multiplier="1:1" id="z1D-Yh-cEt"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zco-WV-zQj" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zco-WV-zQj" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                 <rect key="frame" x="16" y="748" width="382" height="50"/>
                                 <color key="backgroundColor" red="0.16710814830000001" green="0.1071069613" blue="0.54121041299999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -2138,6 +2141,7 @@
                                 </state>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="DnK-Iq-f9R"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="DnK-Iq-f9R" firstAttribute="bottom" secondItem="zco-WV-zQj" secondAttribute="bottom" constant="10" id="67B-sA-PFQ"/>
@@ -2159,7 +2163,6 @@
                             <constraint firstItem="zco-WV-zQj" firstAttribute="top" secondItem="cGy-LK-y7k" secondAttribute="bottom" constant="30" id="oTD-ft-obf"/>
                             <constraint firstAttribute="bottom" secondItem="MqI-ge-Shb" secondAttribute="bottom" constant="-20" id="qXe-AU-jZm"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="DnK-Iq-f9R"/>
                     </view>
                     <navigationItem key="navigationItem" id="TFK-Ix-bcc"/>
                     <connections>
@@ -2218,7 +2221,7 @@
                                         </state>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
                                 <constraints>
                                     <constraint firstItem="n57-JA-iPd" firstAttribute="centerX" secondItem="tOE-2v-tzp" secondAttribute="centerX" constant="-50" id="32u-bT-3aX"/>
                                     <constraint firstItem="n57-JA-iPd" firstAttribute="top" secondItem="tOE-2v-tzp" secondAttribute="bottom" constant="20" id="9ph-Yc-19c"/>
@@ -2235,7 +2238,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cmi-7n-MRf">
                                 <rect key="frame" x="20" y="50" width="374" height="374"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sherlock" translatesAutoresizingMaskIntoConstraints="NO" id="FAC-9c-WVl">
                                 <rect key="frame" x="20" y="50" width="374" height="374"/>
@@ -2243,7 +2246,7 @@
                                     <constraint firstAttribute="width" secondItem="FAC-9c-WVl" secondAttribute="height" multiplier="1:1" id="AS6-fE-HB2"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vco-b6-WiI" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vco-b6-WiI" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                 <rect key="frame" x="16" y="748" width="382" height="50"/>
                                 <color key="backgroundColor" red="0.16710814830000001" green="0.1071069613" blue="0.54121041299999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -2255,6 +2258,7 @@
                                 </state>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="cP9-0H-XYF"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="yhs-cG-Bl0" firstAttribute="height" secondItem="BcF-ya-Yej" secondAttribute="height" multiplier="0.81338" id="4NR-h6-nEC"/>
@@ -2276,7 +2280,6 @@
                             <constraint firstItem="tOE-2v-tzp" firstAttribute="top" secondItem="FAC-9c-WVl" secondAttribute="bottom" constant="10" id="v39-99-aVo"/>
                             <constraint firstItem="vco-b6-WiI" firstAttribute="top" secondItem="QnO-XJ-Jhs" secondAttribute="bottom" constant="30" id="yIa-7F-HV6"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="cP9-0H-XYF"/>
                     </view>
                     <navigationItem key="navigationItem" id="rcy-zo-Y2e"/>
                     <connections>
@@ -2319,7 +2322,7 @@
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ei2-eg-D6D">
                                                             <rect key="frame" x="8" y="8" width="69" height="69"/>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         </view>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sherlock" translatesAutoresizingMaskIntoConstraints="NO" id="SkB-k7-YBn">
                                                             <rect key="frame" x="8" y="8" width="69" height="69"/>
@@ -2387,6 +2390,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="zio-1C-68o"/>
                         <color key="backgroundColor" name="backgroundViewColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="EjH-I1-4F9" secondAttribute="bottom" id="9pg-Lt-1xK"/>
@@ -2398,7 +2402,6 @@
                             <constraint firstItem="EjH-I1-4F9" firstAttribute="leading" secondItem="zio-1C-68o" secondAttribute="leading" id="qsk-eJ-0P0"/>
                             <constraint firstItem="EjH-I1-4F9" firstAttribute="top" secondItem="k4k-dw-uJU" secondAttribute="top" id="rls-6x-zQf"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="zio-1C-68o"/>
                     </view>
                     <navigationItem key="navigationItem" title="Список людей" largeTitleDisplayMode="never" id="MtQ-In-HoP"/>
                     <connections>
@@ -2836,9 +2839,9 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="q9u-Y8-CqQ">
                                                     <rect key="frame" x="16" y="30" width="382" height="132"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pvB-xa-SGq" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
+                                                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pvB-xa-SGq" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="382" height="51"/>
-                                                            <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="backgroundColor" systemColor="systemRedColor"/>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="15"/>
                                                             <state key="normal" title="Зарегистрироваться">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2847,7 +2850,7 @@
                                                                 <action selector="registrationBtnAction:" destination="XJb-OH-pZL" eventType="touchUpInside" id="Be5-TB-wQb"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJK-bo-pdE" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJK-bo-pdE" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="81" width="382" height="51"/>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
                                                             <state key="normal" title="У меня уже есть аккаунт">
@@ -2930,7 +2933,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Напишите сообщение:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7Rz-Fp-j9f">
-                                <rect key="frame" x="103.00000000000001" y="120" width="208.33333333333337" height="24"/>
+                                <rect key="frame" x="102.33333333333333" y="120" width="209.33333333333337" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="aeY-c1-6Z4"/>
                                 </constraints>
@@ -2940,7 +2943,7 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="re7-OP-eTB">
                                 <rect key="frame" x="16" y="10" width="100" height="100"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sherlock" translatesAutoresizingMaskIntoConstraints="NO" id="qm9-Su-5I6">
                                 <rect key="frame" x="16" y="10" width="100" height="100"/>
@@ -2949,9 +2952,9 @@
                                     <constraint firstAttribute="width" constant="100" id="Oto-ME-Rkn"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1o-o9-fKW" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1o-o9-fKW" customClass="CustomButton" customModule="Я_дома" customModuleProvider="target">
                                 <rect key="frame" x="16" y="748" width="382" height="50"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="m4L-gL-Qay"/>
                                 </constraints>
@@ -2963,7 +2966,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Wov-We-xBw">
                                 <rect key="frame" x="16" y="154" width="382" height="574"/>
                                 <color key="backgroundColor" name="inputTextViewColor"/>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                 <userDefinedRuntimeAttributes>
@@ -2976,6 +2979,7 @@
                                 </connections>
                             </textView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="HjY-lc-kUp"/>
                         <color key="backgroundColor" name="backgroundViewColor"/>
                         <constraints>
                             <constraint firstItem="HjY-lc-kUp" firstAttribute="bottom" secondItem="m1o-o9-fKW" secondAttribute="bottom" constant="10" id="0GD-Sz-BWg"/>
@@ -3001,7 +3005,6 @@
                             <constraint firstItem="Wov-We-xBw" firstAttribute="leading" secondItem="HjY-lc-kUp" secondAttribute="leading" constant="16" id="w1X-1D-pCG"/>
                             <constraint firstItem="re7-OP-eTB" firstAttribute="bottom" secondItem="qm9-Su-5I6" secondAttribute="bottom" id="zmN-SF-lzU"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="HjY-lc-kUp"/>
                     </view>
                     <navigationItem key="navigationItem" id="yXR-dl-wxC"/>
                     <connections>
@@ -3030,23 +3033,23 @@
         <image name="camera.circle.fill" catalog="system" width="128" height="121"/>
         <image name="closed_eye" width="22.333333969116211" height="14"/>
         <image name="exclamationmark.triangle.fill" width="128" height="128"/>
-        <image name="faceid" catalog="system" width="128" height="114"/>
+        <image name="faceid" catalog="system" width="128" height="115"/>
         <image name="fonBackground" width="250" height="444.66665649414062"/>
         <image name="gear" catalog="system" width="128" height="119"/>
         <image name="homeIcon" width="22" height="26"/>
         <image name="lock" catalog="system" width="128" height="128"/>
         <image name="lock.fill" catalog="system" width="128" height="128"/>
-        <image name="map.fill" catalog="system" width="128" height="113"/>
+        <image name="map.fill" catalog="system" width="128" height="110"/>
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
-        <image name="mappin.slash" catalog="system" width="105" height="128"/>
+        <image name="mappin.slash" catalog="system" width="102" height="128"/>
         <image name="mic.fill" catalog="system" width="108" height="128"/>
-        <image name="mic.slash.fill" catalog="system" width="112" height="128"/>
+        <image name="mic.slash.fill" catalog="system" width="108" height="128"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.2.fill" catalog="system" width="128" height="80"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
-        <image name="person.badge.plus.fill" catalog="system" width="128" height="116"/>
+        <image name="person.fill.badge.plus" catalog="system" width="128" height="124"/>
         <image name="sherlock" width="206.66667175292969" height="140"/>
-        <image name="shield.fill" catalog="system" width="128" height="115"/>
+        <image name="shield.fill" catalog="system" width="128" height="121"/>
         <image name="text.bubble.fill" catalog="system" width="128" height="110"/>
         <namedColor name="backgroundViewColor">
             <color red="0.15700000524520874" green="0.13300000131130219" blue="0.54100000858306885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3078,5 +3081,23 @@
         <namedColor name="viewPlitsColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

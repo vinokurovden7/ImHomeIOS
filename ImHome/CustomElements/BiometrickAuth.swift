@@ -26,7 +26,7 @@ class BiometrickAuth {
     }
     
     /// Получение названия относительно типа биометрической аутентификации
-    /// - Returns: Изображение
+    /// - Returns: Название в виде строки
     func getStringForBiometrickType() -> String {
         let _ = context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
         switch context.biometryType {
