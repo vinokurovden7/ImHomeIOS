@@ -45,4 +45,15 @@ class BiometrickAuth {
         let _ = context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
         return context.biometryType
     }
+    
+    func showBiomentricAutorization(context: LAContext, completion: @escaping (Bool) -> ()) {
+        var authError: NSError?
+        if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &authError) {
+            context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "Автозаполнение пароля") { (success, error) in
+                completion(success)
+            }
+        } else {
+            completion(false)
+        }
+    }
 }

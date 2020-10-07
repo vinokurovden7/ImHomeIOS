@@ -195,7 +195,7 @@
                                     <constraint firstAttribute="width" constant="25" id="uds-Qc-wUF"/>
                                 </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="closed_eye">
+                                <state key="normal" image="closedEye">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                 </state>
                             </button>
@@ -1264,6 +1264,9 @@
                     <connections>
                         <outlet property="backgroundImageView" destination="FoM-c1-D6D" id="iYf-l3-LxE"/>
                         <outlet property="editAccountButton" destination="Tdc-sh-x2g" id="tmP-zP-Fi5"/>
+                        <outlet property="emailAccount" destination="itH-vm-XO8" id="vSS-1X-RPk"/>
+                        <outlet property="fioAccount" destination="sV2-3Q-C6H" id="umj-U4-DRd"/>
+                        <outlet property="logoutAccounButton" destination="TJz-xG-mB8" id="Bz3-9h-rLX"/>
                         <outlet property="profileImageVIew" destination="0ow-dX-MsM" id="7ib-tH-wMb"/>
                         <outlet property="timeCancelSOSSignal" destination="Wln-Z6-ypB" id="zNN-Im-7gf"/>
                         <segue destination="kYe-3K-TNs" kind="show" identifier="showProfile" id="NQ0-L5-JoZ"/>
@@ -1292,7 +1295,7 @@
                                     <rect key="frame" x="92" y="20" width="230" height="230"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </view>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="RYi-Th-qt5">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="RYi-Th-qt5">
                                     <rect key="frame" x="92" y="20.999999999999986" width="230" height="228.66666666666669"/>
                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3022,7 +3025,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YZM-tW-3Zg"/>
+        <segue reference="oc1-Sy-V6b"/>
         <segue reference="TjU-Yc-Fqh"/>
         <segue reference="QzT-K7-opg"/>
         <segue reference="aae-ew-RzT"/>
@@ -3031,7 +3034,7 @@
         <image name="Home" width="380" height="423"/>
         <image name="Path" width="249" height="410"/>
         <image name="camera.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="closed_eye" width="22.333333969116211" height="14"/>
+        <image name="closedEye" width="22.333333969116211" height="14"/>
         <image name="exclamationmark.triangle.fill" width="128" height="128"/>
         <image name="faceid" catalog="system" width="128" height="115"/>
         <image name="fonBackground" width="250" height="444.66665649414062"/>

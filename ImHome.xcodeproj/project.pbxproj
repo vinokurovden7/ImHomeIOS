@@ -36,6 +36,10 @@
 		92AA6F522500BDB8007E51E4 /* LockerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AA6F512500BDB8007E51E4 /* LockerViewController.swift */; };
 		92B82DB224ED7DC3002B8366 /* DBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B82DB124ED7DC3002B8366 /* DBModel.swift */; };
 		92B82DB424ED7DDF002B8366 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B82DB324ED7DDF002B8366 /* StorageManager.swift */; };
+		92B86D17252D89F200A9DB01 /* RegistrationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B86D16252D89F200A9DB01 /* RegistrationVM.swift */; };
+		92B86D1C252D8A0900A9DB01 /* RegistrationViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B86D1B252D8A0900A9DB01 /* RegistrationViewModelType.swift */; };
+		92B86D21252E12EA00A9DB01 /* MainVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B86D20252E12EA00A9DB01 /* MainVM.swift */; };
+		92B86D26252E12F800A9DB01 /* MainViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B86D25252E12F800A9DB01 /* MainViewModelType.swift */; };
 		92CD7577247BDA4E00EED562 /* DelayMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CD7576247BDA4E00EED562 /* DelayMessageVC.swift */; };
 		92CD7579247BFC5000EED562 /* ProfileContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CD7578247BFC5000EED562 /* ProfileContactVC.swift */; };
 		92CDF61D25087A63003E063D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CDF61C25087A63003E063D /* Extensions.swift */; };
@@ -114,6 +118,10 @@
 		92AA6F512500BDB8007E51E4 /* LockerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockerViewController.swift; sourceTree = "<group>"; };
 		92B82DB124ED7DC3002B8366 /* DBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBModel.swift; sourceTree = "<group>"; };
 		92B82DB324ED7DDF002B8366 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		92B86D16252D89F200A9DB01 /* RegistrationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVM.swift; sourceTree = "<group>"; };
+		92B86D1B252D8A0900A9DB01 /* RegistrationViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModelType.swift; sourceTree = "<group>"; };
+		92B86D20252E12EA00A9DB01 /* MainVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVM.swift; sourceTree = "<group>"; };
+		92B86D25252E12F800A9DB01 /* MainViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelType.swift; sourceTree = "<group>"; };
 		92CD7576247BDA4E00EED562 /* DelayMessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayMessageVC.swift; sourceTree = "<group>"; };
 		92CD7578247BFC5000EED562 /* ProfileContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContactVC.swift; sourceTree = "<group>"; };
 		92CDF61C25087A63003E063D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -183,10 +191,10 @@
 			children = (
 				92B82DB024ED7751002B8366 /* Realm */,
 				92827C3C2484C543000B4318 /* DefaultClasses */,
-				9243481C2477D81200649D0B /* Protocols */,
 				9268A11E24862272007D75BD /* CustomElements */,
+				9243481C2477D81200649D0B /* Protocols */,
+				92A01A282529EA4200DBA3AC /* ViewModel */,
 				9243481F2477FAA800649D0B /* Views */,
-				92827C3B2484C525000B4318 /* ViewModels */,
 				922D2B18246ACBB500CA6492 /* Assets.xcassets */,
 				922D2B1D246ACBB500CA6492 /* Info.plist */,
 			);
@@ -237,6 +245,8 @@
 		9243481C2477D81200649D0B /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				92B86D1B252D8A0900A9DB01 /* RegistrationViewModelType.swift */,
+				92B86D25252E12F800A9DB01 /* MainViewModelType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -285,13 +295,6 @@
 			path = CustomElements;
 			sourceTree = "<group>";
 		};
-		92827C3B2484C525000B4318 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		92827C3C2484C543000B4318 /* DefaultClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,6 +302,15 @@
 				922D2B11246ACBB400CA6492 /* SceneDelegate.swift */,
 			);
 			path = DefaultClasses;
+			sourceTree = "<group>";
+		};
+		92A01A282529EA4200DBA3AC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				92B86D16252D89F200A9DB01 /* RegistrationVM.swift */,
+				92B86D20252E12EA00A9DB01 /* MainVM.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		92B82DB024ED7751002B8366 /* Realm */ = {
@@ -581,6 +593,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92413DA6247AA0CC009B56B7 /* ProfileVC.swift in Sources */,
+				92B86D21252E12EA00A9DB01 /* MainVM.swift in Sources */,
 				92CD7577247BDA4E00EED562 /* DelayMessageVC.swift in Sources */,
 				925CED7C250FA06B0070CC7D /* ContentVC.swift in Sources */,
 				92DD21A32479495900849AB2 /* SettingsVC.swift in Sources */,
@@ -593,7 +606,10 @@
 				92B82DB224ED7DC3002B8366 /* DBModel.swift in Sources */,
 				92CDF61F2508BFD3003E063D /* PasswordStronger.swift in Sources */,
 				922D2B10246ACBB400CA6492 /* AppDelegate.swift in Sources */,
+				92B86D17252D89F200A9DB01 /* RegistrationVM.swift in Sources */,
+				92B86D1C252D8A0900A9DB01 /* RegistrationViewModelType.swift in Sources */,
 				924B0949247D6BA9002F7267 /* NewContactVC.swift in Sources */,
+				92B86D26252E12F800A9DB01 /* MainViewModelType.swift in Sources */,
 				92AA6F522500BDB8007E51E4 /* LockerViewController.swift in Sources */,
 				929F40FC2506A28C00607D9C /* BiometrickAuth.swift in Sources */,
 				924348242478049D00649D0B /* ContactsVC.swift in Sources */,

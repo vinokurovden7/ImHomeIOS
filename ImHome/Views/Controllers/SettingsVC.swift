@@ -27,6 +27,8 @@ class SettingsVC: UITableViewController, UITextFieldDelegate {
         }
     }
     @IBOutlet weak var editAccountButton: CustomButton!
+    @IBOutlet weak var fioAccount: UILabel!
+    @IBOutlet weak var emailAccount: UILabel!
     @IBOutlet weak var logoutAccounButton: CustomButton!
     @IBOutlet weak var profileImageVIew: UIImageView! {
         didSet {
@@ -37,15 +39,19 @@ class SettingsVC: UITableViewController, UITextFieldDelegate {
         }
     }
     
-    private let keychain = Keychain()
+    private let nameAccount = "Home"
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getAccountData()
+    }
     
     //MARK: Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.backgroundView = UIImageView(image: UIImage(named: "fonBackground"))
+        tableView.backgroundView?.contentMode = .scaleAspectFill
         tableView.backgroundView?.alpha = 0.07
         timeCancelSOSSignal.addTarget(self, action: #selector(endChangeVal), for: .editingDidEnd)
-        
     }
     
     //MARK: Обработчики
@@ -66,8 +72,22 @@ class SettingsVC: UITableViewController, UITextFieldDelegate {
             destination.closure = {[weak self] success in
                 if success {
                     self!.performSegue(withIdentifier: "logoutAccount", sender: self)
+                } else {
+                    self!.getAccountData()
                 }
             }
+        }
+    }
+    
+    /// Получение данных аккаунта
+    private func getAccountData() {
+        let account = StorageManager().getAccount()
+        DispatchQueue.main.async {
+            if !(account.photoAccount?.isEmpty ?? true) {
+                self.profileImageVIew.image = UIImage(data: (account.photoAccount!))
+            }
+            self.fioAccount.text = "\(account.secondNameAccount) \(account.firstNameAccount) \(account.thirdNameAccount ?? "")"
+            self.emailAccount.text = "\(account.emailAccount)"
         }
     }
     

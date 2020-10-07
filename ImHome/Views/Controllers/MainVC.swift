@@ -34,16 +34,18 @@ class MainVC: UIViewController {
     var hour = 0
     var minutes = 0
     private var pressedMainButton = false
-    let timeClass: CustomTimer = CustomTimer()
+    private var viewModel: MainViewModelType?
     
     //MARK: Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(update_timer(notification:)), name: Notification.Name("update_timer"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateInterface(notification:)), name: Notification.Name("update_timer"), object: nil)
         mainButton.addTarget(self, action: #selector(touchDown), for: .touchDown)
         mainButton.addTarget(self, action: #selector(touchUpInside), for: .touchUpInside)
         mainButton.addTarget(self, action: #selector(touchDragExit), for: .touchDragExit)
         mainButton.addTarget(self, action: #selector(allEvents), for: .allEvents)
+        
+        viewModel = MainVM()
     }
     
     //MARK: Обработчики
@@ -73,13 +75,15 @@ class MainVC: UIViewController {
                     self!.messageTimerTimeLabel.isHidden = false
                     self!.cancelAlarm.isHidden = false
                     self!.delayMessageButton.backgroundColor = .systemOrange
-                    self!.timeClass.createTimer(hour: self!.hour, minutes: self!.minutes, seconds: self!.sec)
+                    guard let viewModel = self!.viewModel else {return}
+                    viewModel.setTimer(hour: self!.hour, minutes: self!.minutes, seconds: self!.sec)
                 }
             case "showLocker":
                 guard let destination = segue.destination as? LockerViewController else {return}
                 destination.closure = {[weak self] success in
                     if success {
-                        self!.timeClass.stopTimer()
+                        guard let viewModel = self!.viewModel else {return}
+                        viewModel.stopTimer()
                         self!.tabBarItem.badgeValue = nil
                         self!.cancelAlarm.isHidden = true
                         self!.mainTimerTimeLabel.isHidden = true
@@ -149,44 +153,34 @@ class MainVC: UIViewController {
             mainTimerTimeLabel.isHidden = false
             messageTimerTimeLabel.isHidden = true
             cancelAlarm.isHidden = false
-            timeClass.createTimer(hour: 0, minutes: 0, seconds: 10)
+            guard let viewModel = viewModel else {return}
+            viewModel.setTimer(hour: 0, minutes: 0, seconds: 10)
         }
         pressedMainButton = true
     }
     
     //MARK: Функция обработки обновления таймера (слушатель таймера)
-    @objc func update_timer(notification: Notification){
-        if let userInfo = notification.userInfo as? [String: Any]
+    @objc func updateInterface(notification: Notification) {
+        if let userInfo = notification.userInfo as? [String: [String]]
         {
-            if let date = userInfo["time"] as? [String] {
-                if date.count > 0 {
-                    if date.count == 3 {
-                        self.hour = Int(date[0]) ?? 0
-                        self.minutes = Int(date[1]) ?? 0
-                        self.sec = Int(date[2]) ?? 0
-                    } else if date.count == 2 {
-                        self.minutes = Int(date[0]) ?? 0
-                        self.sec = Int(date[1]) ?? 0
-                    } else {
-                        self.sec = Int(date[0]) ?? 0
-                    }
-                    if sec <= 5 && sec > 0 && minutes == 0 && hour == 0 {
-                        UIImpactFeedbackGenerator.init(style: .heavy).impactOccurred()
-                    }
-                    self.tabBarItem.badgeValue = date.joined(separator: ":")
-                    self.mainTimerTimeLabel.text = date.joined(separator: ":")
-                    self.messageTimerTimeLabel.text = date.joined(separator: ":")
-                } else {
+            if let date = userInfo["time"] {
+                guard let viewModel = viewModel else {return}
+                let dateString = viewModel.getTimeString(date: date)
+                if dateString == "!!!" {
                     UINotificationFeedbackGenerator().notificationOccurred(.error)
                     if !mainTimerTimeLabel.isHidden {
                         self.mainButton.tintColor = .systemRed
                     } else {
                         self.delayMessageButton.backgroundColor = .systemRed
                     }
-                    self.tabBarItem.badgeValue = "!!!"
+                    self.tabBarItem.badgeValue = dateString
                     UINotificationFeedbackGenerator().notificationOccurred(.error)
                     self.mainTimerTimeLabel.isHidden = true
                     self.messageTimerTimeLabel.isHidden = true
+                } else {
+                    self.tabBarItem.badgeValue = dateString
+                    self.mainTimerTimeLabel.text = dateString
+                    self.messageTimerTimeLabel.text = dateString
                 }
             }
         }

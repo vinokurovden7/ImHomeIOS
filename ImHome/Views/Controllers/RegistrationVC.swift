@@ -67,6 +67,7 @@ class RegistrationVC: UITableViewController {
     private let myNotification = CustomNotification()
     private let strongerPass = PasswordStronger()
     var closure: (([String:String]) -> ())?
+    private var viewModel: RegistrationViewModelType?
     
     //MARK: Жизненный цикл
     override func viewDidLoad() {
@@ -81,6 +82,8 @@ class RegistrationVC: UITableViewController {
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         imageAccount.addGestureRecognizer(tapGestureRecognizer)
+        
+        viewModel = RegistrationVM()
     }
     
     //MARK: Кастомные функции
@@ -249,8 +252,10 @@ class RegistrationVC: UITableViewController {
                     self.indicator.alpha = 1
                 })
             }
-            
             indicator.startAnimating()
+            
+            viewModel?.saveAccount(emailAccount: emailTextField.text!, firstNameAccount: firstNameUser.text!, secondNameAccount: secondNameUser.text!, thirdNameAccount: thirdNameUser.text!, photoAccount: (imageAccount.image?.pngData())!)
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5)) {
                 self.indicator.stopAnimating()
                 self.closure?(["login":self.usernameTextField.text!, "password":self.passwordTextField.text!])

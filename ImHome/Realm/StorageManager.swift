@@ -32,10 +32,10 @@ class StorageManager {
     //MARK: Удаление данных
     /// Удаление аккаунта
     /// - Parameter account: Объект типа Account
-    func deleteAccount(account: Account) {
+    func deleteAccount() {
         let realm = try! Realm()
         try! realm.write {
-            realm.delete(account)
+            realm.delete(realm.objects(Account.self).first ?? Account())
         }
     }
     
@@ -48,4 +48,10 @@ class StorageManager {
         }
     }
     
+    /// Получить аккаунт
+    /// - Returns: Объект типа Account
+    func getAccount() -> Account {
+        let realm = try! Realm()
+        return realm.objects(Account.self).first ?? Account()
+    }
 }

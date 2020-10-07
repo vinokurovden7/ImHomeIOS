@@ -36,6 +36,8 @@ class LoginVC: UIViewController {
     private let keychain = Keychain()
     private let nameAccount = "Home"
     private var context = LAContext()
+    private let storageManager = StorageManager()
+    private var biometrickAuth = BiometrickAuth()
     
     //MARK: Жизненный цикл
     override func viewDidLoad() {
@@ -48,7 +50,7 @@ class LoginVC: UIViewController {
         showPasswordButton.addTarget(self, action: #selector(allEvents), for: .allEvents)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         showHidePasswordButton()
         changeColorLockImage()
     }
@@ -71,7 +73,8 @@ class LoginVC: UIViewController {
     
     /// Отображение кнопки показа пароля
     private func showHidePasswordButton() {
-            showPasswordButton.isHidden = passwordTextField.text!.isEmpty
+        print(passwordTextField.text!.isEmpty)
+        showPasswordButton.isHidden = passwordTextField.text!.isEmpty
     }
     
     /// Нажатие кнопки показать пароль
@@ -84,7 +87,6 @@ class LoginVC: UIViewController {
     /// Отпускание кнопки показа пароля
     @objc func touchUpInsideBtn() {
         showPasswordButton.setImage(UIImage.init(named: "closedEye"), for: .normal)
-        showHidePasswordButton()
         passwordTextField.isSecureTextEntry = true
     }
     
@@ -100,6 +102,7 @@ class LoginVC: UIViewController {
                 self!.keychain.addKey(data: dict, userAccount: self!.nameAccount)
                 self!.nameTextField.text = dict["login"]
                 self!.passwordTextField.text = dict["password"]
+                self!.showHidePasswordButton()
             }
         }
     }
@@ -132,13 +135,17 @@ class LoginVC: UIViewController {
         if nameTextField.text!.isEmpty || passwordTextField.text!.isEmpty {
             myNotification.showNotification(title: "Упс", message: desc, imageColor: nil, image: nil)
         } else {
-            if keychain.getKey(userAccount: nameAccount)?.isEmpty ?? true {
+            
+            if keychain.getKey(userAccount: nameAccount)?.isEmpty ?? true && !storageManager.getAccount().emailAccount.isEmpty {
                 keychain.addKey(data: ["login" : nameTextField.text!, "password" : passwordTextField.text!], userAccount: nameAccount)
                 self.nameTextField.text = ""
                 self.passwordTextField.text = ""
                 performSegue(withIdentifier: "autorizeAction", sender: self)
             } else {
-                guard let dict = keychain.getKey(userAccount: nameAccount) else {return}
+                guard let dict = keychain.getKey(userAccount: nameAccount) else {
+                    myNotification.showNotification(title: "Ошибка", message: "Такой учетной записи не существует", imageColor: .systemRed, image: "xmark.octagon.fill")
+                    return
+                }
                 if nameTextField.text == dict["login"] as? String && passwordTextField.text == dict["password"] as? String {
                     self.nameTextField.text = ""
                     self.passwordTextField.text = ""
@@ -160,25 +167,21 @@ class LoginVC: UIViewController {
     /// Вызов авторизации через Touch или Face ID
     private func showBiomentricAutorization() {
         context = LAContext()
-        if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: nil) {
-            context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "Автозаполнение пароля") { (success, error) in
-                if success {
-                    DispatchQueue.main.async {
-                        if let dict = self.keychain.getKey(userAccount: self.nameAccount) {
-                            self.lockImageButton.tintColor = .systemGreen
-                            self.nameTextField.text = dict["login"] as? String
-                            self.passwordTextField.text = dict["password"] as? String
-                            self.context.invalidate()
-                            self.nameTextField.text = ""
-                            self.passwordTextField.text = ""
-                            self.performSegue(withIdentifier: "autorizeAction", sender: self)
-                        }
+        biometrickAuth.showBiomentricAutorization(context: context, completion: { (success) in
+            if success {
+                DispatchQueue.main.async {
+                    if let dict = self.keychain.getKey(userAccount: self.nameAccount) {
+                        self.lockImageButton.tintColor = .systemGreen
+                        self.nameTextField.text = dict["login"] as? String
+                        self.passwordTextField.text = dict["password"] as? String
+                        self.context.invalidate()
+                        self.nameTextField.text = ""
+                        self.passwordTextField.text = ""
+                        self.performSegue(withIdentifier: "autorizeAction", sender: self)
                     }
-                } else {
-                    print("Ошибка авторизации через биометрию")
                 }
             }
-        }
+        })
     }
     
     //MARK: Визуальное оформление

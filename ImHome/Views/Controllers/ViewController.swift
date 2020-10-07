@@ -17,21 +17,17 @@ class ViewController: UIViewController {
     //MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        //checkLoginData()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        
+    override func viewWillAppear(_ animated: Bool) {
         if UserDefaults.standard.string(forKey: "localPassword")?.isEmpty ?? true {
             performSegue(withIdentifier: "setLocalPassword", sender: self)
         } else if !UserDefaults.standard.bool(forKey: "presentationWasViewed") {
+            keychain.removeKey(userAccount: nameAccount)
             performSegue(withIdentifier: "showPresentation", sender: self)
         } else {
             checkLoginData()
         }
-        
     }
     
     func checkLoginData() {

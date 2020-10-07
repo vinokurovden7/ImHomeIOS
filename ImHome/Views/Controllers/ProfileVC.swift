@@ -13,48 +13,13 @@ import LocalAuthentication
 class ProfileVC: UITableViewController {
 
     //MARK: IBOutlets
-    @IBOutlet weak var emailTextField: UITextField! {
-        didSet {
-            textFieldSetup(textField: emailTextField)
-        }
-    }
-
-    @IBOutlet weak var secondNameTextField: UITextField! {
-        didSet {
-            textFieldSetup(textField: secondNameTextField)
-        }
-    }
-    
-    @IBOutlet weak var firstNameTextField: UITextField! {
-        didSet {
-            textFieldSetup(textField: firstNameTextField)
-        }
-    }
-    
-    @IBOutlet weak var thirdNameTextField: UITextField! {
-        didSet {
-            textFieldSetup(textField: thirdNameTextField)
-        }
-    }
-    
-    @IBOutlet weak var changePasswordBtn: UIButton! {
-        didSet {
-            buttonSetup(button: changePasswordBtn)
-        }
-    }
-    
-    @IBOutlet weak var saveBtn: UIButton! {
-        didSet {
-            buttonSetup(button: saveBtn)
-        }
-    }
-    
-    @IBOutlet weak var deleteAccountBtn: UIButton! {
-        didSet {
-            buttonSetup(button: deleteAccountBtn)
-        }
-    }
-    
+    @IBOutlet weak var emailTextField: UITextField! {didSet {textFieldSetup(textField: emailTextField)}}
+    @IBOutlet weak var secondNameTextField: UITextField! {didSet {textFieldSetup(textField: secondNameTextField)}}
+    @IBOutlet weak var firstNameTextField: UITextField! {didSet {textFieldSetup(textField: firstNameTextField)}}
+    @IBOutlet weak var thirdNameTextField: UITextField! {didSet {textFieldSetup(textField: thirdNameTextField)}}
+    @IBOutlet weak var changePasswordBtn: UIButton! {didSet {buttonSetup(button: changePasswordBtn)}}
+    @IBOutlet weak var saveBtn: UIButton! {didSet {buttonSetup(button: saveBtn)}}
+    @IBOutlet weak var deleteAccountBtn: UIButton! {didSet {buttonSetup(button: deleteAccountBtn)}}
     @IBOutlet weak var backgroundViewImageProfile: UIView! {
         didSet {
             backgroundViewImageProfile.layer.cornerRadius = backgroundViewImageProfile.frame.height / 2
@@ -78,6 +43,8 @@ class ProfileVC: UITableViewController {
     private let myNotification = CustomNotification()
     private let keychain = Keychain()
     var closure: ((Bool) -> ())?
+    let storageManager = StorageManager()
+    private var image = UIImage()
     
     //MARK: Жизненный цикл
     override func viewDidLoad() {
@@ -87,7 +54,17 @@ class ProfileVC: UITableViewController {
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         imageProfile.addGestureRecognizer(tapGestureRecognizer)
-
+        
+        let account = StorageManager().getAccount()
+        DispatchQueue.main.async {
+            if !(account.photoAccount?.isEmpty ?? true) {
+                self.imageProfile.image = UIImage(data: (account.photoAccount!))
+            }
+            self.firstNameTextField.text = account.firstNameAccount
+            self.secondNameTextField.text = account.secondNameAccount
+            self.thirdNameTextField.text = account.thirdNameAccount ?? ""
+            self.emailTextField.text = account.emailAccount
+        }
     }
 
     //MARK: Обработчики
@@ -122,6 +99,7 @@ class ProfileVC: UITableViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
     //MARK: Сохранение
     @IBAction func saveBtnAction(_ sender: CustomButton) {
         if emailTextField.text!.isEmpty {
@@ -134,16 +112,24 @@ class ProfileVC: UITableViewController {
             myNotification.showNotification(title: "Упс", message: "Укажите имя", imageColor: nil, image: nil)
             return
         } else {
+            let account = Account()
+            account.idAccount = storageManager.getAccount().idAccount
+            account.emailAccount = emailTextField.text!
+            account.firstNameAccount = firstNameTextField.text!
+            account.secondNameAccount = secondNameTextField.text!
+            account.thirdNameAccount = thirdNameTextField.text ?? ""
+            account.photoAccount = image.pngData()
+            storageManager.saveAccount(account: account)
             myNotification.miniNotification(text: "Сохранено", color: .systemGreen)
             dismiss(animated: true)
+            closure?(false)
         }
     }
-    
-    
     
     //MARK: Удаление аккаунта
     @IBAction func deleteAccountAction(_ sender: CustomButton) {
         keychain.removeKey(userAccount: "Home")
+        storageManager.deleteAccount()
         dismiss(animated: true)
         closure?(true)
     }
@@ -183,13 +169,22 @@ extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDele
             imagePicker.delegate = self
             imagePicker.allowsEditing = true
             imagePicker.sourceType = source
+            if source == .camera {
+                imagePicker.cameraDevice = .front
+                imagePicker.cameraFlashMode = .auto
+                imagePicker.showsCameraControls = true
+            }
             present(imagePicker,animated: true)
         }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        imageProfile.image = info[.editedImage] as? UIImage
+        image = (info[.editedImage] as? UIImage)!
+        if picker.sourceType == .camera {
+            image = UIImage(cgImage: (image.cgImage!), scale: image.scale, orientation: .upMirrored)
+        }
+        imageProfile.image = image
         imageProfile.contentMode = .scaleAspectFill
         imageProfile.clipsToBounds = true
         dismiss(animated: true)
