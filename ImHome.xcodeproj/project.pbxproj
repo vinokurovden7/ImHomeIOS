@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2DFFBA83334C8EBE4D2B13F6 /* Pods_ImHome_ImHomeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6358E0BE9641DAF4050D39C0 /* Pods_ImHome_ImHomeUITests.framework */; };
 		92084D0325025B3E003F1580 /* CustomTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92084D0225025B3E003F1580 /* CustomTimer.swift */; };
+		920A6053253C6872007CC6F1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 920A6052253C6872007CC6F1 /* MapKit.framework */; };
 		922D2B10246ACBB400CA6492 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922D2B0F246ACBB400CA6492 /* AppDelegate.swift */; };
 		922D2B12246ACBB400CA6492 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922D2B11246ACBB400CA6492 /* SceneDelegate.swift */; };
 		922D2B14246ACBB400CA6492 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922D2B13246ACBB400CA6492 /* ViewController.swift */; };
@@ -34,12 +35,16 @@
 		929F40FA250689B500607D9C /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929F40F9250689B500607D9C /* Keychain.swift */; };
 		929F40FC2506A28C00607D9C /* BiometrickAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929F40FB2506A28C00607D9C /* BiometrickAuth.swift */; };
 		92AA6F522500BDB8007E51E4 /* LockerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AA6F512500BDB8007E51E4 /* LockerViewController.swift */; };
+		92ADEBFD2546A8BB0093EF50 /* ProfileViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ADEBFC2546A8BB0093EF50 /* ProfileViewModelType.swift */; };
+		92ADEC022546BBC90093EF50 /* ProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ADEC012546BBC90093EF50 /* ProfileVM.swift */; };
 		92B82DB224ED7DC3002B8366 /* DBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B82DB124ED7DC3002B8366 /* DBModel.swift */; };
 		92B82DB424ED7DDF002B8366 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B82DB324ED7DDF002B8366 /* StorageManager.swift */; };
 		92B86D17252D89F200A9DB01 /* RegistrationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B86D16252D89F200A9DB01 /* RegistrationVM.swift */; };
 		92B86D1C252D8A0900A9DB01 /* RegistrationViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B86D1B252D8A0900A9DB01 /* RegistrationViewModelType.swift */; };
 		92B86D21252E12EA00A9DB01 /* MainVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B86D20252E12EA00A9DB01 /* MainVM.swift */; };
 		92B86D26252E12F800A9DB01 /* MainViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B86D25252E12F800A9DB01 /* MainViewModelType.swift */; };
+		92B86D2B252EE48000A9DB01 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B86D2A252EE48000A9DB01 /* LoginVM.swift */; };
+		92B86D30252EE48E00A9DB01 /* LoginViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B86D2F252EE48E00A9DB01 /* LoginViewModelType.swift */; };
 		92CD7577247BDA4E00EED562 /* DelayMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CD7576247BDA4E00EED562 /* DelayMessageVC.swift */; };
 		92CD7579247BFC5000EED562 /* ProfileContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CD7578247BFC5000EED562 /* ProfileContactVC.swift */; };
 		92CDF61D25087A63003E063D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CDF61C25087A63003E063D /* Extensions.swift */; };
@@ -82,6 +87,7 @@
 		7E517BA73C56F6ABE80483E6 /* Pods-I'm home.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-I'm home.debug.xcconfig"; path = "Target Support Files/Pods-I'm home/Pods-I'm home.debug.xcconfig"; sourceTree = "<group>"; };
 		82775E455AD302CBC8CB9414 /* Pods-I'm home-I'm homeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-I'm home-I'm homeUITests.debug.xcconfig"; path = "Target Support Files/Pods-I'm home-I'm homeUITests/Pods-I'm home-I'm homeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		92084D0225025B3E003F1580 /* CustomTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTimer.swift; sourceTree = "<group>"; };
+		920A6052253C6872007CC6F1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		922D2B0C246ACBB400CA6492 /* Я дома.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Я дома.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		922D2B0F246ACBB400CA6492 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		922D2B11246ACBB400CA6492 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,12 +122,16 @@
 		929F40F9250689B500607D9C /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		929F40FB2506A28C00607D9C /* BiometrickAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometrickAuth.swift; sourceTree = "<group>"; };
 		92AA6F512500BDB8007E51E4 /* LockerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockerViewController.swift; sourceTree = "<group>"; };
+		92ADEBFC2546A8BB0093EF50 /* ProfileViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModelType.swift; sourceTree = "<group>"; };
+		92ADEC012546BBC90093EF50 /* ProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVM.swift; sourceTree = "<group>"; };
 		92B82DB124ED7DC3002B8366 /* DBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBModel.swift; sourceTree = "<group>"; };
 		92B82DB324ED7DDF002B8366 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		92B86D16252D89F200A9DB01 /* RegistrationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVM.swift; sourceTree = "<group>"; };
 		92B86D1B252D8A0900A9DB01 /* RegistrationViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModelType.swift; sourceTree = "<group>"; };
 		92B86D20252E12EA00A9DB01 /* MainVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVM.swift; sourceTree = "<group>"; };
 		92B86D25252E12F800A9DB01 /* MainViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelType.swift; sourceTree = "<group>"; };
+		92B86D2A252EE48000A9DB01 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
+		92B86D2F252EE48E00A9DB01 /* LoginViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelType.swift; sourceTree = "<group>"; };
 		92CD7576247BDA4E00EED562 /* DelayMessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayMessageVC.swift; sourceTree = "<group>"; };
 		92CD7578247BFC5000EED562 /* ProfileContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContactVC.swift; sourceTree = "<group>"; };
 		92CDF61C25087A63003E063D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -141,6 +151,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				920A6053253C6872007CC6F1 /* MapKit.framework in Frameworks */,
 				F34185285CEB8F90BFF3C79A /* Pods_ImHome.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,6 +258,8 @@
 			children = (
 				92B86D1B252D8A0900A9DB01 /* RegistrationViewModelType.swift */,
 				92B86D25252E12F800A9DB01 /* MainViewModelType.swift */,
+				92B86D2F252EE48E00A9DB01 /* LoginViewModelType.swift */,
+				92ADEBFC2546A8BB0093EF50 /* ProfileViewModelType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -309,6 +322,8 @@
 			children = (
 				92B86D16252D89F200A9DB01 /* RegistrationVM.swift */,
 				92B86D20252E12EA00A9DB01 /* MainVM.swift */,
+				92B86D2A252EE48000A9DB01 /* LoginVM.swift */,
+				92ADEC012546BBC90093EF50 /* ProfileVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -325,6 +340,7 @@
 		9B721344D61F96F06BE4904A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				920A6052253C6872007CC6F1 /* MapKit.framework */,
 				927E4982249278C4009B99DD /* SwiftEntryKit.framework */,
 				1BD1E5273FDD16EA75FD04F9 /* Pods_ImHome.framework */,
 				6358E0BE9641DAF4050D39C0 /* Pods_ImHome_ImHomeUITests.framework */,
@@ -592,6 +608,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92B86D30252EE48E00A9DB01 /* LoginViewModelType.swift in Sources */,
 				92413DA6247AA0CC009B56B7 /* ProfileVC.swift in Sources */,
 				92B86D21252E12EA00A9DB01 /* MainVM.swift in Sources */,
 				92CD7577247BDA4E00EED562 /* DelayMessageVC.swift in Sources */,
@@ -621,9 +638,12 @@
 				925228E6249104D0006E3836 /* CustomButton.swift in Sources */,
 				92CD7579247BFC5000EED562 /* ProfileContactVC.swift in Sources */,
 				92DAA1A124A99D4C0065A6F4 /* HelpProfileContactVC.swift in Sources */,
+				92ADEBFD2546A8BB0093EF50 /* ProfileViewModelType.swift in Sources */,
+				92ADEC022546BBC90093EF50 /* ProfileVM.swift in Sources */,
 				925CED7E250FA0870070CC7D /* PageVC.swift in Sources */,
 				92925C7324751D63000F6500 /* RegistrationVC.swift in Sources */,
 				922D2B12246ACBB400CA6492 /* SceneDelegate.swift in Sources */,
+				92B86D2B252EE48000A9DB01 /* LoginVM.swift in Sources */,
 				92628B4C24936111003CCA3F /* CustomNotification.swift in Sources */,
 				92B82DB424ED7DDF002B8366 /* StorageManager.swift in Sources */,
 				92CDF61D25087A63003E063D /* Extensions.swift in Sources */,
@@ -750,6 +770,7 @@
 			baseConfigurationReference = ED56878A275F48C08AD85394 /* Pods-ImHome.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "ImHome/Я дома.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AWN3QD4X7Y;
 				INFOPLIST_FILE = "$(SRCROOT)/ImHome/Info.plist";
@@ -808,131 +829,6 @@
 			};
 			name = Debug;
 		};
-		92D73430249294C8007588B3 /* Debug copy */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = "Debug copy";
-		};
-		92D73431249294C8007588B3 /* Debug copy */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 176C9111C28843ACDFBE5B5F /* Pods-ImHome.debug copy.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AWN3QD4X7Y;
-				INFOPLIST_FILE = "$(SRCROOT)/ImHome/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "denis.I-m-home";
-				PRODUCT_NAME = "Я дома";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = "Debug copy";
-		};
-		92D73432249294C8007588B3 /* Debug copy */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4CD9B3447060384F05170264 /* Pods-ImHomeTests.debug copy.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AWN3QD4X7Y;
-				INFOPLIST_FILE = "I'm homeTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "denis.I-m-homeTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImHome.app/ImHome";
-			};
-			name = "Debug copy";
-		};
-		92D73433249294C8007588B3 /* Debug copy */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 477DAA0107DD27F5C2584598 /* Pods-ImHome-ImHomeUITests.debug copy.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AWN3QD4X7Y;
-				INFOPLIST_FILE = "I'm homeUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "denis.I-m-homeUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "I'm home";
-			};
-			name = "Debug copy";
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -940,7 +836,6 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				922D2B34246ACBB500CA6492 /* Debug */,
-				92D73430249294C8007588B3 /* Debug copy */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
@@ -949,7 +844,6 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				922D2B37246ACBB500CA6492 /* Debug */,
-				92D73431249294C8007588B3 /* Debug copy */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
@@ -958,7 +852,6 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				922D2B3A246ACBB500CA6492 /* Debug */,
-				92D73432249294C8007588B3 /* Debug copy */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
@@ -967,7 +860,6 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				922D2B3D246ACBB500CA6492 /* Debug */,
-				92D73433249294C8007588B3 /* Debug copy */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

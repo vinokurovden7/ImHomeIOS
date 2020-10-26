@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LocalAuthentication
 
 class MainVM: MainViewModelType {
     
@@ -15,6 +16,7 @@ class MainVM: MainViewModelType {
     private var hour = 0
     private var minutes = 0
     private let timeClass: CustomTimer
+    private let biometrickAuth: BiometrickAuth
     
     func getTimeString(date: [String]) -> String {
         if date.count > 0 {
@@ -47,7 +49,15 @@ class MainVM: MainViewModelType {
         timeClass.stopTimer()
     }
     
+    func showBiometrickAuth(context: LAContext, completion: @escaping (Bool) -> ()) {
+        biometrickAuth.showBiomentricAutorization(context: context) { (success) in
+            
+            completion(success)
+        }
+    }
+    
     init() {
         timeClass = CustomTimer()
+        biometrickAuth = BiometrickAuth()
     }
 }

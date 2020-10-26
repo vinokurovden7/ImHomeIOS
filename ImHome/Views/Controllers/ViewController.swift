@@ -21,10 +21,14 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         if UserDefaults.standard.string(forKey: "localPassword")?.isEmpty ?? true {
-            performSegue(withIdentifier: "setLocalPassword", sender: self)
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "setLocalPassword", sender: self)
+            }
         } else if !UserDefaults.standard.bool(forKey: "presentationWasViewed") {
             keychain.removeKey(userAccount: nameAccount)
-            performSegue(withIdentifier: "showPresentation", sender: self)
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "showPresentation", sender: self)
+            }
         } else {
             checkLoginData()
         }

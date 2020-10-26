@@ -10,6 +10,7 @@ import Foundation
 
 class RegistrationVM: RegistrationViewModelType {
     
+    
     func saveAccount(emailAccount: String, firstNameAccount: String, secondNameAccount: String, thirdNameAccount: String, photoAccount: Data) {
         
         let account = Account()

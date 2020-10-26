@@ -16,7 +16,7 @@ class CustomNotification {
     
     //MARK: Атрибуты для уведомления с текстом
     ///Атрибуты для уведомления с текстом
-    var floatAlertAttributes: EKAttributes {
+    private var floatAlertAttributes: EKAttributes {
         var attributes = EKAttributes.topFloat
         attributes.hapticFeedbackType = .none
         attributes.displayDuration = .infinity
@@ -73,7 +73,7 @@ class CustomNotification {
     ///   - imageColor: Цвет картинки уведомления
     ///   - imageName: Название изображения
     /// - Returns: Уведомление
-    func getFloatContentView(title: String, desc: String, textColor: EKColor, imageColor: EKColor?, imageName: String? = nil) -> EKNotificationMessageView {
+    private func getFloatContentView(title: String, desc: String, textColor: EKColor, imageColor: EKColor?, imageName: String? = nil) -> EKNotificationMessageView {
         let title = EKProperty.LabelContent(
             text: title,
             style: .init(
@@ -115,7 +115,7 @@ class CustomNotification {
     /// Системное уведомление
     /// - Parameter text: Текст уведомления
     /// - Returns: Уведомление
-    func smallNotifContentView(text: String) -> EKNoteMessageView{
+    private func smallNotifContentView(text: String) -> EKNoteMessageView{
         let text = text
         let style = EKProperty.LabelStyle(
             font: UIFont.systemFont(ofSize: 14),
@@ -132,7 +132,7 @@ class CustomNotification {
     /// Получить атрибуты системного уведомления
     /// - Parameter color: Цвет
     /// - Returns: Атрибуты
-    func getSmallNotificationAttributes(color: UIColor) -> EKAttributes {
+    private func getSmallNotificationAttributes(color: UIColor) -> EKAttributes {
         var noteAttributes = EKAttributes.topNote
         noteAttributes.displayMode = EKAttributes.DisplayMode.inferred
         noteAttributes.hapticFeedbackType = .none
@@ -160,8 +160,10 @@ class CustomNotification {
     ///   - image: Название картинки
     func showNotification(title: String, message: String, imageColor: UIColor? ,image: String?){
         let contentView = getFloatContentView(title: title, desc: message, textColor: EKColor(UIColor(named: "notifTextViewColor")!), imageColor: EKColor(imageColor ?? UIColor.systemOrange), imageName: image ?? "exclamationmark.triangle.fill")
-        SwiftEntryKit.display(entry: contentView, using: floatAlertAttributes)
-        UINotificationFeedbackGenerator().notificationOccurred(.error)
+        DispatchQueue.main.async {
+            SwiftEntryKit.display(entry: contentView, using: self.floatAlertAttributes)
+            UINotificationFeedbackGenerator().notificationOccurred(.error)
+        }
     }
     
     /// Мини уведомление

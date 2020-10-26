@@ -1668,8 +1668,8 @@
                     <connections>
                         <segue destination="SbB-GM-0eM" kind="presentation" identifier="showLoginScreen" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="O5G-oF-Q2H"/>
                         <segue destination="VYK-Bl-ZHS" kind="presentation" identifier="skipLoginScreen" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="YZM-tW-3Zg"/>
-                        <segue destination="XdD-Sm-RNI" kind="presentation" identifier="setLocalPassword" modalPresentationStyle="fullScreen" id="TjU-Yc-Fqh"/>
                         <segue destination="Fwk-Ty-vX4" kind="presentation" identifier="showPresentation" modalPresentationStyle="fullScreen" id="IIS-2n-JLT"/>
+                        <segue destination="XdD-Sm-RNI" kind="presentation" identifier="setLocalPassword" modalPresentationStyle="fullScreen" id="rFP-g6-caC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9BH-Ko-Lx8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2764,7 +2764,7 @@
                                                                 <constraint firstAttribute="height" constant="34" id="PVW-VC-OQd"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
-                                                            <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES" textContentType="new-password"/>
+                                                            <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
                                                             <connections>
                                                                 <outlet property="delegate" destination="XJb-OH-pZL" id="T37-7K-j9B"/>
                                                             </connections>
@@ -2814,7 +2814,7 @@
                                                                 <constraint firstAttribute="height" constant="34" id="Bef-J4-jj3"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
-                                                            <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="new-password"/>
+                                                            <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                                             <connections>
                                                                 <outlet property="delegate" destination="XJb-OH-pZL" id="3fg-w1-PEs"/>
                                                             </connections>
@@ -3025,10 +3025,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="oc1-Sy-V6b"/>
-        <segue reference="TjU-Yc-Fqh"/>
-        <segue reference="QzT-K7-opg"/>
-        <segue reference="aae-ew-RzT"/>
+        <segue reference="fcm-13-Vvk"/>
+        <segue reference="rFP-g6-caC"/>
+        <segue reference="IIS-2n-JLT"/>
+        <segue reference="O5G-oF-Q2H"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Home" width="380" height="423"/>

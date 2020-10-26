@@ -33,11 +33,9 @@ class LoginVC: UIViewController {
     
     //MARK: Variables
     private let myNotification = CustomNotification()
-    private let keychain = Keychain()
     private let nameAccount = "Home"
     private var context = LAContext()
-    private let storageManager = StorageManager()
-    private var biometrickAuth = BiometrickAuth()
+    private var viewModel: LoginViewModelType?
     
     //MARK: Жизненный цикл
     override func viewDidLoad() {
@@ -48,6 +46,7 @@ class LoginVC: UIViewController {
         showPasswordButton.addTarget(self, action: #selector(touchDownBtn), for: .touchDown)
         showPasswordButton.addTarget(self, action: #selector(touchUpInsideBtn), for: [.touchUpInside,.touchDragExit])
         showPasswordButton.addTarget(self, action: #selector(allEvents), for: .allEvents)
+        viewModel = LoginVM()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,9 +57,10 @@ class LoginVC: UIViewController {
     //MARK: Обработчики
     /// Изменение цвета  замка на поле ввода пароля
     private func changeColorLockImage() {
-        if let dict = keychain.getKey(userAccount: nameAccount) {
+        guard let viewModel = viewModel  else {return}
+        if !viewModel.getLogin().isEmpty {
             lockImageButton.tintColor = .systemGreen
-            nameTextField.text = dict["login"] as? String
+            nameTextField.text = viewModel.getLogin()
         } else {
             lockImageButton.tintColor = .lightGray
         }
@@ -99,7 +99,8 @@ class LoginVC: UIViewController {
         if segue.identifier == "showRegistrationScreen" {
             guard let destination = segue.destination as? RegistrationVC else {return}
             destination.closure = {[weak self] dict in
-                self!.keychain.addKey(data: dict, userAccount: self!.nameAccount)
+                guard let viewModel = self!.viewModel else {return}
+                viewModel.setLoginPassword(login: dict["login"] ?? "", password: dict["password"] ?? "")
                 self!.nameTextField.text = dict["login"]
                 self!.passwordTextField.text = dict["password"]
                 self!.showHidePasswordButton()
@@ -135,18 +136,18 @@ class LoginVC: UIViewController {
         if nameTextField.text!.isEmpty || passwordTextField.text!.isEmpty {
             myNotification.showNotification(title: "Упс", message: desc, imageColor: nil, image: nil)
         } else {
-            
-            if keychain.getKey(userAccount: nameAccount)?.isEmpty ?? true && !storageManager.getAccount().emailAccount.isEmpty {
-                keychain.addKey(data: ["login" : nameTextField.text!, "password" : passwordTextField.text!], userAccount: nameAccount)
+            guard let viewModel = viewModel else {return}
+            if viewModel.getLogin().isEmpty && !viewModel.getAccount().emailAccount.isEmpty {
+                viewModel.setLoginPassword(login: nameTextField.text!, password: passwordTextField.text!)
                 self.nameTextField.text = ""
                 self.passwordTextField.text = ""
                 performSegue(withIdentifier: "autorizeAction", sender: self)
             } else {
-                guard let dict = keychain.getKey(userAccount: nameAccount) else {
+                if self.nameTextField.text != viewModel.getLogin() {
                     myNotification.showNotification(title: "Ошибка", message: "Такой учетной записи не существует", imageColor: .systemRed, image: "xmark.octagon.fill")
                     return
                 }
-                if nameTextField.text == dict["login"] as? String && passwordTextField.text == dict["password"] as? String {
+                if nameTextField.text == viewModel.getLogin() && passwordTextField.text == viewModel.getPassword() {
                     self.nameTextField.text = ""
                     self.passwordTextField.text = ""
                     performSegue(withIdentifier: "autorizeAction", sender: self)
@@ -159,7 +160,8 @@ class LoginVC: UIViewController {
     
     //MARK: Нажатие на значок замка в поле ввода пароля
     @IBAction func lockImageButtonAction(_ sender: CustomButton) {
-        if let _ = keychain.getKey(userAccount: nameAccount) {
+        guard let viewModel = viewModel else {return}
+        if !viewModel.getLogin().isEmpty {
             showBiomentricAutorization()
         }
     }
@@ -167,21 +169,17 @@ class LoginVC: UIViewController {
     /// Вызов авторизации через Touch или Face ID
     private func showBiomentricAutorization() {
         context = LAContext()
-        biometrickAuth.showBiomentricAutorization(context: context, completion: { (success) in
+        guard let viewModel = viewModel else {return}
+        viewModel.showBiometrickAuth(context: context) { (success) in
             if success {
                 DispatchQueue.main.async {
-                    if let dict = self.keychain.getKey(userAccount: self.nameAccount) {
-                        self.lockImageButton.tintColor = .systemGreen
-                        self.nameTextField.text = dict["login"] as? String
-                        self.passwordTextField.text = dict["password"] as? String
-                        self.context.invalidate()
-                        self.nameTextField.text = ""
-                        self.passwordTextField.text = ""
-                        self.performSegue(withIdentifier: "autorizeAction", sender: self)
-                    }
+                    self.context.invalidate()
+                    self.nameTextField.text = ""
+                    self.passwordTextField.text = ""
+                    self.performSegue(withIdentifier: "autorizeAction", sender: self)
                 }
             }
-        })
+        }
     }
     
     //MARK: Визуальное оформление
@@ -208,7 +206,7 @@ class LoginVC: UIViewController {
         textField.leftViewMode = UITextField.ViewMode.always
         textField.layer.borderColor = UIColor.black.withAlphaComponent(0.25).cgColor
         textField.layer.shadowOffset = CGSize(width: 0, height: 4)
-        textField.layer.shadowColor = UIColor.black.cgColor //Any dark color
+        textField.layer.shadowColor = UIColor.black.cgColor
         let spacerView = UIView(frame:CGRect(x:0, y:0, width:40, height:10))
         textField.leftViewMode = UITextField.ViewMode.always
         textField.leftView = spacerView

@@ -9,17 +9,18 @@
 import UIKit
 import SwiftEntryKit
 import LocalAuthentication
+import PhotosUI
 
 class ProfileVC: UITableViewController {
 
     //MARK: IBOutlets
-    @IBOutlet weak var emailTextField: UITextField! {didSet {textFieldSetup(textField: emailTextField)}}
-    @IBOutlet weak var secondNameTextField: UITextField! {didSet {textFieldSetup(textField: secondNameTextField)}}
-    @IBOutlet weak var firstNameTextField: UITextField! {didSet {textFieldSetup(textField: firstNameTextField)}}
-    @IBOutlet weak var thirdNameTextField: UITextField! {didSet {textFieldSetup(textField: thirdNameTextField)}}
-    @IBOutlet weak var changePasswordBtn: UIButton! {didSet {buttonSetup(button: changePasswordBtn)}}
-    @IBOutlet weak var saveBtn: UIButton! {didSet {buttonSetup(button: saveBtn)}}
-    @IBOutlet weak var deleteAccountBtn: UIButton! {didSet {buttonSetup(button: deleteAccountBtn)}}
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var secondNameTextField: UITextField!
+    @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var thirdNameTextField: UITextField!
+    @IBOutlet weak var changePasswordBtn: UIButton!
+    @IBOutlet weak var saveBtn: UIButton!
+    @IBOutlet weak var deleteAccountBtn: UIButton!
     @IBOutlet weak var backgroundViewImageProfile: UIView! {
         didSet {
             backgroundViewImageProfile.layer.cornerRadius = backgroundViewImageProfile.frame.height / 2
@@ -41,10 +42,9 @@ class ProfileVC: UITableViewController {
     
     //MARK: Variables
     private let myNotification = CustomNotification()
-    private let keychain = Keychain()
     var closure: ((Bool) -> ())?
-    let storageManager = StorageManager()
     private var image = UIImage()
+    private var viewModel: ProfileViewModelType?
     
     //MARK: Жизненный цикл
     override func viewDidLoad() {
@@ -59,39 +59,51 @@ class ProfileVC: UITableViewController {
         DispatchQueue.main.async {
             if !(account.photoAccount?.isEmpty ?? true) {
                 self.imageProfile.image = UIImage(data: (account.photoAccount!))
+                self.image = UIImage(data: (account.photoAccount!))!
             }
             self.firstNameTextField.text = account.firstNameAccount
             self.secondNameTextField.text = account.secondNameAccount
             self.thirdNameTextField.text = account.thirdNameAccount ?? ""
             self.emailTextField.text = account.emailAccount
         }
+        viewModel = ProfileVM(viewController: self)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        guard let viewModel = viewModel else {return}
+        viewModel.textFieldSetup(textField: emailTextField)
+        viewModel.textFieldSetup(textField: firstNameTextField)
+        viewModel.textFieldSetup(textField: secondNameTextField)
+        viewModel.textFieldSetup(textField: thirdNameTextField)
+        viewModel.buttonSetup(button: changePasswordBtn)
+        viewModel.buttonSetup(button: saveBtn)
+        viewModel.buttonSetup(button: deleteAccountBtn)
     }
 
     //MARK: Обработчики
-    
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         let cameraIcon = UIImage.init(named: "camera")
         let photoIcon = UIImage.init(named: "photoImage")
-        
+
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let camera = UIAlertAction(title: "Сделать снимок", style: .default) { _ in
             self.chooseImagePicker(source: .camera)
         }
         camera.setValue(cameraIcon, forKey: "image")
         camera.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
-        
+
         let photo = UIAlertAction(title: "Выбрать из галереи", style: .default) { _ in
             self.chooseImagePicker(source: .photoLibrary)
         }
         photo.setValue(photoIcon, forKey: "image")
         photo.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
-        
+
         let cancel = UIAlertAction(title: "Отмена", style: .cancel)
-        
+
         actionSheet.addAction(camera)
         actionSheet.addAction(photo)
         actionSheet.addAction(cancel)
-        
+
         present(actionSheet,animated: true)
     }
     
@@ -102,6 +114,7 @@ class ProfileVC: UITableViewController {
     
     //MARK: Сохранение
     @IBAction func saveBtnAction(_ sender: CustomButton) {
+        guard let viewModel = viewModel else {return}
         if emailTextField.text!.isEmpty {
             myNotification.showNotification(title: "Упс", message: "Укажите email", imageColor: nil, image: nil)
             return
@@ -113,13 +126,12 @@ class ProfileVC: UITableViewController {
             return
         } else {
             let account = Account()
-            account.idAccount = storageManager.getAccount().idAccount
             account.emailAccount = emailTextField.text!
             account.firstNameAccount = firstNameTextField.text!
             account.secondNameAccount = secondNameTextField.text!
             account.thirdNameAccount = thirdNameTextField.text ?? ""
-            account.photoAccount = image.pngData()
-            storageManager.saveAccount(account: account)
+            account.photoAccount = image.jpeg(.low)
+            viewModel.saveAccount(account: account)
             myNotification.miniNotification(text: "Сохранено", color: .systemGreen)
             dismiss(animated: true)
             closure?(false)
@@ -128,14 +140,16 @@ class ProfileVC: UITableViewController {
     
     //MARK: Удаление аккаунта
     @IBAction func deleteAccountAction(_ sender: CustomButton) {
-        keychain.removeKey(userAccount: "Home")
-        storageManager.deleteAccount()
+        guard let viewModel = viewModel else {return}
+        viewModel.deleteAccount()
         dismiss(animated: true)
         closure?(true)
     }
     
     //MARK: Переход к работе с паролями
     @IBAction func showPasswordManagerAction(_ sender: CustomButton) {
+        guard let viewModel = viewModel else {return}
+        viewModel.showPasswordManagerAction()
     }
     
     //MARK: Визуальное оформление
@@ -143,27 +157,13 @@ class ProfileVC: UITableViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
     }
-    
-    //MARK: Кастомные функции
-    //MARK: Настройка текстовых полей
-    fileprivate func textFieldSetup(textField: UITextField){
-        //To apply padding
-        let paddingView : UIView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
-        textField.leftView = paddingView
-        textField.leftViewMode = UITextField.ViewMode.always
-        textField.layer.cornerRadius = textField.frame.height / 2
-        textField.clipsToBounds = true
-    }
-    //MARK: Настройка кнопок
-    fileprivate func buttonSetup(button: UIButton){
-        button.layer.cornerRadius = button.frame.height / 2
-    }
 }
 
 extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
-    func chooseImagePicker(source: UIImagePickerController.SourceType){
-        
+    /// Выбор изображения
+    /// - Parameter source: откуда брать изображение
+    func chooseImagePicker(source: UIImagePickerController.SourceType) {
         if UIImagePickerController.isSourceTypeAvailable(source){
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
@@ -178,18 +178,17 @@ extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDele
         }
     }
     
+    /// Обратотка выбранного изображения
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        image = (info[.editedImage] as? UIImage)!
-        if picker.sourceType == .camera {
-            image = UIImage(cgImage: (image.cgImage!), scale: image.scale, orientation: .upMirrored)
-        }
+        image = info[.editedImage] as? UIImage ?? UIImage()
         imageProfile.image = image
         imageProfile.contentMode = .scaleAspectFill
         imageProfile.clipsToBounds = true
         dismiss(animated: true)
     }
     
+    /// Обработка нажатия на кнопку Enter на клавиатуре
+    /// - Parameter textField: поле, на котром происходит нажатие
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
             case emailTextField:
@@ -204,5 +203,17 @@ extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDele
                 self.view.endEditing(true)
         }
         return true
+    }
+    
+    /// Функция смены пароля от аккаунта
+    func changeAccountPass() {
+        guard let viewModel = viewModel else {return}
+        viewModel.changeAccountPass()
+    }
+    
+    /// Функция смены локального пароля
+    func changeLocalPass() {
+        guard let viewModel = viewModel else {return}
+        viewModel.changeLocalPass()
     }
 }

@@ -9,6 +9,7 @@
 import UIKit
 import SwiftEntryKit
 import NVActivityIndicatorView
+import PhotosUI
 
 class RegistrationVC: UITableViewController {
     
@@ -254,7 +255,7 @@ class RegistrationVC: UITableViewController {
             }
             indicator.startAnimating()
             
-            viewModel?.saveAccount(emailAccount: emailTextField.text!, firstNameAccount: firstNameUser.text!, secondNameAccount: secondNameUser.text!, thirdNameAccount: thirdNameUser.text!, photoAccount: (imageAccount.image?.pngData())!)
+            viewModel?.saveAccount(emailAccount: emailTextField.text!, firstNameAccount: firstNameUser.text!, secondNameAccount: secondNameUser.text!, thirdNameAccount: thirdNameUser.text!, photoAccount: (imageAccount.image?.jpeg(.low))!)
             
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5)) {
                 self.indicator.stopAnimating()
@@ -281,17 +282,25 @@ class RegistrationVC: UITableViewController {
     }
 }
 
-extension RegistrationVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate{
+extension RegistrationVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
-    func chooseImagePicker(source: UIImagePickerController.SourceType){
+    func chooseImagePicker(source: UIImagePickerController.SourceType) {
+        
         if UIImagePickerController.isSourceTypeAvailable(source){
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.allowsEditing = true
             imagePicker.sourceType = source
+            if source == .camera {
+                imagePicker.cameraDevice = .front
+                imagePicker.cameraFlashMode = .auto
+                imagePicker.showsCameraControls = true
+            }
             present(imagePicker,animated: true)
         }
     }
+    
+    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         imageAccount.image = info[.editedImage] as? UIImage
