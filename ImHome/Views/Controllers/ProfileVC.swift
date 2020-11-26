@@ -130,7 +130,7 @@ class ProfileVC: UITableViewController {
             account.firstNameAccount = firstNameTextField.text!
             account.secondNameAccount = secondNameTextField.text!
             account.thirdNameAccount = thirdNameTextField.text ?? ""
-            account.photoAccount = image.jpeg(.low)
+            account.photoAccount = image.jpegData(.low)
             viewModel.saveAccount(account: account)
             myNotification.miniNotification(text: "Сохранено", color: .systemGreen)
             dismiss(animated: true)

@@ -14,6 +14,7 @@ enum StrangePassword {
     case high
 }
 
+/// Проверка стойоксти пароля через регулярные выражения
 class PasswordStronger {
     
     func checkPassword(password: String) -> StrangePassword {

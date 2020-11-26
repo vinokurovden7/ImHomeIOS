@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Класс для работы с таймером
 class CustomTimer {
 
     //MARK: Переменные

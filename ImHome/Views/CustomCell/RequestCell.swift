@@ -8,11 +8,6 @@
 
 import UIKit
 
-protocol RequestCellSubclassDelegate: class {
-    func acceptButtonTapped(cell: RequestCell)
-    func declineButtonTapped(cell: RequestCell)
-}
-
 /// Кастомный класс ячейки из раздела запросов
 class RequestCell: UITableViewCell {
     
@@ -51,7 +46,17 @@ class RequestCell: UITableViewCell {
         }
     }
     
-    var delegate: RequestCellSubclassDelegate?
+    weak var viewModel: RequestCellSubclassDelegate? {
+        willSet(viewModel) {
+            guard let viewModel = viewModel else {return}
+            messageTextLabel.text = viewModel.messageTextLabel
+            nameContactLabel.text = viewModel.nameContactLabel
+            emailContactLabel.text = viewModel.emailContactLabel
+            imageRequest.image = viewModel.imageRequest
+        }
+    }
+    
+    var delegate: RequestCellActionDelegate?
     
     override func prepareForReuse() {
         super.prepareForReuse()

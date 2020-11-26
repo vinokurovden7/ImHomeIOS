@@ -11,23 +11,11 @@ import UIKit
 class MainVC: UIViewController {
     
     //MARK: IBOutlets
-    @IBOutlet weak var mainTimerTimeLabel: UILabel! {
-        didSet {
-            mainTimerTimeLabel.isHidden = true
-        }
-    }
-    @IBOutlet weak var messageTimerTimeLabel: UILabel! {
-        didSet {
-            messageTimerTimeLabel.isHidden = true
-        }
-    }
+    @IBOutlet weak var mainTimerTimeLabel: UILabel! {didSet {mainTimerTimeLabel.isHidden = true}}
+    @IBOutlet weak var messageTimerTimeLabel: UILabel! {didSet {messageTimerTimeLabel.isHidden = true}}
     @IBOutlet weak var mainButton: UIButton!
     @IBOutlet weak var delayMessageButton: CustomButton!
-    @IBOutlet weak var cancelAlarm: UIButton! {
-        didSet {
-            cancelAlarm.isHidden = true
-        }
-    }
+    @IBOutlet weak var cancelAlarm: UIButton! {didSet {cancelAlarm.isHidden = true}}
     
     //MARK: Variables
     var sec = 10
@@ -94,7 +82,7 @@ class MainVC: UIViewController {
                         self!.pressedMainButton = false
                         self!.mainTimerTimeLabel.text = ""
                         self!.messageTimerTimeLabel.text = ""
-                    }
+                }
             }
             default:
                 return

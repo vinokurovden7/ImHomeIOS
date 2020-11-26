@@ -8,6 +8,7 @@
 import UIKit
 import LocalAuthentication
 
+/// Класс, для работы с биометрией
 class BiometrickAuth {
     private var context = LAContext()
     
@@ -46,6 +47,7 @@ class BiometrickAuth {
         return context.biometryType
     }
     
+    /// Отоборажение диалога с биометрической авторизацией
     func showBiomentricAutorization(context: LAContext, completion: @escaping (Bool) -> ()) {
         var authError: NSError?
         if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &authError) {

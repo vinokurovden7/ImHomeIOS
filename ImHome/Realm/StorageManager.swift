@@ -8,6 +8,7 @@
 
 import RealmSwift
 
+/// Класс для работы с базой данных Realm
 class StorageManager {
     
     //MARK: Сохранение данных
@@ -48,10 +49,31 @@ class StorageManager {
         }
     }
     
+    //MARK: Выборка данных
     /// Получить аккаунт
     /// - Returns: Объект типа Account
     func getAccount() -> Account {
         let realm = try! Realm()
         return realm.objects(Account.self).first ?? Account()
     }
+    
+    /// Получить контакты
+    /// - Parameter filter: параметр поиска
+    /// - Returns: Объект запроса Contact
+    func getContacts(filter: String?) -> Results<Contact>! {
+        let realm = try! Realm()
+        if let filter = filter {
+            return realm.objects(Contact.self).filter("firstNameContact CONTAINS[c] %@ OR secondNameContact CONTAINS[c] %@ OR thirdNameContact CONTAINS[c] %@", filter ,filter).sorted(byKeyPath: "firstNameContact").sorted(byKeyPath: "secondNameContact").sorted(byKeyPath: "thirdNameContact")
+        } else {
+            return realm.objects(Contact.self).sorted(byKeyPath: "firstNameContact").sorted(byKeyPath: "secondNameContact").sorted(byKeyPath: "thirdNameContact")
+        }
+    }
+    
+    /// Получить запросы на добавления в контакты
+    /// - Returns: Объект запроса Request
+    func getRequests() -> Results<Request>! {
+        let realm = try! Realm()
+        return realm.objects(Request.self)
+    }
+    
 }

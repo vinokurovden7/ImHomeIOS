@@ -25,10 +25,7 @@ class NewContactVC: UIViewController, UISearchBarDelegate {
     //MARK: Настройка searchController и  NavigationController
     /// Настройка searchController и  NavigationController
     func setSearchNavController(){
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.view.backgroundColor = .clear
-        self.navigationController?.navigationBar.barStyle = .black
+        navigationController?.setupNavigationController(navigationController: self.navigationController!)
         
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.tintColor = UIColor .white

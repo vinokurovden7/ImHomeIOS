@@ -22,10 +22,13 @@ class ContactsVC: UICollectionViewController, UISearchBarDelegate {
     //Отступ от краев экрана и по-середине
     private let paddingPlit = CGFloat(25)
     
+    private var viewModel: ContactsViewModelType?
+    
     //MARK: Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel = ContactsVM(collectionView: myCollectionView)
         setSearchNavController()
     }
     
@@ -38,11 +41,7 @@ class ContactsVC: UICollectionViewController, UISearchBarDelegate {
     //MARK: Setup
     /// Настройка searchController и  navigationController
     func setSearchNavController(){
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.view.backgroundColor = .clear
-        self.navigationController?.navigationBar.barStyle = .black
-        
+        navigationController?.setupNavigationController(navigationController: self.navigationController!)
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.tintColor = UIColor.white
         searchController.searchBar.barTintColor = UIColor .clear
@@ -95,28 +94,29 @@ extension ContactsVC: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return CGFloat(bitPattern: 10)
+        guard let viewModel = viewModel else {return CGFloat(10)}
+        return viewModel.getMinimumLineSpacing()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        let widthPlit = (collectionView.frame.width - paddingPlit * countItems) / countItems
-        let superPadding = (collectionView.frame.width - widthPlit * countItems) / (countItems+1)
-        let padding = (collectionView.frame.width - (superPadding + (countItems * widthPlit))) / countItems
-        return UIEdgeInsets(top: 0, left: padding, bottom: 40, right: padding)
+        guard let viewModel = viewModel else {return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)}
+        return viewModel.getEdgeInsets()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.frame.width - paddingPlit * countItems) / countItems, height: 155)
+        guard let viewModel = viewModel else {return CGSize(width: 0, height: 0)}
+        return viewModel.getSizeItem()
     }
     
     // MARK: UICollectionViewDataSource
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+        guard let viewModel = viewModel else {return 1}
+        return viewModel.getNumberOfSections()
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
+//        guard let viewModel = viewModel else {return 1}
+//        return viewModel.getNumbersItemsInSection()
         return 15
     }
 
@@ -138,7 +138,8 @@ extension ContactsVC: UICollectionViewDelegateFlowLayout {
             cell.mapButton.tintColor = .white
             cell.messageButton.tintColor = .white
         }
-        cell.widthConstraintPlit.constant = (collectionView.frame.width - paddingPlit * countItems) / countItems
+        guard let viewModel = viewModel else {return cell}
+        cell.widthConstraintPlit.constant = viewModel.getWidthPlits()
         return cell
     }
 }
@@ -149,4 +150,3 @@ extension ContactsVC: UISearchResultsUpdating {
         print(searchController.searchBar.text ?? "")
     }
 }
-

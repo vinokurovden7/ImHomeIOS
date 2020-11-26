@@ -36,10 +36,19 @@ extension UIImage {
             case highest = 1
         }
 
-        /// Returns the data for the specified image in JPEG format.
-        /// If the image object’s underlying image data has been purged, calling this function forces that data to be reloaded into memory.
-        /// - returns: A data object containing the JPEG data, or nil if there was a problem generating the data. This function may return nil if the image has no data or if the underlying CGImageRef contains data in an unsupported bitmap format.
-        func jpeg(_ quality: JPEGQuality) -> Data? {
-            return self.jpegData(compressionQuality: quality.rawValue)
-        }
+    /// Возвращает данные для указанного изображения в формате JPEG.
+    /// Если базовые данные изображения объекта изображения были удалены, вызов этой функции заставляет эти данные быть перезагруженными в память.
+    /// - returns: Объект данных, содержащий данные JPEG, или ноль, если возникла проблема с генерацией данных. Эта функция может возвращать ноль, если изображение не содержит данных или если базовый CGImageRef содержит данные в неподдерживаемом растровом формате.
+    func jpegData(_ quality: JPEGQuality) -> Data? {
+        return self.jpegData(compressionQuality: quality.rawValue)
+    }
+}
+
+extension UINavigationController {
+    func setupNavigationController(navigationController: UINavigationController) {
+        navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController.navigationBar.shadowImage = UIImage()
+        navigationController.view.backgroundColor = .clear
+        navigationController.navigationBar.barStyle = .black
+    }
 }

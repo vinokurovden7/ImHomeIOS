@@ -253,12 +253,14 @@ class RegistrationVC: UITableViewController {
                     self.indicator.alpha = 1
                 })
             }
+            tableView.isScrollEnabled = false
             indicator.startAnimating()
             
-            viewModel?.saveAccount(emailAccount: emailTextField.text!, firstNameAccount: firstNameUser.text!, secondNameAccount: secondNameUser.text!, thirdNameAccount: thirdNameUser.text!, photoAccount: (imageAccount.image?.jpeg(.low))!)
+            viewModel?.saveAccount(emailAccount: emailTextField.text!, firstNameAccount: firstNameUser.text!, secondNameAccount: secondNameUser.text!, thirdNameAccount: thirdNameUser.text!, photoAccount: (imageAccount.image?.jpegData(.low))!)
             
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5)) {
                 self.indicator.stopAnimating()
+                self.tableView.isScrollEnabled = true
                 self.closure?(["login":self.usernameTextField.text!, "password":self.passwordTextField.text!])
                 self.dismiss(animated: true)
             }

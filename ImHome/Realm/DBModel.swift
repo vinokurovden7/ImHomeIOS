@@ -41,3 +41,15 @@ class Contact: Object {
         return "idContact"
     }
 }
+
+/// Запросы на добавление в контакты
+class Request: Object {
+    @objc dynamic var idRequest = ""
+    @objc dynamic var messageRequest = ""
+    @objc dynamic var firstNameContactRequest = ""
+    @objc dynamic var secondNameContactRequest = ""
+    @objc dynamic var thirdNameContactRequest: String?
+    @objc dynamic var emailContactRequest = ""
+    @objc dynamic var photoContactRequest: Data?
+    @objc dynamic var dateRequest = NSDate.now
+}
