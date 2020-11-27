@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 class ContactsVM: ContactsViewModelType {
     
     //Количество ячеек в строке
@@ -14,17 +15,21 @@ class ContactsVM: ContactsViewModelType {
     //Отступ от краев экрана и по-середине
     private let paddingPlit:CGFloat
     private let collectionView: UICollectionView
+    private let contacts: Results<Contact>!
+    private let storageManager = StorageManager()
     
     init(collectionView: UICollectionView) {
         countItems = CGFloat(2)
         paddingPlit = CGFloat(25)
         self.collectionView = collectionView
+        contacts = storageManager.getContacts(filter: nil)
     }
     
     init(countItems: CGFloat, paddingPlit: CGFloat, collectionView: UICollectionView) {
         self.countItems = countItems
         self.paddingPlit = paddingPlit
         self.collectionView = collectionView
+        contacts = storageManager.getContacts(filter: nil)
     }
     
     func getNumberOfSections() -> Int {
@@ -55,5 +60,10 @@ class ContactsVM: ContactsViewModelType {
         return (collectionView.frame.width - paddingPlit * countItems) / countItems
     }
     
+    func cellViewModel(forIndexPath indexPath: IndexPath) -> ContactsCellDelegate? {
+        var contact = Contact()
+        contact = contacts[indexPath.row]
+        return ContactCellVM(contact: contact)
+    }
     
 }

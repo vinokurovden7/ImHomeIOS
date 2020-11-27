@@ -6,7 +6,7 @@
 //  Copyright © 2020 Денис Винокуров. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import RealmSwift
 class RequestVM: RequestViewModelType {
     

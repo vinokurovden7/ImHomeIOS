@@ -16,6 +16,7 @@ class Account: Object {
     @objc dynamic var thirdNameAccount: String?
     @objc dynamic var emailAccount = ""
     @objc dynamic var photoAccount: Data?
+    @objc dynamic var timeCancelSosSignal = 10
     
     override class func primaryKey() -> String? {
         return "idAccount"
@@ -52,4 +53,12 @@ class Request: Object {
     @objc dynamic var emailContactRequest = ""
     @objc dynamic var photoContactRequest: Data?
     @objc dynamic var dateRequest = NSDate.now
+}
+
+
+class NewContact: Object {
+    @objc dynamic var idNewContact = ""
+    @objc dynamic var fullNameNewContact = ""
+    @objc dynamic var emailNewContact = ""
+    @objc dynamic var photoNewContact: Data?
 }

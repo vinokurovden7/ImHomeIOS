@@ -13,6 +13,9 @@ class ProfileVM: ProfileViewModelType {
     private let keychain = Keychain()
     private let storageManager = StorageManager()
     private var sourceType: UIImagePickerController.SourceType?
+    private lazy var account = Account()
+    private lazy var changedOldLocalPassTF = UITextField()
+    private lazy var changedNewLocalPassTF = UITextField()
     
     init(viewController: UIViewController) {
         self.viewController = viewController
@@ -48,13 +51,17 @@ class ProfileVM: ProfileViewModelType {
     /// Изменеие локального пароля для отмены вызова помощи
     func changeLocalPass() {
         let alert = UIAlertController (title: "Локальный пароль", message: "Смена пароля", preferredStyle: .alert)
-        alert.addTextField { (oldLocalPass) in
+        alert.addTextField { [self] (oldLocalPass) in
             oldLocalPass.placeholder = "Старый пароль"
             oldLocalPass.keyboardType = .numberPad
+            oldLocalPass.isSecureTextEntry = true
+            changedOldLocalPassTF = oldLocalPass
         }
-        alert.addTextField { (newLocalPass) in
+        alert.addTextField { [self] (newLocalPass) in
             newLocalPass.placeholder = "Новый пароль"
             newLocalPass.keyboardType = .numberPad
+            newLocalPass.isSecureTextEntry = true
+            changedNewLocalPassTF = newLocalPass
         }
         let changeLocalPassAction = UIAlertAction(title: "Сменить пароль", style: .default, handler: { _ in
             guard let oldLocalPass = alert.textFields?[0] else {return}
@@ -66,6 +73,15 @@ class ProfileVM: ProfileViewModelType {
         })
         alert.addAction(changeLocalPassAction)
         viewController.present(alert, animated: true)
+    }
+    
+    //MARK: Ограничение на ввод больше 2 цифр
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if (Int(string) ?? 0 > 0 && changedOldLocalPassTF.text?.count ?? 0 > 0 && Int(changedOldLocalPassTF.text!) ?? 0 >= 7) || (Int(string) ?? 0 > 0 && changedNewLocalPassTF.text?.count ?? 0 > 0 && Int(changedNewLocalPassTF.text!) ?? 0 >= 7) {
+        }
+        if range.length + range.location > (changedOldLocalPassTF.text?.count)! {return false}
+        let newLimit = (changedOldLocalPassTF.text?.count)! + string.count - range.length
+        return newLimit <= 6
     }
     
     /// Настройка кнопки
@@ -121,5 +137,40 @@ class ProfileVM: ProfileViewModelType {
     func saveAccount(account: Account) {
         account.idAccount = storageManager.getAccount().idAccount
         storageManager.saveAccount(account: account)
+    }
+    
+    func getPhotoAccount() -> UIImage {
+        account = storageManager.getAccount()
+        return UIImage(data: (account.photoAccount ?? UIImage(named: "camera")?.pngData())!)!
+    }
+    
+    func getFioAccount() -> String {
+        account = storageManager.getAccount()
+        return "\(account.secondNameAccount) \(account.firstNameAccount) \(account.thirdNameAccount ?? "")"
+    }
+    
+    func getEmailAccount() -> String {
+        account = storageManager.getAccount()
+        return account.emailAccount
+    }
+    
+    func getFirstName() -> String {
+        account = storageManager.getAccount()
+        return account.firstNameAccount
+    }
+    
+    func getSecondName() -> String {
+        account = storageManager.getAccount()
+        return account.secondNameAccount
+    }
+    
+    func getThirdName() -> String {
+        account = storageManager.getAccount()
+        return account.thirdNameAccount ?? ""
+    }
+    
+    func getTimeCancelSosSignal() -> String {
+        account = storageManager.getAccount()
+        return "\(account.timeCancelSosSignal)"
     }
 }

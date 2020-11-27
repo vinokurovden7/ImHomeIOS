@@ -15,10 +15,12 @@ class NewContactVC: UIViewController, UISearchBarDelegate {
     //MARK: Variables
     private var searchController: UISearchController!
     private var counRecord = 10
+    private var viewModel: NewContactViewModelType?
     
     //MARK: Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = NewContactVM()
         setSearchNavController()
     }
     
@@ -51,11 +53,20 @@ class NewContactVC: UIViewController, UISearchBarDelegate {
 extension NewContactVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        guard let viewModel = viewModel else {return 0}
+//        return viewModel.numberOfRowsInSection()
         return counRecord
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? NewContactCell
+//        guard let viewModel = viewModel, let tableViewCell = cell else {return UITableViewCell()}
+//        let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath)
+//        tableViewCell.viewModel = cellViewModel
+//
+//        return tableViewCell
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! NewContactCell
         let backgroundView = UIView()
         backgroundView.backgroundColor = UIColor.clear
@@ -68,6 +79,7 @@ extension NewContactVC: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         guard let cell: NewContactCell = myTableView.cellForRow(at: indexPath) as? NewContactCell else {return}
         cell.pulseAnimate(cell.mainViewContactCell) {
+            
             self.performSegue(withIdentifier: "showAddedContact", sender: self)
         }
         
@@ -78,5 +90,7 @@ extension NewContactVC: UITableViewDelegate, UITableViewDataSource {
 //MARK: Extensions search results updating
 extension NewContactVC: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
+        guard let viewModel = viewModel else {return}
+        viewModel.filteringContact(filteredString: searchController.searchBar.text ?? "")
     }
 }

@@ -40,7 +40,24 @@ class ContactsCell: UICollectionViewCell {
         }
     }
     
-    
+    weak var viewModel: ContactsCellDelegate? {
+        willSet(viewModel){
+            guard let viewModel = viewModel else {return}
+            nameContact.text = viewModel.nameContact
+            emailContact.text = viewModel.emailContact
+            imageContact.image = viewModel.imageContact
+            switch viewModel.statusContact {
+            case 0:
+                backgroundViewContacts.backgroundColor = UIColor(named: "viewPlitsColor")
+            case 1:
+                backImageContactView.backgroundColor = .systemOrange
+            case 2:
+                backImageContactView.backgroundColor = .systemRed
+            default:
+                backImageContactView.backgroundColor = UIColor(named: "viewPlitsColor")
+            }
+        }
+    }
     
     /// Пульсирующая анимация, имитирующая нажатие
     /// - Parameters:

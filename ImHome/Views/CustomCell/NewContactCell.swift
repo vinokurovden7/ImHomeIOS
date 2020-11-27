@@ -54,4 +54,13 @@ class NewContactCell: UITableViewCell {
         }
     }
     
+    weak var viewModel: NewContactCellDelegate? {
+        willSet(viewModel){
+            guard let viewModel = viewModel else {return}
+            nameContact.text = viewModel.fullnameContact
+            emailContact.text = viewModel.emailContact
+            newContactImage.image = viewModel.photoContact
+        }
+    }
+    
 }

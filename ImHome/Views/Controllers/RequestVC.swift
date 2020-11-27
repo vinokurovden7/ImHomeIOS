@@ -44,10 +44,10 @@ extension RequestVC: UITableViewDelegate, UITableViewDataSource, RequestCellActi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "requestCell") as! RequestCell
         cell.delegate = self
-        
+
         cell.messageTextLabel.text = arrayMessage[indexPath.row]
         return cell
-        
+//
 //        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as? RequestCell
 //        guard let tableViewCell = cell, let viewModel = viewModel else { return UITableViewCell() }
 //

@@ -14,4 +14,5 @@ protocol ContactsViewModelType {
     func getEdgeInsets() -> UIEdgeInsets
     func getSizeItem() -> CGSize
     func getWidthPlits() -> CGFloat
+    func cellViewModel(forIndexPath indexPath: IndexPath) -> ContactsCellDelegate?
 }

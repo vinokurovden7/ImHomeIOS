@@ -76,4 +76,9 @@ class StorageManager {
         return realm.objects(Request.self)
     }
     
+    func getNewConacts() -> Results<NewContact>! {
+        let realm = try! Realm()
+        return realm.objects(NewContact.self).sorted(byKeyPath: "fullNameNewContact")
+    }
+    
 }

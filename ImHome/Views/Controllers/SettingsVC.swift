@@ -40,6 +40,7 @@ class SettingsVC: UITableViewController, UITextFieldDelegate {
     }
     
     private let nameAccount = "Home"
+    private var viewModel: SettingViewModelType?
     
     override func viewWillAppear(_ animated: Bool) {
         getAccountData()
@@ -48,6 +49,9 @@ class SettingsVC: UITableViewController, UITextFieldDelegate {
     //MARK: Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = SettingsVM()
+        guard let viewModel = viewModel else {return}
+        timeCancelSOSSignal.text = viewModel.getTimeCancelSosSignal()
         tableView.backgroundView = UIImageView(image: UIImage(named: "fonBackground"))
         tableView.backgroundView?.contentMode = .scaleAspectFill
         tableView.backgroundView?.alpha = 0.07
@@ -60,6 +64,8 @@ class SettingsVC: UITableViewController, UITextFieldDelegate {
         if Int(timeCancelSOSSignal.text!) ?? 0 > 30 {
             timeCancelSOSSignal.text = "30"
         }
+        guard let viewModel = viewModel else {return}
+        viewModel.setTimeCancelSosSignal(time: timeCancelSOSSignal.text!)
     }
     
     @IBAction func showPresentationAction(_ sender: CustomButton) {
@@ -81,13 +87,13 @@ class SettingsVC: UITableViewController, UITextFieldDelegate {
     
     /// Получение данных аккаунта
     private func getAccountData() {
-        let account = StorageManager().getAccount()
+        //let account = StorageManager().getAccount()
+        guard let viewModel = viewModel else {return}
         DispatchQueue.main.async {
-            if !(account.photoAccount?.isEmpty ?? true) {
-                self.profileImageVIew.image = UIImage(data: (account.photoAccount!))
-            }
-            self.fioAccount.text = "\(account.secondNameAccount) \(account.firstNameAccount) \(account.thirdNameAccount ?? "")"
-            self.emailAccount.text = "\(account.emailAccount)"
+            self.profileImageVIew.image = viewModel.getPhotoAccount()
+            self.fioAccount.text = viewModel.getFioAccount()
+            self.emailAccount.text = viewModel.getEmailAccount()
+            self.timeCancelSOSSignal.text = viewModel.getTimeCancelSosSignal()
         }
     }
     
@@ -105,19 +111,12 @@ class SettingsVC: UITableViewController, UITextFieldDelegate {
     }
     //MARK: Ограничение на ввод больше 2 цифр
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
         if Int(string) ?? 0 > 0 && timeCancelSOSSignal.text?.count ?? 0 > 0 && Int(timeCancelSOSSignal.text!) ?? 0 >= 3 {
             timeCancelSOSSignal.text = "30"
         }
-        
-        if range.length + range.location > (timeCancelSOSSignal.text?.count)! {
-            return false
-        }
-        
+        if range.length + range.location > (timeCancelSOSSignal.text?.count)! {return false}
         let newLimit = (timeCancelSOSSignal.text?.count)! + string.count - range.length
-        
         return newLimit <= 2
-        
     }
 
     //MARK: Визуальное оформление

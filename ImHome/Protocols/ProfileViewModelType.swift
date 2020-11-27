@@ -15,4 +15,11 @@ protocol ProfileViewModelType {
     func saveAccount(account: Account)
     func changeLocalPass()
     func changeAccountPass()
+    func getPhotoAccount() -> UIImage
+    func getFioAccount() -> String
+    func getEmailAccount() -> String
+    func getFirstName() -> String
+    func getSecondName() -> String
+    func getThirdName() -> String
+    func getTimeCancelSosSignal() -> String
 }

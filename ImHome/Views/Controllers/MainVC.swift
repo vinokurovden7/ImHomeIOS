@@ -18,7 +18,7 @@ class MainVC: UIViewController {
     @IBOutlet weak var cancelAlarm: UIButton! {didSet {cancelAlarm.isHidden = true}}
     
     //MARK: Variables
-    var sec = 10
+    var sec = 0
     var hour = 0
     var minutes = 0
     private var pressedMainButton = false
@@ -142,7 +142,9 @@ class MainVC: UIViewController {
             messageTimerTimeLabel.isHidden = true
             cancelAlarm.isHidden = false
             guard let viewModel = viewModel else {return}
-            viewModel.setTimer(hour: 0, minutes: 0, seconds: 10)
+            viewModel.setTimer(hour: 0, minutes: 0, seconds: viewModel.getTimeCancelSosSignal())
+            mainTimerTimeLabel.text = "\(viewModel.getTimeCancelSosSignal())"
+            self.tabBarItem.badgeValue = "\(viewModel.getTimeCancelSosSignal())"
         }
         pressedMainButton = true
     }

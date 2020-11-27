@@ -72,9 +72,7 @@ class DelayMessageVC: UIViewController {
                     self.topConstraint.constant = -(self.delayTextField.frame.origin.y + self.delayTextField.frame.size.height - (keyboardFrameEndRect?.origin.y)!) - 50.0
                     self.bottomConstraint.constant = (self.delayTextField.frame.origin.y + self.delayTextField.frame.size.height - (keyboardFrameEndRect?.origin.y)!) + 100.0
                     self.view.layoutIfNeeded()
-                }, completion: {(_ finished: Bool) -> Void in
-                    
-                })
+                }, completion: nil)
             }
         } else {
             let keyboardInfo  = notification.userInfo as NSDictionary?
@@ -84,9 +82,7 @@ class DelayMessageVC: UIViewController {
                 UIView.animate(withDuration: 0.3, delay: 0, options: .transitionFlipFromTop, animations: {() -> Void in
                     self.bottomConstraint.constant = (self.delayTextField.frame.origin.y + self.delayTextField.frame.size.height - (keyboardFrameEndRect?.origin.y)!) + 10
                     self.view.layoutIfNeeded()
-                }, completion: {(_ finished: Bool) -> Void in
-                    
-                })
+                }, completion: nil)
             }
         }
     }

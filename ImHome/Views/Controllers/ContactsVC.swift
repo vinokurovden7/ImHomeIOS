@@ -121,6 +121,15 @@ extension ContactsVC: UICollectionViewDelegateFlowLayout {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? ContactsCell
+//        guard let tableViewCell = cell, let viewModel = viewModel else { return UICollectionViewCell() }
+//
+//        let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath)
+//        tableViewCell.viewModel = cellViewModel
+//
+//        return tableViewCell
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ContactsCell
         if indexPath.row < 2 {
             cell.backgroundViewContacts.backgroundColor = .systemRed

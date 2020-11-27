@@ -10,6 +10,8 @@
 		2DFFBA83334C8EBE4D2B13F6 /* Pods_ImHome_ImHomeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6358E0BE9641DAF4050D39C0 /* Pods_ImHome_ImHomeUITests.framework */; };
 		92084D0325025B3E003F1580 /* CustomTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92084D0225025B3E003F1580 /* CustomTimer.swift */; };
 		920A6053253C6872007CC6F1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 920A6052253C6872007CC6F1 /* MapKit.framework */; };
+		92176B142570E068000FCC85 /* ContactsCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92176B132570E068000FCC85 /* ContactsCellDelegate.swift */; };
+		92176B192570E115000FCC85 /* ContactCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92176B182570E115000FCC85 /* ContactCellVM.swift */; };
 		922D2B10246ACBB400CA6492 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922D2B0F246ACBB400CA6492 /* AppDelegate.swift */; };
 		922D2B12246ACBB400CA6492 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922D2B11246ACBB400CA6492 /* SceneDelegate.swift */; };
 		922D2B14246ACBB400CA6492 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922D2B13246ACBB400CA6492 /* ViewController.swift */; };
@@ -36,6 +38,12 @@
 		925CED7E250FA0870070CC7D /* PageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925CED7D250FA0870070CC7D /* PageVC.swift */; };
 		92628B4C24936111003CCA3F /* CustomNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92628B4B24936111003CCA3F /* CustomNotification.swift */; };
 		9268A12424862612007D75BD /* CustomNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9268A12324862612007D75BD /* CustomNavigationViewController.swift */; };
+		927F8120256FC63B00A2E4A1 /* SettingViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927F811F256FC63B00A2E4A1 /* SettingViewModelType.swift */; };
+		927F8128256FCD9000A2E4A1 /* SettingsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927F8127256FCD9000A2E4A1 /* SettingsVM.swift */; };
+		927F813C2570C31200A2E4A1 /* NewContactCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927F813B2570C31200A2E4A1 /* NewContactCellDelegate.swift */; };
+		927F81412570C40200A2E4A1 /* NewContactViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927F81402570C40200A2E4A1 /* NewContactViewModelType.swift */; };
+		927F81462570C44600A2E4A1 /* NewContactVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927F81452570C44600A2E4A1 /* NewContactVM.swift */; };
+		927F81512570CC2000A2E4A1 /* NewContactCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927F81502570CC2000A2E4A1 /* NewContactCellVM.swift */; };
 		92925C7324751D63000F6500 /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92925C7224751D63000F6500 /* RegistrationVC.swift */; };
 		929F40FA250689B500607D9C /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929F40F9250689B500607D9C /* Keychain.swift */; };
 		929F40FC2506A28C00607D9C /* BiometrickAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929F40FB2506A28C00607D9C /* BiometrickAuth.swift */; };
@@ -95,6 +103,8 @@
 		82775E455AD302CBC8CB9414 /* Pods-I'm home-I'm homeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-I'm home-I'm homeUITests.debug.xcconfig"; path = "Target Support Files/Pods-I'm home-I'm homeUITests/Pods-I'm home-I'm homeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		92084D0225025B3E003F1580 /* CustomTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTimer.swift; sourceTree = "<group>"; };
 		920A6052253C6872007CC6F1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		92176B132570E068000FCC85 /* ContactsCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsCellDelegate.swift; sourceTree = "<group>"; };
+		92176B182570E115000FCC85 /* ContactCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCellVM.swift; sourceTree = "<group>"; };
 		922D2B0C246ACBB400CA6492 /* Я дома.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Я дома.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		922D2B0F246ACBB400CA6492 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		922D2B11246ACBB400CA6492 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +140,12 @@
 		92628B4B24936111003CCA3F /* CustomNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNotification.swift; sourceTree = "<group>"; };
 		9268A12324862612007D75BD /* CustomNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationViewController.swift; sourceTree = "<group>"; };
 		927E4982249278C4009B99DD /* SwiftEntryKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftEntryKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		927F811F256FC63B00A2E4A1 /* SettingViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModelType.swift; sourceTree = "<group>"; };
+		927F8127256FCD9000A2E4A1 /* SettingsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVM.swift; sourceTree = "<group>"; };
+		927F813B2570C31200A2E4A1 /* NewContactCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactCellDelegate.swift; sourceTree = "<group>"; };
+		927F81402570C40200A2E4A1 /* NewContactViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactViewModelType.swift; sourceTree = "<group>"; };
+		927F81452570C44600A2E4A1 /* NewContactVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactVM.swift; sourceTree = "<group>"; };
+		927F81502570CC2000A2E4A1 /* NewContactCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactCellVM.swift; sourceTree = "<group>"; };
 		92925C7224751D63000F6500 /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
 		929F40F9250689B500607D9C /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		929F40FB2506A28C00607D9C /* BiometrickAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometrickAuth.swift; sourceTree = "<group>"; };
@@ -270,12 +286,14 @@
 		9243481C2477D81200649D0B /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				92B86D2F252EE48E00A9DB01 /* LoginViewModelType.swift */,
 				92B86D1B252D8A0900A9DB01 /* RegistrationViewModelType.swift */,
 				92B86D25252E12F800A9DB01 /* MainViewModelType.swift */,
-				92B86D2F252EE48E00A9DB01 /* LoginViewModelType.swift */,
-				92ADEBFC2546A8BB0093EF50 /* ProfileViewModelType.swift */,
 				92E7E038256BEEF300B1FC1E /* ContactsViewModelType.swift */,
 				92530B90256E21BA00D162B6 /* RequestViewModelType.swift */,
+				927F811F256FC63B00A2E4A1 /* SettingViewModelType.swift */,
+				92ADEBFC2546A8BB0093EF50 /* ProfileViewModelType.swift */,
+				927F81402570C40200A2E4A1 /* NewContactViewModelType.swift */,
 				927F811B256FC3AA00A2E4A1 /* Cells */,
 			);
 			path = Protocols;
@@ -329,6 +347,8 @@
 			isa = PBXGroup;
 			children = (
 				92530B88256E16A800D162B6 /* RequestCellVM.swift */,
+				927F81502570CC2000A2E4A1 /* NewContactCellVM.swift */,
+				92176B182570E115000FCC85 /* ContactCellVM.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -338,6 +358,8 @@
 			children = (
 				92530B71256D3A6900D162B6 /* RequestCellSubclassDelegate.swift */,
 				92530B98256E267400D162B6 /* RequestCellActionDelegate.swift */,
+				927F813B2570C31200A2E4A1 /* NewContactCellDelegate.swift */,
+				92176B132570E068000FCC85 /* ContactsCellDelegate.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -359,7 +381,9 @@
 				92B86D20252E12EA00A9DB01 /* MainVM.swift */,
 				92E7E041256D1D8300B1FC1E /* ContactsVM.swift */,
 				92530B7B256E146A00D162B6 /* RequestVM.swift */,
+				927F8127256FCD9000A2E4A1 /* SettingsVM.swift */,
 				92ADEC012546BBC90093EF50 /* ProfileVM.swift */,
+				927F81452570C44600A2E4A1 /* NewContactVM.swift */,
 				927F8117256FC21A00A2E4A1 /* Cells */,
 			);
 			path = ViewModel;
@@ -661,20 +685,26 @@
 				924348262478FB0C00649D0B /* RequestVC.swift in Sources */,
 				92E1E04024D8F88500D17FF7 /* AddedContactVC.swift in Sources */,
 				92B82DB224ED7DC3002B8366 /* DBModel.swift in Sources */,
+				927F81462570C44600A2E4A1 /* NewContactVM.swift in Sources */,
+				92176B192570E115000FCC85 /* ContactCellVM.swift in Sources */,
 				92CDF61F2508BFD3003E063D /* PasswordStronger.swift in Sources */,
 				922D2B10246ACBB400CA6492 /* AppDelegate.swift in Sources */,
 				92B86D17252D89F200A9DB01 /* RegistrationVM.swift in Sources */,
 				92B86D1C252D8A0900A9DB01 /* RegistrationViewModelType.swift in Sources */,
 				924B0949247D6BA9002F7267 /* NewContactVC.swift in Sources */,
+				927F81512570CC2000A2E4A1 /* NewContactCellVM.swift in Sources */,
 				92530B72256D3A6900D162B6 /* RequestCellSubclassDelegate.swift in Sources */,
+				927F81412570C40200A2E4A1 /* NewContactViewModelType.swift in Sources */,
 				92E7E042256D1D8300B1FC1E /* ContactsVM.swift in Sources */,
 				92B86D26252E12F800A9DB01 /* MainViewModelType.swift in Sources */,
 				92E7E039256BEEF300B1FC1E /* ContactsViewModelType.swift in Sources */,
+				927F8120256FC63B00A2E4A1 /* SettingViewModelType.swift in Sources */,
 				92AA6F522500BDB8007E51E4 /* LockerViewController.swift in Sources */,
 				929F40FC2506A28C00607D9C /* BiometrickAuth.swift in Sources */,
 				924348242478049D00649D0B /* ContactsVC.swift in Sources */,
 				92084D0325025B3E003F1580 /* CustomTimer.swift in Sources */,
 				929F40FA250689B500607D9C /* Keychain.swift in Sources */,
+				92176B142570E068000FCC85 /* ContactsCellDelegate.swift in Sources */,
 				924F9E05246AD2340065056E /* LoginVC.swift in Sources */,
 				924348222477FAF800649D0B /* ContactsCell.swift in Sources */,
 				92DD21A12478FD2300849AB2 /* RequestCell.swift in Sources */,
@@ -691,6 +721,8 @@
 				92628B4C24936111003CCA3F /* CustomNotification.swift in Sources */,
 				92B82DB424ED7DDF002B8366 /* StorageManager.swift in Sources */,
 				92CDF61D25087A63003E063D /* Extensions.swift in Sources */,
+				927F8128256FCD9000A2E4A1 /* SettingsVM.swift in Sources */,
+				927F813C2570C31200A2E4A1 /* NewContactCellDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -814,6 +846,7 @@
 			baseConfigurationReference = ED56878A275F48C08AD85394 /* Pods-ImHome.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_MODULES_DISABLE_PRIVATE_WARNING = NO;
 				CODE_SIGN_ENTITLEMENTS = "ImHome/Я дома.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AWN3QD4X7Y;

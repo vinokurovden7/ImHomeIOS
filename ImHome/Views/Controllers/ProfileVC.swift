@@ -55,16 +55,14 @@ class ProfileVC: UITableViewController {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         imageProfile.addGestureRecognizer(tapGestureRecognizer)
         
-        let account = StorageManager().getAccount()
-        DispatchQueue.main.async {
-            if !(account.photoAccount?.isEmpty ?? true) {
-                self.imageProfile.image = UIImage(data: (account.photoAccount!))
-                self.image = UIImage(data: (account.photoAccount!))!
-            }
-            self.firstNameTextField.text = account.firstNameAccount
-            self.secondNameTextField.text = account.secondNameAccount
-            self.thirdNameTextField.text = account.thirdNameAccount ?? ""
-            self.emailTextField.text = account.emailAccount
+        DispatchQueue.main.async { [self] in
+            guard let viewModel = viewModel else {return}
+            self.imageProfile.image = viewModel.getPhotoAccount()
+            self.image = viewModel.getPhotoAccount()
+            self.firstNameTextField.text = viewModel.getFirstName()
+            self.secondNameTextField.text = viewModel.getSecondName()
+            self.thirdNameTextField.text = viewModel.getThirdName()
+            self.emailTextField.text = viewModel.getEmailAccount()
         }
         viewModel = ProfileVM(viewController: self)
     }
@@ -131,6 +129,7 @@ class ProfileVC: UITableViewController {
             account.secondNameAccount = secondNameTextField.text!
             account.thirdNameAccount = thirdNameTextField.text ?? ""
             account.photoAccount = image.jpegData(.low)
+            account.timeCancelSosSignal = Int(viewModel.getTimeCancelSosSignal())!
             viewModel.saveAccount(account: account)
             myNotification.miniNotification(text: "Сохранено", color: .systemGreen)
             dismiss(animated: true)

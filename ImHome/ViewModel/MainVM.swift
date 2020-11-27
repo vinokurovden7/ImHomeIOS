@@ -12,11 +12,12 @@ import LocalAuthentication
 class MainVM: MainViewModelType {
     
     //MARK: Variables
-    private var sec = 10
+    private var sec = 0
     private var hour = 0
     private var minutes = 0
     private let timeClass: CustomTimer
     private let biometrickAuth: BiometrickAuth
+    private let storageManager = StorageManager()
     
     func getTimeString(date: [String]) -> String {
         if date.count > 0 {
@@ -51,9 +52,12 @@ class MainVM: MainViewModelType {
     
     func showBiometrickAuth(context: LAContext, completion: @escaping (Bool) -> ()) {
         biometrickAuth.showBiomentricAutorization(context: context) { (success) in
-            
             completion(success)
         }
+    }
+    
+    func getTimeCancelSosSignal() -> Int {
+        return storageManager.getAccount().timeCancelSosSignal
     }
     
     init() {
