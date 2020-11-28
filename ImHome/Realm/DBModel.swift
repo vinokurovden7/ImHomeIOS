@@ -17,6 +17,7 @@ class Account: Object {
     @objc dynamic var emailAccount = ""
     @objc dynamic var photoAccount: Data?
     @objc dynamic var timeCancelSosSignal = 10
+    @objc dynamic var useBiometrick = false
     
     override class func primaryKey() -> String? {
         return "idAccount"
@@ -53,6 +54,7 @@ class Request: Object {
     @objc dynamic var emailContactRequest = ""
     @objc dynamic var photoContactRequest: Data?
     @objc dynamic var dateRequest = NSDate.now
+    @objc dynamic var typeRequest = 0 // 0 - входящая заявка 1 - исходящая
 }
 
 

@@ -159,7 +159,7 @@ class CustomNotification {
     ///   - message: Текст сообщения
     ///   - image: Название картинки
     func showNotification(title: String, message: String, imageColor: UIColor? ,image: String?){
-        let contentView = getFloatContentView(title: title, desc: message, textColor: EKColor(UIColor(named: "notifTextViewColor")!), imageColor: EKColor(imageColor ?? UIColor.systemOrange), imageName: image ?? "exclamationmark.triangle.fill")
+        let contentView = getFloatContentView(title: title, desc: message, textColor: EKColor(UIColor(named: "notifTextViewColor")!), imageColor: EKColor(imageColor ?? UIColor.systemRed), imageName: image ?? "exclamationmark.triangle.fill")
         DispatchQueue.main.async {
             SwiftEntryKit.display(entry: contentView, using: self.floatAlertAttributes)
             UINotificationFeedbackGenerator().notificationOccurred(.error)

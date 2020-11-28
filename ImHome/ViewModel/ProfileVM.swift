@@ -136,6 +136,8 @@ class ProfileVM: ProfileViewModelType {
     /// - Parameter account: аккаунт для сохранения
     func saveAccount(account: Account) {
         account.idAccount = storageManager.getAccount().idAccount
+        account.timeCancelSosSignal = storageManager.getAccount().timeCancelSosSignal
+        account.useBiometrick = storageManager.getAccount().useBiometrick
         storageManager.saveAccount(account: account)
     }
     

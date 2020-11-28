@@ -44,6 +44,7 @@ class DelayMessageVC: UIViewController {
     
     //MARK: Variables
     var closure: ((String) -> ())?
+    private let myNotification = CustomNotification()
     
     //MARK: Жизненный цикл
     override func viewDidLoad() {
@@ -156,6 +157,14 @@ class DelayMessageVC: UIViewController {
     
     //MARK: Отправка отложенного сообщения
     @IBAction func sendBtnAction(_ sender: CustomButton) {
+        if (messageTextView.text ?? "").isEmpty {
+            myNotification.showNotification(title: "Ошибка!", message: "Укажите сообщение", imageColor: nil, image: nil)
+            return
+        }
+        if (delayTextField.text ?? "").isEmpty {
+            myNotification.showNotification(title: "Ошибка!", message: "Укажите время, через которое отправить сообщение", imageColor: nil, image: nil)
+            return
+        }
         closure?(delayTextField.text ?? "")
         dismiss(animated: true)
     }

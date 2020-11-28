@@ -15,4 +15,5 @@ protocol MainViewModelType {
     func stopTimer()
     func showBiometrickAuth(context: LAContext, completion: @escaping (Bool) -> ())
     func getTimeCancelSosSignal() -> Int
+    func parsingTime(time: String)
 }

@@ -39,23 +39,25 @@ class SettingsVC: UITableViewController, UITextFieldDelegate {
         }
     }
     
+    @IBOutlet weak var biometrickSwitcher: UISwitch!
+    
+    //MARK: Variables
     private let nameAccount = "Home"
     private var viewModel: SettingViewModelType?
-    
-    override func viewWillAppear(_ animated: Bool) {
-        getAccountData()
-    }
+    private let myNotification = CustomNotification()
     
     //MARK: Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = SettingsVM()
-        guard let viewModel = viewModel else {return}
-        timeCancelSOSSignal.text = viewModel.getTimeCancelSosSignal()
         tableView.backgroundView = UIImageView(image: UIImage(named: "fonBackground"))
         tableView.backgroundView?.contentMode = .scaleAspectFill
         tableView.backgroundView?.alpha = 0.07
         timeCancelSOSSignal.addTarget(self, action: #selector(endChangeVal), for: .editingDidEnd)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getAccountData()
     }
     
     //MARK: Обработчики
@@ -66,6 +68,13 @@ class SettingsVC: UITableViewController, UITextFieldDelegate {
         }
         guard let viewModel = viewModel else {return}
         viewModel.setTimeCancelSosSignal(time: timeCancelSOSSignal.text!)
+        myNotification.miniNotification(text: "Сохранено", color: .systemGreen)
+    }
+    
+    @IBAction func biometrickSwicherAction(_ sender: UISwitch) {
+        guard let viewModel = viewModel else {return}
+        viewModel.setUseBiometrick(using: sender.isOn)
+        myNotification.miniNotification(text: "Сохранено", color: .systemGreen)
     }
     
     @IBAction func showPresentationAction(_ sender: CustomButton) {
@@ -94,6 +103,7 @@ class SettingsVC: UITableViewController, UITextFieldDelegate {
             self.fioAccount.text = viewModel.getFioAccount()
             self.emailAccount.text = viewModel.getEmailAccount()
             self.timeCancelSOSSignal.text = viewModel.getTimeCancelSosSignal()
+            self.biometrickSwitcher.isOn = viewModel.getUseBiometrick()
         }
     }
     

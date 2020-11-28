@@ -681,8 +681,8 @@
                                     <action selector="delayMessageBtnAction:" destination="rj1-kM-JaT" eventType="touchUpInside" id="aBG-r9-L94"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35:15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FWd-Ae-VeS">
-                                <rect key="frame" x="316" y="731" width="42" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FWd-Ae-VeS">
+                                <rect key="frame" x="337" y="731" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="17"/>
                                 <color key="textColor" name="textLabelColor"/>
                                 <nil key="highlightedColor"/>
@@ -1238,6 +1238,9 @@
                                                             <integer key="value" value="15"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="biometrickSwicherAction:" destination="htl-ds-WV1" eventType="valueChanged" id="C6E-RT-WBH"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Использовать Touch ID для отмены вызова" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Spp-10-Wio">
                                                     <rect key="frame" x="8" y="19" width="307" height="17"/>
@@ -1268,6 +1271,7 @@
                     <tabBarItem key="tabBarItem" title="Настройки" image="gear" catalog="system" landscapeImage="gear" largeContentSizeImage="gear" id="Wub-mA-5SZ"/>
                     <connections>
                         <outlet property="backgroundImageView" destination="FoM-c1-D6D" id="iYf-l3-LxE"/>
+                        <outlet property="biometrickSwitcher" destination="g02-2i-BbB" id="Ck8-95-NHH"/>
                         <outlet property="editAccountButton" destination="Tdc-sh-x2g" id="tmP-zP-Fi5"/>
                         <outlet property="emailAccount" destination="itH-vm-XO8" id="vSS-1X-RPk"/>
                         <outlet property="fioAccount" destination="sV2-3Q-C6H" id="umj-U4-DRd"/>
@@ -1693,7 +1697,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7Zj-om-5J2">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="761"/>
+                                <rect key="frame" x="0.0" y="115" width="390" height="646"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -1857,29 +1861,45 @@
                                     <outlet property="delegate" destination="bfI-T2-rSs" id="Nsb-59-Qsq"/>
                                 </connections>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XDS-qY-Rf6">
+                                <rect key="frame" x="16" y="64" width="358" height="32"/>
+                                <color key="backgroundColor" name="viewPlitsColor"/>
+                                <segments>
+                                    <segment title="Входящие"/>
+                                    <segment title="Исходящие"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" name="fonBackgroundImageColor"/>
+                                <connections>
+                                    <action selector="segmentedControlAction:" destination="bfI-T2-rSs" eventType="valueChanged" id="y1m-4g-KDJ"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UmJ-BK-ehB"/>
                         <color key="backgroundColor" name="backgroundViewColor"/>
                         <constraints>
-                            <constraint firstItem="7Zj-om-5J2" firstAttribute="top" secondItem="080-PY-let" secondAttribute="top" id="5E1-t4-JHA"/>
+                            <constraint firstItem="7Zj-om-5J2" firstAttribute="top" secondItem="XDS-qY-Rf6" secondAttribute="bottom" constant="20" id="5pp-Bv-UMu"/>
+                            <constraint firstItem="UmJ-BK-ehB" firstAttribute="trailing" secondItem="XDS-qY-Rf6" secondAttribute="trailing" constant="16" id="7Oo-Yl-NVI"/>
                             <constraint firstItem="xvg-NL-5bY" firstAttribute="trailing" secondItem="UmJ-BK-ehB" secondAttribute="trailing" id="9Cg-3j-EdV"/>
+                            <constraint firstItem="XDS-qY-Rf6" firstAttribute="top" secondItem="UmJ-BK-ehB" secondAttribute="top" constant="20" id="CHB-la-CTf"/>
                             <constraint firstAttribute="bottom" secondItem="xvg-NL-5bY" secondAttribute="bottom" id="Kdp-EY-iUf"/>
                             <constraint firstItem="xvg-NL-5bY" firstAttribute="leading" secondItem="UmJ-BK-ehB" secondAttribute="leading" id="PgG-Hk-pKT"/>
                             <constraint firstItem="7Zj-om-5J2" firstAttribute="trailing" secondItem="UmJ-BK-ehB" secondAttribute="trailing" id="VVo-Lw-SBI"/>
                             <constraint firstItem="xvg-NL-5bY" firstAttribute="top" secondItem="080-PY-let" secondAttribute="top" id="dZG-DG-Rf9"/>
                             <constraint firstItem="7Zj-om-5J2" firstAttribute="leading" secondItem="UmJ-BK-ehB" secondAttribute="leading" id="tml-K5-NJm"/>
                             <constraint firstItem="7Zj-om-5J2" firstAttribute="bottom" secondItem="UmJ-BK-ehB" secondAttribute="bottom" id="vdw-lt-Ydd"/>
+                            <constraint firstItem="XDS-qY-Rf6" firstAttribute="leading" secondItem="UmJ-BK-ehB" secondAttribute="leading" constant="16" id="xM0-uj-pdO"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Заявки" image="person.2.fill" catalog="system" landscapeImage="person.2.fill" largeContentSizeImage="person.2.fill" selectedImage="person.2.fill" id="DQe-gH-M5O"/>
                     <connections>
                         <outlet property="requestTableView" destination="7Zj-om-5J2" id="uOO-7E-HsO"/>
+                        <outlet property="segmentedControl" destination="XDS-qY-Rf6" id="vzM-vb-eD2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nIa-Fy-sMd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="YbP-vv-m7I" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3618.4000000000001" y="541.62561576354688"/>
+            <point key="canvasLocation" x="3616.9230769230767" y="540.99526066350711"/>
         </scene>
         <!--Profile ContactVC-->
         <scene sceneID="QqA-lJ-h6H">
@@ -3035,8 +3055,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="fcm-13-Vvk"/>
         <segue reference="pxy-El-Vtd"/>
-        <segue reference="IIS-2n-JLT"/>
-        <segue reference="O5G-oF-Q2H"/>
+        <segue reference="QzT-K7-opg"/>
+        <segue reference="aae-ew-RzT"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Home" width="380" height="423"/>

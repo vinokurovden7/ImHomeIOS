@@ -129,7 +129,6 @@ class ProfileVC: UITableViewController {
             account.secondNameAccount = secondNameTextField.text!
             account.thirdNameAccount = thirdNameTextField.text ?? ""
             account.photoAccount = image.jpegData(.low)
-            account.timeCancelSosSignal = Int(viewModel.getTimeCancelSosSignal())!
             viewModel.saveAccount(account: account)
             myNotification.miniNotification(text: "Сохранено", color: .systemGreen)
             dismiss(animated: true)

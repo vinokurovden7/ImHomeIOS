@@ -10,4 +10,5 @@ import Foundation
 protocol RequestViewModelType {
     func numberOfRows() -> Int
     func cellViewModel(forIndexPath indexPath: IndexPath) -> RequestCellSubclassDelegate?
+    func changeTypeRequest(typeRequest: Int)
 }

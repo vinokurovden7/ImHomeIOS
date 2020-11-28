@@ -23,6 +23,7 @@ class SettingsVM: SettingViewModelType {
         newAccount.emailAccount = account.emailAccount
         newAccount.photoAccount = account.photoAccount
         newAccount.timeCancelSosSignal = Int(time)!
+        newAccount.useBiometrick = account.useBiometrick
         storageManager.saveAccount(account: newAccount)
     }
     
@@ -52,6 +53,29 @@ class SettingsVM: SettingViewModelType {
     func getTimeCancelSosSignal() -> String {
         account = storageManager.getAccount()
         return "\(account.timeCancelSosSignal)"
+    }
+    
+    /// Установить флаг использования биометрии
+    /// - Parameter using: флаг
+    func setUseBiometrick(using: Bool) {
+        account = storageManager.getAccount()
+        let newAccount = Account()
+        newAccount.idAccount = account.idAccount
+        newAccount.firstNameAccount = account.firstNameAccount
+        newAccount.secondNameAccount = account.secondNameAccount
+        newAccount.thirdNameAccount = account.thirdNameAccount
+        newAccount.emailAccount = account.emailAccount
+        newAccount.photoAccount = account.photoAccount
+        newAccount.timeCancelSosSignal = account.timeCancelSosSignal
+        newAccount.useBiometrick = using
+        storageManager.saveAccount(account: newAccount)
+    }
+    
+    /// Получить флаг использования биометрии
+    /// - Returns: флаг
+    func getUseBiometrick() -> Bool {
+        account = storageManager.getAccount()
+        return account.useBiometrick
     }
     
 }

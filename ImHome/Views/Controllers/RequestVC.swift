@@ -16,17 +16,24 @@ class RequestVC: UIViewController {
 
     //MARK: IBOutlets
     @IBOutlet var requestTableView: UITableView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     //MARK: Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = RequestVM()
+        viewModel = RequestVM(typeRequest: segmentedControl.selectedSegmentIndex)
     }
     
     //MARK: Визуальное оформление
     //MARK: Стиль статус бара
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
+    }
+    
+    @IBAction func segmentedControlAction(_ sender: UISegmentedControl) {
+        guard let viewModel = viewModel else {return}
+        viewModel.changeTypeRequest(typeRequest: sender.selectedSegmentIndex)
+        requestTableView.reloadData()
     }
     
 }
@@ -38,13 +45,17 @@ extension RequestVC: UITableViewDelegate, UITableViewDataSource, RequestCellActi
 //        guard let viewModel = viewModel else {return 0}
 //        return viewModel.numberOfRows()
         checkCountRecord()
+        if arrayMessage.count > 0 {
+            self.tabBarItem.badgeValue = "\(arrayMessage.count)"
+        } else {
+            self.tabBarItem.badgeValue = nil
+        }
         return arrayMessage.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "requestCell") as! RequestCell
         cell.delegate = self
-
         cell.messageTextLabel.text = arrayMessage[indexPath.row]
         return cell
 //
@@ -96,5 +107,4 @@ extension RequestVC: UITableViewDelegate, UITableViewDataSource, RequestCellActi
             view.willRemoveSubview(textLabel)
         }
     }
-    
 }

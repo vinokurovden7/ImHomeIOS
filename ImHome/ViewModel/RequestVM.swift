@@ -12,9 +12,10 @@ class RequestVM: RequestViewModelType {
     
     private let storageManager = StorageManager()
     private var requests: Results<Request>!
+    private var typeRequest = 0
     
     func numberOfRows() -> Int {
-        requests = storageManager.getRequests()
+        requests = storageManager.getRequests()?.filter("typeRequest CONTAINS[c] %@", typeRequest)
         return requests.count
     }
     
@@ -22,5 +23,13 @@ class RequestVM: RequestViewModelType {
         var request = Request()
         request = requests[indexPath.row]
         return RequestCellVM(request: request)
+    }
+    
+    func changeTypeRequest(typeRequest: Int) {
+        self.typeRequest = typeRequest
+    }
+    
+    init(typeRequest: Int) {
+        self.typeRequest = typeRequest
     }
 }

@@ -10,6 +10,8 @@ import UIKit
 protocol SettingViewModelType {
     func setTimeCancelSosSignal(time: String)
     func getTimeCancelSosSignal() -> String
+    func setUseBiometrick(using: Bool)
+    func getUseBiometrick() -> Bool
     func getPhotoAccount() -> UIImage
     func getFioAccount() -> String
     func getEmailAccount() -> String

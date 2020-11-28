@@ -60,6 +60,21 @@ class MainVM: MainViewModelType {
         return storageManager.getAccount().timeCancelSosSignal
     }
     
+    func parsingTime(time: String) {
+        let timeArr = time.components(separatedBy: ":")
+        if timeArr.count == 3 {
+            hour = Int(timeArr[0]) ?? 0
+            minutes = Int(timeArr[1]) ?? 0
+            sec = Int(timeArr[2]) ?? 0
+        } else if timeArr.count == 2 {
+            minutes = Int(timeArr[0]) ?? 0
+            sec = Int(timeArr[1]) ?? 0
+        } else {
+            sec = Int(timeArr[0]) ?? 0
+        }
+        setTimer(hour: hour, minutes: minutes, seconds: sec)
+    }
+    
     init() {
         timeClass = CustomTimer()
         biometrickAuth = BiometrickAuth()

@@ -34,6 +34,8 @@ class MainVC: UIViewController {
         mainButton.addTarget(self, action: #selector(allEvents), for: .allEvents)
         
         viewModel = MainVM()
+        
+        tabBarController?.tabBar.items?[2].badgeValue = "3"
     }
     
     //MARK: Обработчики
@@ -47,24 +49,13 @@ class MainVC: UIViewController {
         switch segue.identifier {
             case "showDelayMessageScreen":
                 guard let destination = segue.destination as? DelayMessageVC else {return}
-                destination.closure = { [weak self] time in
-                    let timeArr = time.components(separatedBy: ":")
-                    if timeArr.count == 3 {
-                        self!.hour = Int(timeArr[0]) ?? 0
-                        self!.minutes = Int(timeArr[1]) ?? 0
-                        self!.sec = Int(timeArr[2]) ?? 0
-                    } else if timeArr.count == 2 {
-                        self!.minutes = Int(timeArr[0]) ?? 0
-                        self!.sec = Int(timeArr[1]) ?? 0
-                    } else {
-                        self!.sec = Int(timeArr[0]) ?? 0
-                    }
-                    self!.mainTimerTimeLabel.isHidden = true
-                    self!.messageTimerTimeLabel.isHidden = false
-                    self!.cancelAlarm.isHidden = false
-                    self!.delayMessageButton.backgroundColor = .systemOrange
-                    guard let viewModel = self!.viewModel else {return}
-                    viewModel.setTimer(hour: self!.hour, minutes: self!.minutes, seconds: self!.sec)
+                destination.closure = { time in
+                    guard let viewModel = self.viewModel else {return}
+                    viewModel.parsingTime(time: time)
+                    self.mainTimerTimeLabel.isHidden = true
+                    self.messageTimerTimeLabel.isHidden = false
+                    self.cancelAlarm.isHidden = false
+                    self.delayMessageButton.backgroundColor = .systemOrange
                 }
             case "showLocker":
                 guard let destination = segue.destination as? LockerViewController else {return}
